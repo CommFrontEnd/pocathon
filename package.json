@@ -4,7 +4,8 @@
   "description": "Seed project with resources to participate the pocathon",
   "main": "index.html",
   "scripts": {
-    "test": "gulp server"
+    "mockups": "gulp mockups",
+    "server": "gulp server"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,13 @@
   },
   "homepage": "https://github.com/CommFrontEnd/pocathon#readme",
   "dependencies": {
+    "chartist": "^0.10.1",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+  },
+  "devDependencies": {
     "express": "^4.14.0",
-    "gulp": "^3.9.1"
+    "gulp-nodemon": "^2.2.1",
+    "serve-static": "^1.11.1"
   }
 }
