@@ -1,8 +1,7 @@
- const express = require('express');
+const express = require('express');
 const serveStatic = require('serve-static');
 module.exports = {
     mockups : function(){
-       
         var port = 8082;
         var app = express();
         //app.use(serveStatic(__dirname + '/public-optimized'));
@@ -10,7 +9,6 @@ module.exports = {
         app.use('/vendors', express.static('./node_modules'));
         app.listen(port);
         console.info('Maquettes Server started at : localhost:'+ port+'/');
-
     }
 };
 

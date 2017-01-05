@@ -7,6 +7,7 @@
 const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
 const server = require('./server.js');
+const notify = require('gulp-notify');
 
 // This task lets you access locally to the mock-ups
 gulp.task('mockups', server.mockups);
@@ -23,8 +24,8 @@ gulp.task('server', function(){
         env: { 'NODE_ENV': 'development' } //now you can use safely console.debug
        
     }).on('restart', function() {
-    gulp.src('maquettes/server.js')
-      .pipe(notify('This notification show when restarting but you can add any other task'));
+    gulp.src('app.js')
+      .pipe(notify('This notification shows when restarting but you can add any other task'));
   });
 });
 
