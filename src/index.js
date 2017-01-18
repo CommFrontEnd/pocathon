@@ -8,16 +8,14 @@ import Login from './components/login/Login';
 import NotFound from './components/error/NotFound';
 
 // Rooter
-import { BrowserRouter, Match, Miss } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 const Root = () => {
 	return (
-		<BrowserRouter>
-			<div>
-				<Match exactly pattern="/" component={Login} />
-				<Miss component={NotFound} />
-			</div>
-		</BrowserRouter>
+		<Router history={browserHistory}>
+			<Route path="/" component={Login} />
+			<Route path="*" component={NotFound} />
+		</Router>
 	)
 }
 
