@@ -3,42 +3,49 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
+import { AuthService } from './auth.service';
+
 import { Client } from '../domain/client';
-import { CLIENTS } from './mock';
 
 @Injectable()
 export class ClientService {
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private clientsUrl = 'https://siipocathon.apispark.net:443/v1/clients/';  // URL to web api
+    private clientsUrl = '/v1/clients/';  // URL to web api
 
     private currentClient;
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private authService : AuthService) { }
 
     private getClient(idClient: string): Promise<Client> {
-        let client = null;
-        for (let i in CLIENTS) {
-            if (idClient == CLIENTS[i].id) {
-                client = CLIENTS[i];
-            }
+        if(null == idClient || "" == idClient) {
+            return Promise.reject(new Error(idClient+" is not a valid Client id."));
         }
-        if (null == client) {
-            return Promise.reject(new Error("Client " + idClient + " not found"));
-        } else {
-            return Promise.resolve(client);
-        }
+        return new Promise((resolve,reject) => {
+            this.http.get(this.clientsUrl + idClient).toPromise()
+            .then((res) => {
+                resolve(res);
+            })
+            .catch(() => {
+                reject(new Error("Client "+idClient+" cannot be found"));
+            });    
+        });
     }
 
     login(username: string, password: string) {
         return new Promise((resolve, reject) => {
-            this.getClient("000000001")
+            this.authService.auth(username,password)
+            .then((clientId) => {
+                this.getClient(clientId)
                 .then((res) => {
                     this.setCurrentClient(res);
                     resolve(res);
                 })
-                .catch(() => {
-                    reject(new Error("Bad user/password"));
-                })
+                .catch((err)) => {
+                    reject(err);
+                });
+            })
+            .catch((err) => {
+                reject(err);
+            });
         });
     }
 

@@ -5,28 +5,28 @@ import 'rxjs/add/operator/toPromise';
 
 import { Account } from '../domain/account';
 import { Client } from '../domain/client';
-import { ACCOUNTS } from './mock';
 
 @Injectable()
 export class AccountService {
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
-    private accountsUrl = 'https://siipocathon.apispark.net:443/v1/accounts/';  // URL to web api
+    private accountsUrl = '/v1/accounts/';  // URL to web api
 
     constructor(private http: Http) { }
 
     getAccount(idAccount: string): Promise<Account> {
-        let account = null;
-        for (let i in ACCOUNTS) {
-            if (idAccount == ACCOUNTS[i].id) {
-                account = ACCOUNTS[i];
-            }
+        if(null == idAccount || "" == idAccount) {
+            return Promise.reject(new Error(idAccount+" is not a valid Account id."));
         }
-        if (null == account) {
-            return Promise.reject(new Error("Account " + idAccount + " not found"));
-        } else {
-            return Promise.resolve(account);
-        }
+        return new Promise((resolve,reject) => {
+            this.http.get(this.accountsUrl + idAccount).toPromise()
+            .then((res) => {
+                resolve(res);
+            })
+            .catch(() => {
+                reject(new Error("Account "+idAccount+" cannot be found"));
+            });    
+        });
     }
 
     getAccounts(client: Client): Promise<Account[]> {
