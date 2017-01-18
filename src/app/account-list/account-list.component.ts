@@ -3,8 +3,8 @@ import { Router }            from '@angular/router';
 import { Observable }        from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
-// TODO ADD IMPORTS
 import { ClientService } from '../shared/services/client.service';
+import { AccountService } from '../shared/services/account.service';
 import { Account } from '../shared/domain/account';
 import { Client } from '../shared/domain/client';
 
@@ -20,6 +20,7 @@ export class AccountListComponent implements OnInit {
 
   constructor(
     private clientService: ClientService,
+    private accountService: AccountService, 
     private router: Router) {}
 
   ngOnInit(): void {
@@ -31,7 +32,7 @@ export class AccountListComponent implements OnInit {
         this.client = new Client();
       }
     );
-    this.accounts = Observable.of<Account[]>(this.client.accountsList);
+    this.accounts = Observable.of<Account[]>(this.accountService.getAccounts(this.client));
   }
 
   goToDetail(account: Account): void {
