@@ -8,7 +8,8 @@ import { Client } from '../shared/domain/client';
   moduleId: module.id,
   selector: 'login',
   templateUrl: 'login.component.html',
-  providers: [ClientService]
+  providers: [ClientService],
+  styleUrls:['login.component.css']
 })
 
 export class LoginComponent {
@@ -30,4 +31,6 @@ export class LoginComponent {
         component.loginFailed = true;
       });
   }
+
+  
 }

@@ -9,6 +9,8 @@ import { AccountListComponent }   from './account-list/account-list.component';
 import { AccountDetailsComponent }      from './account-details/account-details.component';
 import { LoginComponent }  from './login/login.component';
 import { TopbarComponent }  from './shared/topbar/topbar.component';
+import { MapsComponent }  from './shared/maps/maps.component';
+
 //import { StatComponent }  from './stat/stat.component';
 
 import { AccountService }    from './shared/services/account.service';
@@ -29,7 +31,8 @@ import { CustomRequestOptions } from './shared/services/custom-request-options';
     AccountListComponent,
     AccountDetailsComponent,
     LoginComponent,
-    TopbarComponent/*,
+    TopbarComponent,
+    MapsComponent/*,
     StatComponent*/
   ],
   providers: [
