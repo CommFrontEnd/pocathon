@@ -1,0 +1,29 @@
+<div class="o-panel-header">
+    <h1 class="c-logo">
+        <div *ngIf="isAccountListMode">
+            <svg height="2em" viewBox="0 0 20 20" preserveAspectRatio="xMinYMid">
+                <use xlink:href="#logo-min"></use>
+            </svg>
+        </div>
+        <div *ngIf="isAccountDetailMode">
+            <a routerLink="/accounts" class="header__btn fa fa-angle-left"></a>
+        </div>
+        <div *ngIf="isAccountStatMode">
+            <a routerLink="{{accountDetailsRoute}}" class="header__btn fa fa-angle-left"></a>            
+        </div>
+    </h1>
+    <div class="c-user menu-container js-user-menu">
+        <div class="fa fa-user-circle-o c-user__ico"></div>
+        {{clientLabel}}
+        <div class="fa fa-angle-down"></div>
+        <ul class="menu">
+            <li class="menu__item"><a routerLink="#" routerLinkActive="active"><span class="fa fa-gear"></span> Preferences</a></li>
+            <li class="menu__item"><a routerLink="/login" routerLinkActive="active"><span class="fa fa-unlock-alt"></span> Logout</a></li>
+        </ul>
+    </div>
+    <div class="c-options">
+        <div *ngIf="isAccountDetailMode">
+            <a href="/accountStatistics.html" class="header__btn fa fa-line-chart"></a>
+        </div>
+    </div>
+</div>

@@ -4,14 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccountListComponent }   from './account-list/account-list.component';
 import { AccountDetailsComponent }      from './account-details/account-details.component';
 import { LoginComponent }  from './login/login.component';
-import { StatComponent }  from './stat/stat.component';
+//import { StatComponent }  from './stat/stat.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login',  component: LoginComponent },
   { path: 'detail/:id', component: AccountDetailsComponent },
-  { path: 'accounts',     component: AccountListComponent },
-  { path: 'stat/:id',     component: StatComponent }
+  { path: 'accounts',     component: AccountListComponent }/*,
+  { path: 'stat/:id',     component: StatComponent }*/
 ];
 
 @NgModule({

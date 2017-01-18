@@ -30,7 +30,7 @@ export class OperationService {
 
     getOperations(account: Account): Promise<Operation[]> {
         return new Promise((resolve, reject) => {
-            let operations = [];
+            let operations : Operation[] = [];
 
             for (let i in account.operationsList) {
                 this.getOperation(account.operationsList[i])

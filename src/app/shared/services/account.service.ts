@@ -31,7 +31,7 @@ export class AccountService {
 
     getAccounts(client: Client): Promise<Account[]> {
         return new Promise((resolve, reject) => {
-            let accounts = [];
+            let accounts : Account[] = [];
 
             for (let i in client.accountsList) {
                 this.getAccount(client.accountsList[i])

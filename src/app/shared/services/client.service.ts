@@ -11,7 +11,7 @@ import { Client } from '../domain/client';
 export class ClientService {
     private clientsUrl = '/v1/clients/';  // URL to web api
 
-    private currentClient;
+    private currentClient : Client = null;
 
     constructor(private http: Http, private authService : AuthService) { }
 
