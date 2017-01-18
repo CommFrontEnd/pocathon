@@ -35,15 +35,15 @@ export class ClientService {
             this.authService.auth(username,password)
             .then((clientId) => {
                 this.getClient(clientId)
-                .then((res) => {
+                .then(res => {
                     this.setCurrentClient(res);
                     resolve(res);
                 })
-                .catch((err)) => {
+                .catch(err => {
                     reject(err);
                 });
             })
-            .catch((err) => {
+            .catch(err => {
                 reject(err);
             });
         });
