@@ -2,19 +2,21 @@
 
 // 1. Define route components.
 // These can be imported from other files
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
+const Accounts = { template: '<div>bar</div>' }
+const AccountDetails = { template: '<div>Details du compte {{ $route.params.id }}</div>' }
+const AccountStatistics = { template: '<div>Statistics du compte {{ $route.params.id }}</div>' }
 
 
-console.log('debug');
 // 2. Define some routes
 // Each route should map to a component. The "component" can
 // either be an actual component constructor created via
 // Vue.extend(), or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/login', component: require('./login/login.vue') },
-  { path: '/bar', component: Bar }
+    { path: '/login', component:login},
+    { path: '/accounts/', component: Accounts },
+    { path: '/accounts/:id', component: AccountDetails },
+    { path: '/accounts/:id/stats', component: AccountStatistics }
 ]
 
 // 3. Create the router instance and pass the `routes` option
