@@ -10,6 +10,8 @@ import NotFound from './components/error/NotFound';
 // Rooter
 import { Router, Route, browserHistory } from 'react-router';
 
+import './main.css';
+
 const Root = () => {
 	return (
 		<Router history={browserHistory}>

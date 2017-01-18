@@ -3,8 +3,15 @@ import React from 'react';
 class Login extends React.Component {
 
     render() {
+        var useTag = '<use xlink:href="#logo" />';
         return (
-            <h2>test</h2>
+            <div className="card z-axis--3">
+                <div className="card__header">
+                    <h1>
+                        <svg className="c-logo" height="4em" viewBox="0 0 20 20" preserveAspectRatio="xMinYMid" dangerouslySetInnerHTML={{__html: useTag }}/>
+                    </h1>
+                </div>
+            </div>
         )
     }
 
