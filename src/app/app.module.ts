@@ -13,6 +13,9 @@ import { HttpModule }    from '@angular/http';
 
 import { AppComponent }         from './app.component';
 
+import { AccountService }    from './shared/services/account.service';
+import { ClientService }    from './shared/services/client.service';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -24,7 +27,10 @@ import { AppComponent }         from './app.component';
   declarations: [
     AppComponent
   ],
-  providers: [],
+  providers: [
+    AccountService,
+    ClientService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
