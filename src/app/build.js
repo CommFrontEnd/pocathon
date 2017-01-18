@@ -11559,13 +11559,64 @@
 	    methods: {
 	        fetchData: function fetchData() {
 	            console.log("call");
-	            _axios2.default.get('agencies/').then(function (response) {
+
+	            console.log(this.accounts);
+
+	            var vm = this;
+
+	            this.fetchClient('clients/4464a430-c692-11e6-bbcc-0bdb025a7cfa').then(function (response) {
+	                vm.detailUrl = response.data;
 	                console.log(response.data);
 	                console.log(response.status);
 	                console.log(response.statusText);
 	                console.log(response.headers);
 	                console.log(response.config);
+	                vm.processClient(response.data, vm);
 	            });
+	        },
+
+	        fetchClient: function fetchClient(url) {
+	            return _axios2.default.get(url);
+	        },
+
+	        processClient: function processClient(data, thiz) {
+	            console.log(thiz.accounts);
+	            thiz.accounts = [];
+	            data.accountsList.forEach(function (accountId) {
+	                thiz.fetchAccount('accounts/' + accountId).then(function (response) {
+	                    console.log("processaccount :");
+	                    console.log(thiz.processAccount(response.data, thiz));
+	                    thiz.accounts.push(thiz.processAccount(response.data, thiz));
+	                });
+	            });
+	            console.log(thiz.accounts);
+	        },
+
+	        fetchAccount: function fetchAccount(url) {
+	            return _axios2.default.get(url);
+	        },
+
+	        processAccount: function processAccount(data, thiz) {
+	            var accountObj = {};
+
+	            accountObj.accountNum = data.accountNumber;
+	            accountObj.accountSolde = data.balance;
+
+	            return accountObj;
+	        },
+
+	        fetchOperations: function fetchOperations(url) {
+	            return _axios2.default.get(url);
+	        },
+
+	        processOperations: function processOperations(data) {
+	            for (var i = 0; i < 3; ++i) {
+	                operation = respOperations.data[i];
+	                operationObj = {
+	                    label: operation.type + '-' + operation.label,
+	                    amount: operation.montant
+	                };
+	            }
 	        }
 	    }
 	};
@@ -13206,7 +13257,12 @@
 	      staticClass: "c-field__label"
 	    }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
 	      staticClass: "c-field__value"
-	    }, [_vm._v(_vm._s(account.accountNum))]), _vm._v(" "), _c('div', {
+	    }, [_c('a', {
+	      attrs: {
+	        "bind-router-link": "",
+	        "to": "accounts/account.accountNum"
+	      }
+	    }, [_vm._v(_vm._s(account.accountNum))])]), _vm._v(" "), _c('div', {
 	      staticClass: "c-list-item__actions fa fa-angle-right"
 	    }), _vm._v(" "), _c('div', {
 	      staticClass: "c-list-item__content js-account-details"
@@ -13216,7 +13272,7 @@
 	      staticClass: "c-field__label"
 	    }), _vm._v(" "), _c('div', {
 	      staticClass: "c-field__value"
-	    }, [_vm._v(_vm._s(account.accountSolde) + "} "), _c('span', {
+	    }, [_vm._v(_vm._s(account.accountSolde) + " "), _c('span', {
 	      staticClass: "down fa fa-angle-down"
 	    })])]), _vm._v(" "), _c('div', {
 	      staticClass: "c-list-item__detail"

@@ -5,7 +5,7 @@
                 <div class="c-field__label">N° de compte:</div>
                 <!-- //'<div class="c-field__value" v-text="account.accountNum
                 " />' + -->
-                <div class="c-field__value"><router-link to="#">{{ account.accountNum }}</router-link></div>
+                <div class="c-field__value"><a bind-router-link to="accounts/account.accountNum">{{ account.accountNum }}</a router-link></div>
                 <div class="c-list-item__actions fa fa-angle-right"></div>
             </a>
             <div class="c-list-item__content js-account-details">
@@ -69,6 +69,7 @@ export default {
 
         this.fetchClient('clients/4464a430-c692-11e6-bbcc-0bdb025a7cfa')
             .then(function(response) {
+                vm.detailUrl = response.data
                 console.log(response.data);
                 console.log(response.status);
                 console.log(response.statusText);
