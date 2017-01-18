@@ -1,5 +1,5 @@
-import { Component }          from '@angular/core';
-import { Router }            from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ClientService } from '../shared/services/client.service';
 import { Client } from '../shared/domain/client';
@@ -12,17 +12,17 @@ import { Client } from '../shared/domain/client';
 
 export class LoginComponent {
   loginFailed = false;
-  constructor(private clientService: ClientService, public routeur: Router){}
+  constructor(private clientService: ClientService, public routeur: Router) { }
 
-  login(event, username, password) {
+  login(event: Event, username: string, password: string) {
     event.preventDefault();
     this.clientService.login(username, password)
-    .then(
-      function(){
+      .then(
+      function () {
         this.loginFailed = false;
         this.router.navigate(['account-list']);
       })
-    .catch(
+      .catch(
       error => {
         console.log(error);
         this.loginFailed = true;

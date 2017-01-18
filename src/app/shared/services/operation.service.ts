@@ -15,7 +15,7 @@ export class OperationService {
     constructor(private http: Http) { }
 
     getOperation(idOperation: string): Promise<Operation> {
-        let operation = null;
+        let operation : Operation = null;
         for (let i in OPERATIONS) {
             if (idOperation == OPERATIONS[i].id) {
                 operation = OPERATIONS[i];
@@ -30,7 +30,7 @@ export class OperationService {
 
     getOperations(account: Account): Promise<Operation[]> {
         return new Promise((resolve, reject) => {
-            let operations = [];
+            let operations : Operation[] = [];
 
             for (let i in account.operationsList) {
                 this.getOperation(account.operationsList[i])

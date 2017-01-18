@@ -11,12 +11,12 @@ export class ClientService {
     private headers = new Headers({ 'Content-Type': 'application/json' });
     private clientsUrl = 'https://siipocathon.apispark.net:443/v1/clients/';  // URL to web api
 
-    private currentClient;
+    private currentClient : Client = null;
 
     constructor(private http: Http) { }
 
     private getClient(idClient: string): Promise<Client> {
-        let client = null;
+        let client : Client = null;
         for (let i in CLIENTS) {
             if (idClient == CLIENTS[i].id) {
                 client = CLIENTS[i];

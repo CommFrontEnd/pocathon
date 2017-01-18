@@ -9,7 +9,7 @@ import { Operation } from '../shared/domain/operation';
 @Component({
   selector: 'account-details',
   templateUrl: 'header.component.html',
-  provider:[AccountService, OperationService]
+  providers:[AccountService, OperationService]
 })
 export class AccountDetailsComponent implements OnInit {
   private account : Account;
@@ -21,9 +21,9 @@ export class AccountDetailsComponent implements OnInit {
   ) {}
 
 ngOnInit(): void {
-    this.route.params
+    /*this.route.params
       .switchMap((params: Params) => this.accountService.getAccount(params['id']))
-      .subscribe(account => this.account = account);
+      .subscribe(account => this.account = account);*/
   }
 
 }

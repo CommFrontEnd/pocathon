@@ -16,7 +16,7 @@ export class AccountService {
     constructor(private http: Http) { }
 
     getAccount(idAccount: string): Promise<Account> {
-        let account = null;
+        let account : Account = null;
         for (let i in ACCOUNTS) {
             if (idAccount == ACCOUNTS[i].id) {
                 account = ACCOUNTS[i];
@@ -31,7 +31,7 @@ export class AccountService {
 
     getAccounts(client: Client): Promise<Account[]> {
         return new Promise((resolve, reject) => {
-            let accounts = [];
+            let accounts : Account[] = [];
 
             for (let i in client.accountsList) {
                 this.getAccount(client.accountsList[i])
