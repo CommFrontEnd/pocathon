@@ -1,29 +1,33 @@
 <!DOCTYPE>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
 
-        <link href="./main.css" rel="stylesheet" media="all" />
-        <link href="http://fonts.googleapis.com/css?family=Lato:400,900,400italic,700italic" rel="stylesheet" media="all" />
-        <link href="/vendors/chartist/dist/chartist.min.css" rel="stylesheet" media="all" />
-        <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="all" />
-        <script src="/vendors/vue/dist/vue.js"></script>
-        <script src="/vendors/vue-router/dist/vue-router.js"></script>
-    </head>
-    <body>
-        <div id="app">
-            <h1>Your server is online.  </h1>
-            <p>"-Your orders, Templar? pouet !"</p>
-            <router-view></router-view>
+<head>
+    <meta charset="UTF-8">
+
+    <link href="./main.css" rel="stylesheet" media="all" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,900,400italic,700italic" rel="stylesheet" media="all" />
+    <link href="/vendors/chartist/dist/chartist.min.css" rel="stylesheet" media="all" />
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="all" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- header -->
+        <div id="header">
+            <h1>Vue JS Pocathon</h1>
         </div>
-    </body>
+        <router-view></router-view>
+    </div>
+    <script src="build.js"></script>
+</body>
 
-  
-    <!-- SCRIPTS -->
 
-    <!-- GOOGLE MAPS -->
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZCsMSV5KhnOaKVGfxidaR60q6ZH6O9M&callback=initMap"> </script>
-    <script src="./login/login.js"></script>
-    <script src="/vendors/chartist/dist/chartist.min.js" defer></script>
-    <script src="router.js" ></script>
+<!-- SCRIPTS -->
+
+<!-- GOOGLE MAPS -->
+<!--<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZCsMSV5KhnOaKVGfxidaR60q6ZH6O9M&callback=initMap"> </script>
+
+
+<script src="/vendors/chartist/dist/chartist.min.js" defer></script>-->
+
 </html>
