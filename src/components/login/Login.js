@@ -1,6 +1,21 @@
 import React from 'react';
+import  { Link } from 'react-router';
+
+import LoginService from '../../services/LoginService';
+import LoginStore from '../../stores/LoginStore';
 
 class Login extends React.Component {
+
+    state = {
+        user : {}
+    };
+
+    goToApp = event => {
+        event.preventDefault();
+        const user = LoginService.findUser();
+        
+        LoginStore.user(user);
+    }
 
     render() {
         var useTag = '<use xlink:href="#logo" />';
@@ -12,7 +27,7 @@ class Login extends React.Component {
                     </h1>
                 </div>
                 <div className="card_content">
-                    <form className="form">
+                    <form className="form" onSubmit={(e) => this.goToApp(e)}>
 
                         <div className="form__group is-invalid">
                     
@@ -33,6 +48,8 @@ class Login extends React.Component {
                             </div>
                         </div>
 
+                        <Link className="btn" to={`/accounts`} >Log me In!</Link>
+
                     </form>
                     <div className="form__group">
                         <a href="#forgottenPassword" className="form__label">Mot de passe oublié ?</a>
@@ -44,10 +61,6 @@ class Login extends React.Component {
                         </div>
                     </div>
 
-                </div>
-
-                <div className="card__footer">
-                  <a className="btn" href="/accounts">Log me In!</a>
                 </div>
 
             </div>
