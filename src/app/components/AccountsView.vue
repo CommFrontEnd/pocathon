@@ -5,13 +5,13 @@
                 <div class="c-field__label">N° de compte:</div>
                 <!-- //'<div class="c-field__value" v-text="account.accountNum
                 " />' + -->
-                <div class="c-field__value">{{ account.accountNum }}</div>
+                <div class="c-field__value"><router-link to="#">{{ account.accountNum }}</router-link></div>
                 <div class="c-list-item__actions fa fa-angle-right"></div>
             </a>
             <div class="c-list-item__content js-account-details">
                 <div class="c-field">
                     <div class="c-field__label"></div>
-                    <div class="c-field__value">{{ account.accountSolde }}} <span class="down fa fa-angle-down"></span></div>
+                    <div class="c-field__value">{{ account.accountSolde }} <span class="down fa fa-angle-down"></span></div>
                 </div>
                 <div class="c-list-item__detail">
                     <div class="c-field" v-for="operation in account.lastOperations">
@@ -61,16 +61,68 @@ export default {
   },
   methods: {
       fetchData: function(){
-          console.log("call");
-        axios.get('agencies/')
-        .then(function(response) {
-            console.log(response.data);
-            console.log(response.status);
-            console.log(response.statusText);
-            console.log(response.headers);
-            console.log(response.config);
-        });
-      }
-  }
+        console.log("call");
+
+        console.log(this.accounts);
+        
+        var vm = this;
+
+        this.fetchClient('clients/4464a430-c692-11e6-bbcc-0bdb025a7cfa')
+            .then(function(response) {
+                console.log(response.data);
+                console.log(response.status);
+                console.log(response.statusText);
+                console.log(response.headers);
+                console.log(response.config);
+                vm.processClient(response.data, vm);
+            });
+      },
+
+      fetchClient: function(url) {
+          return axios.get(url);
+      },
+
+      processClient: function(data, thiz) {
+            console.log(thiz.accounts);
+            thiz.accounts = [];
+            data.accountsList.forEach(function(accountId) {
+                thiz.fetchAccount('accounts/' + accountId)
+                    .then(function(response) {
+                        console.log("processaccount :");
+                        console.log(thiz.processAccount(response.data, thiz));
+                        thiz.accounts.push(thiz.processAccount(response.data, thiz));
+                    });
+            }
+            );
+            console.log(thiz.accounts);
+        },
+
+      fetchAccount: function(url) {
+          return axios.get(url);
+      },
+      
+      processAccount: function(data, thiz) {
+            var accountObj = {};
+            
+            accountObj.accountNum = data.accountNumber;
+            accountObj.accountSolde = data.balance;
+
+            return accountObj;
+    },
+
+      fetchOperations: function(url) {
+          return axios.get(url)
+      },
+
+       processOperations: function(data) {                
+                for (var i=0; i < 3; ++i) {
+                    operation = respOperations.data[i];
+                    operationObj = {
+                        label: operation.type + '-' + operation.label,
+                        amount: operation.montant
+                    }
+                }
+          }
+}
 };
 </script>
