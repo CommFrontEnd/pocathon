@@ -5,7 +5,6 @@
   "main": "index.html",
   "scripts": {
     "mockups": "gulp mockups",
-    "server": "gulp server",
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",

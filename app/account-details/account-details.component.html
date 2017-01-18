@@ -1,0 +1,29 @@
+<div class="container">
+    <topbar [isAccountDetailMode]="true"></topbar>
+
+    <div class="o-panel-content">
+        <div class="c-list-item">
+            <div class="c-list-item__title">
+                <div class="u-fullWidth">{{account.name}}
+                    <div class="c-list-item__subtitle c-field c-field--left">
+                        <div class="c-field__label">N° de compte:</div>
+                        <div class="c-field__value">{{account.number}}</div>
+                    </div>
+                    <div class="chart c-list-item__content">
+                        <div class="js-d3-history"></div>
+                        <div class="c-heading c-field">
+                            <div class="field__label">Solde</div>
+                            <div class="u-blank c-field__value is-valid">{{account.balance}} {{account.currency}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngFor="let operation of operations | async" class="c-list-item c-field c-field--default">
+            <div class="c-field__label">
+                <div class="c-ico {{getFontAwesomeIcon(operation.categorie)}}"></div>{{operation.label}}
+            </div>
+            <div class="c-field__value">{{operation.montant}} {{operation.currency}}</div>
+        </div>
+    </div>
+</div>
