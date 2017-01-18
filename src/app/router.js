@@ -13,7 +13,7 @@ console.log('debug');
 // Vue.extend(), or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/foo', component: Foo },
+  { path: '/login', component: require('./login/login.vue') },
   { path: '/bar', component: Bar }
 ]
 
