@@ -4,6 +4,8 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Account } from '../domain/account';
+import { Client } from '../domain/client';
+import { ACCOUNTS } from './mock';
 
 @Injectable()
 export class AccountService {
@@ -13,11 +15,30 @@ export class AccountService {
 
     constructor(private http: Http) { }
 
-    getAccounts(id : string): Promise<Account[]> {
-        return Promise.reject(new Error("something aweful happened!"));
+    getAccount(idAccount : string): Promise<Account> {
+        let account = null;
+        for(let i in ACCOUNTS) {
+            if(idAccount == ACCOUNTS[i].id) {
+                account = ACCOUNTS[i];
+            }
+        }
+        if(null == account) {
+            return Promise.reject(new Error("Account "+idAccount+" not found"));
+        } else {
+            return Promise.resolve(account);
+        }
     }
 
-
-
+    getAccounts(client : Client): Promise<Account[]> {
+        return new Promise((resolve,reject) => {
+            let accounts = [];
+            
+            for(let i in client.accountsList) {
+                this.getAccount(client.accountsList[i])
+                .then((res) => {accounts.push(res)});
+            }
+            resolve(accounts);
+        });
+    }
     
 }
