@@ -3,7 +3,7 @@ import Header from './header/Header';
 
 // Components
 
-import Account from './account/Account';
+import Account from './accounts/Accounts';
 
 class App extends React.Component {
     render() {

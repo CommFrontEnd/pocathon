@@ -17,7 +17,7 @@ const Root = () => {
 	return (
 		<Router history={browserHistory}>
 			<Route path="/" component={Login} />
-			<Route path="/accounts-list" component={App} />
+			<Route path="/accounts" component={App} />
 			<Route path="*" component={NotFound} />
 		</Router>
 	)

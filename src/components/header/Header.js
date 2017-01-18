@@ -10,6 +10,7 @@ class Header extends React.Component {
                     <svg height="2em" viewBox="0 0 20 20" preserveAspectRatio="xMinYMid" dangerouslySetInnerHTML={{__html: useTag }}/>
                 </h1>
                 <Menu />
+                <div className="c-option"/>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Account extends React.Component {
+class Accounts extends React.Component {
     render() {
         return(
             <div className="c-list-item">
@@ -50,4 +50,4 @@ class Account extends React.Component {
     }
 }
 
-export default Account;
+export default Accounts;
