@@ -10,7 +10,32 @@
 </head>
 
 <body>
-  <div class="container" id="root"></div>
+
+
+  <div class="container" id="root">
+  </div>
+
+  <div class="floating-btn-group floating-btn-group--inverted">
+    <div class="btn fa fa-globe js-localization"></div>
+  </div>
+
+  <div class="overlay js-localization-modal" aria-hidden="true">
+      <div class="modal">
+          <div class="btn btn-close js-close"><div class="fa fa-close"></div></div>
+          <div style="width:50vw;max-width:100%;overflow:hidden;height:60vh;">
+              <div id="gmap-canvas">
+                  <iframe
+                      style="height:100%;width:100%;border:0;"
+                      frameborder="0"
+                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBSXVSIegDwxmT3vc1AuiEUDRmunfjDP1w&q=Brooklyn+Bridge,New-York+NY&zoom=16">
+                  </iframe>
+              </div><!-- AIzaSyCMZCsMSV5KhnOaKVGfxidaR60q6ZH6O9M-->
+              <style>#gmap-canvas img{max-width:none!important;background:none!important;}</style>
+          </div>
+      </div>
+  </div>
+
+
   <!-- SYMBOLS -->
   <svg class="symbols" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <symbol id="logo" viewBox="0 0 53 30">
@@ -32,6 +57,15 @@
 
   <!-- GOOGLE MAPS -->
   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZCsMSV5KhnOaKVGfxidaR60q6ZH6O9M&callback=initMap"> </script>
+
+  <script type="text/javascript">
+      document.querySelector('.js-localization').addEventListener('click',function(){
+          document.querySelector('.js-localization-modal').setAttribute('aria-hidden', 'false');
+      });
+      document.querySelector('.js-close').addEventListener('click',function(){
+          document.querySelector('.js-localization-modal').setAttribute('aria-hidden', 'true');
+      });
+  </script>
 
   <script src="/vendors/chartist/dist/chartist.min.js" defer></script>
 </body>

@@ -44,7 +44,7 @@ class Login extends React.Component {
                         <div className="form__group">
                             <label>Password</label>
                             <div className="form__field" data-error-msg="Password is required">
-                                <input type="password" value="mySecurePassword" />
+                                <input type="password" placeholder="password" />
                             </div>
                         </div>
 
@@ -60,11 +60,8 @@ class Login extends React.Component {
                         </div><a className="btn" href="#">Reset my password</a>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         )
     }
 
