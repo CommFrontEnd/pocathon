@@ -32,26 +32,5 @@
 </template>
 
 <script type="text/javascript">
-const Accounts = { 
-  data: {
-      {
-      accountNum: 424242,
-      accountSolde: 15042,
-      operations: [
-        {
-          label: 'Salaire',
-          amount: '4242'
-        },
-        {
-          label: 'Stock options',
-          amount: 12342
-        },
-        {
-          label: 'Achat Lamborghini',
-          amount: -424242.42
-        }
-      ]
-      }
-  }
-}
+
 </script>

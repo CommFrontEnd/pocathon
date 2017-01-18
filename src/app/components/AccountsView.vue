@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
     <div class="c-list-item">
         <a class="c-list-item__title" href="/accountDetail.html" v-for="account in accounts">
@@ -65,3 +66,5 @@ data() {
     }
 }
 </script>
+=======
+>>>>>>> Mise en place de la connection backend
