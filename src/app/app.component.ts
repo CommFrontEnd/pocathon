@@ -13,5 +13,5 @@ import { Component }          from '@angular/core';
   styleUrls: ['main.css']
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Banking App';
 }
