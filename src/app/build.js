@@ -10948,7 +10948,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\LoginView.vue"
+	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\LoginView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10959,9 +10959,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5ba38c06", __vue_options__)
+	    hotAPI.createRecord("data-v-2195b63f", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-5ba38c06", __vue_options__)
+	    hotAPI.reload("data-v-2195b63f", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] LoginView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -10985,8 +10985,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5ba38c06!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginView.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5ba38c06!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginView.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2195b63f!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginView.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2195b63f!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginView.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -11432,7 +11432,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-5ba38c06", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-2195b63f", module.exports)
 	  }
 	}
 
@@ -11459,7 +11459,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountsView.vue"
+	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountsView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -11470,9 +11470,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-892253fa", __vue_options__)
+	    hotAPI.createRecord("data-v-292355ac", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-892253fa", __vue_options__)
+	    hotAPI.reload("data-v-292355ac", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] AccountsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11593,7 +11593,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\Bandeau.vue"
+	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\Bandeau.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -11604,9 +11604,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-36f3b85c", __vue_options__)
+	    hotAPI.createRecord("data-v-74a5c656", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-36f3b85c", __vue_options__)
+	    hotAPI.reload("data-v-74a5c656", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Bandeau.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11701,7 +11701,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-36f3b85c", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-74a5c656", module.exports)
 	  }
 	}
 
@@ -13235,7 +13235,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-892253fa", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-292355ac", module.exports)
 	  }
 	}
 
@@ -13262,7 +13262,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountDetailsView.vue"
+	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountDetailsView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -13273,9 +13273,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-1d85ee72", __vue_options__)
+	    hotAPI.createRecord("data-v-58bd3459", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-1d85ee72", __vue_options__)
+	    hotAPI.reload("data-v-58bd3459", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] AccountDetailsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -13416,7 +13416,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-1d85ee72", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-58bd3459", module.exports)
 	  }
 	}
 
@@ -13443,7 +13443,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountStatisticsView.vue"
+	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountStatisticsView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -13454,9 +13454,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7d05c8cd", __vue_options__)
+	    hotAPI.createRecord("data-v-fb9534f4", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7d05c8cd", __vue_options__)
+	    hotAPI.reload("data-v-fb9534f4", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] AccountStatisticsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -13638,16 +13638,95 @@
 
 	    mounted: function mounted() {
 	        this.fetchData();
+	        this.initiateCharts();
 	    },
 	    methods: {
 	        fetchData: function fetchData() {
-	            console.log("call");
+
 	            _axios2.default.get('agencies/').then(function (response) {
 	                console.log(response.data);
 	                console.log(response.status);
 	                console.log(response.statusText);
 	                console.log(response.headers);
 	                console.log(response.config);
+	            });
+	        },
+	        initiateCharts: function initiateCharts() {
+	            // HISTORIQUE POUR COMPTE COURANT
+	            var history = new Chartist.Line('.js-d3-history', {
+	                series: [[2000000, 1999957, 1999884, 1999831, 1999765, 1999697, 1999549, 1999404, 1999234, 1999202, 1999024, 1998974, 1998789, 1998631, 1998623, 1998525, 1998409, 1998360, 1998255, 1998211, 1998088, 1998069, 1997991, 1997991, 1997954, 1997928, 1997870, 1997708, 1997541, 1997427, 1997322, 1997126, 1997122, 1997028, 1996934, 1996879, 1996753, 1996563, 1996392, 1996196, 1996164, 1995995, 1995820, 1995711, 1995679, 1995589, 1995558, 1995360, 1995193, 1995047, 1994853, 1994825, 1994677, 1994487, 1994447, 1994282, 1994227, 1994188, 1994036, 1993861, 1993677]]
+	            }, {
+	                showArea: true,
+	                fullWidth: true,
+	                showPoint: false,
+	                lineSmooth: false
+	            });
+	            // REPARTITION DEPENSES PAR CATEGORIE
+	            var data = [0, 20, 14, 3, 33, 46];
+	            new Chartist.Pie('.js-d3-categories-repartition', {
+	                series: data,
+	                labels: ['Boulot', 'Impôts', 'Courses', 'Véhicule', 'Santé', 'Dépenses autre', 'Logement']
+	            }, {
+	                labelInterpolationFnc: function labelInterpolationFnc(label, index) {
+	                    return data[index] + '%';
+	                }
+	            });
+
+	            // REPARTITION GAINS PAR CATEGORIE
+	            var data = [80, 0, 0, 0, 0, 20];
+	            new Chartist.Pie('.js-d3-categories-repartition-gains', {
+	                series: data,
+	                labels: ['Boulot', 'Impôts', 'Courses', 'Véhicule', 'Santé', 'Dépenses autre', 'Logement']
+	            }, {
+	                labelInterpolationFnc: function labelInterpolationFnc(label, index) {
+	                    return data[index] + '%';
+	                }
+	            });
+
+	            // HISTORIQUE PAR CATEGORIE
+	            new Chartist.Line('.js-d3-history-by-category', {
+	                series: [[2000000, 1999957, 1999884, 1999831, 1999765, 1999697, 1999549, 1999404, 1999234, 1999202, 1999024, 1998974, 1998789, 1998631, 1998623, 1998525, 1998409, 1998360, 1998255, 1998211], [1998088, 1998069, 1997991, 1997991, 1997954, 1997928, 1997870, 1997708, 1997541, 1997427, 1997322, 1997126, 1997122, 1997028, 1996934, 1996879, 1996753, 1996563, 1996392, 1996196, 1996164, 1995995, 1995820], [1995711, 1995679, 1995589, 1995558, 1995360, 1995193, 1995047, 1994853, 1994825, 1994677, 1994487, 1994447, 1994282, 1994227, 1994188, 1994036, 1993861, 1993677]]
+	            }, {
+	                showArea: true,
+	                fullWidth: true,
+	                showPoint: false,
+	                lineSmooth: false
+	            });
+
+	            // COMPARAISON MOIS PRECEDENT
+	            new Chartist.Line('.js-d3-history-month', {
+	                labels: ['Janv.', 'Fev.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Aout', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+	                series: [[100, 200, 30, 0, 50, 302, 40, 10, 102, 78, 65, 401], [450, 450, 54, 450, 650, 840, 40, 10, 102, 120, 50, 70], [150, 50, 504, 150, 350, 740, 140, 160, 902, 120, 100, 20]]
+	            }, {
+	                showArea: true,
+	                fullWidth: true,
+	                showPoint: false,
+	                lineSmooth: false
+	            });
+
+	            document.querySelector('.js-localization').addEventListener('click', function () {
+	                document.querySelector('.js-localization-modal').setAttribute('aria-hidden', 'false');
+	            });
+	            document.querySelector('.js-close').addEventListener('click', function () {
+	                document.querySelector('.js-localization-modal').setAttribute('aria-hidden', 'true');
+	            });
+
+	            document.querySelector('.js-user-menu').addEventListener('click', function () {
+	                if (this.classList.contains('is-opened')) {
+	                    this.classList.remove('is-opened');
+	                } else {
+	                    this.classList.add('is-opened');
+	                }
+	            });
+
+	            document.querySelectorAll('.js-account-details, .js-btn--selectable').forEach(function (el) {
+	                el.addEventListener('click', function () {
+	                    if (this.classList.contains('is-selected')) {
+	                        this.classList.remove('is-selected');
+	                    } else {
+	                        this.classList.add('is-selected');
+	                    }
+	                });
 	            });
 	        }
 	    }
@@ -13842,13 +13921,13 @@
 	    staticClass: "u-bg-3 btn btn--selectable is-selected js-btn--selectable"
 	  }, [_c('div', {
 	    staticClass: "btn__label"
-	  }, [_vm._v("Moyenne Annuell")])])])])])])
+	  }, [_vm._v("Moyenne Annuelle")])])])])])])
 	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7d05c8cd", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-fb9534f4", module.exports)
 	  }
 	}
 
