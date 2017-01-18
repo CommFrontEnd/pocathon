@@ -24,7 +24,9 @@
   "dependencies": {
     "chartist": "^0.10.1",
     "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "vue": "^2.1.10",
+    "vue-router": "^2.1.1"
   },
   "devDependencies": {
     "express": "^4.14.0",
