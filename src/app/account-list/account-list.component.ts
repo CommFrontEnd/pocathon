@@ -31,7 +31,13 @@ export class AccountListComponent implements OnInit {
                 console.log(error);
                 this.client = new Client();
             });
-        this.accountService.getAccounts(this.client).then(function(account) { this.accounts = Observable.of<Account[]>(); })
+        this.accountService.getAccounts(this.client)
+            .then(function(accounts) { this.accounts = accounts })
+            .catch(
+            error => {
+                console.log(error);
+                this.accounts = Observable.of<Account[]>([]);
+            });
     }
 
     goToDetail(account: Account): void {

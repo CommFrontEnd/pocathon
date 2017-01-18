@@ -1,18 +1,20 @@
-<div class="o-panel-content">
-    <div *ngFor="let account of accounts | async" 
-        (click)="gotoDetail(account)" class="c-list-item">
-        <div>{{account.name}}
-            <div class="c-field c-field--left c-list-item__subtitle">
-                <div class="c-field__label">N° de compte:</div>
-                <div class="c-field__value">{{account.number}}</div>
+<div class="container">
+    <header [isAccountListMode]="true"></header>
+
+    <div class="o-panel-content">
+        <div *ngFor="let account of accounts | async" (click)="gotoDetail(account)" class="c-list-item">
+            <div>{{account.name}}
+                <div class="c-field c-field--left c-list-item__subtitle">
+                    <div class="c-field__label">N° de compte:</div>
+                    <div class="c-field__value">{{account.number}}</div>
+                </div>
             </div>
-        </div>
-        <div class="c-list-item__actions fa fa-angle-right"></div>
-        </a>
-        <div class="c-list-item__content js-account-details">
-            <div class="c-field">
-                <div class="c-field__label"></div>
-                <div class="c-field__value">{{account.balance}} {{account.currency}} <span class="down fa fa-angle-down"></span></div>
+            <div class="c-list-item__actions fa fa-angle-right"></div>
+            <div class="c-list-item__content js-account-details">
+                <div class="c-field">
+                    <div class="c-field__label"></div>
+                    <div class="c-field__value">{{account.balance}} {{account.currency}} <span class="down fa fa-angle-down"></span></div>
+                </div>
             </div>
         </div>
     </div>
