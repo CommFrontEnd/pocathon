@@ -13,6 +13,9 @@ import { AccountDetailsComponent }      from './account-details/account-details.
 import { LoginComponent }  from './login/login.component';
 import { StatComponent }  from './stat/stat.component';
 
+import { AccountService }    from './shared/services/account.service';
+import { ClientService }    from './shared/services/client.service';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -27,7 +30,10 @@ import { StatComponent }  from './stat/stat.component';
   LoginComponent,
   StatComponent
   ],
-  providers: [],
+  providers: [
+    AccountService,
+    ClientService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
