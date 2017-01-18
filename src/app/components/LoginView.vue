@@ -2,8 +2,10 @@
  <div class="container">
     <div class="row">
         <div class="col-md-offset-5 col-md-3">
+            <div 
             <div class="form-login">
             <h4>Bienvenue, pour continuer merci  de vous identifer:</h4>
+            <p class="text-danger"v-if="error">{{message}}</p>
             <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" v-model.trim="userName"/>
             </br>
             </br>
@@ -27,17 +29,21 @@
       formIsValid: function() {
         var FakeApiData = {login:'test1', pwd:'test1'};
 
-        if (this.userName == FakeApiData.login &&
-         this.password == FakeApiData.pwd) {
-          return alert("U are connected!");
+        if (this.userName == FakeApiData.login && this.password == FakeApiData.pwd) {
+          this.$router.push('/accounts');
         }
-        return alert("failed! try again!");
+        else {
+          console.debug("error bordel!!");
+          this.error= true;
+          this.message= 'Bad login or password, try again';
+        }
       }
     },
     data () {
       return {
         userName: 'username',
-        password: 'password'
+        password: 'password',
+        error: false
       }
     }
 

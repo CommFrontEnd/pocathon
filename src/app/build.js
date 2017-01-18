@@ -62,15 +62,15 @@
 
 	var _AccountsView2 = _interopRequireDefault(_AccountsView);
 
-	var _AccountDetailsView = __webpack_require__(38);
+	var _AccountDetailsView = __webpack_require__(42);
 
 	var _AccountDetailsView2 = _interopRequireDefault(_AccountDetailsView);
 
-	var _AccountStatisticsView = __webpack_require__(41);
+	var _AccountStatisticsView = __webpack_require__(45);
 
 	var _AccountStatisticsView2 = _interopRequireDefault(_AccountStatisticsView);
 
-	var _axios = __webpack_require__(12);
+	var _axios = __webpack_require__(16);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -11318,25 +11318,29 @@
 	//
 	//
 	//
+	//
+	//
 
 	exports.default = {
 	  name: 'formLogin',
 	  methods: {
 	    formIsValid: function formIsValid() {
-	      var apiAuth = { login: 'test1', pwd: 'test1' };
-	      console.debug(apiAuth);
-	      console.debug(this.userName);
-	      console.debug(this.password);
-	      if (this.userName == apiAuth.login && this.password == apiAuth.pwd) {
-	        return alert("U are connected!");
+	      var FakeApiData = { login: 'test1', pwd: 'test1' };
+
+	      if (this.userName == FakeApiData.login && this.password == FakeApiData.pwd) {
+	        this.$router.push('/accounts');
+	      } else {
+	        console.debug("error bordel!!");
+	        this.error = true;
+	        this.message = 'Bad login or password, try again';
 	      }
-	      return alert("failed! try again!");
 	    }
 	  },
 	  data: function data() {
 	    return {
 	      userName: 'username',
-	      password: 'password'
+	      password: 'password',
+	      error: false
 	    };
 	  }
 	};
@@ -11354,7 +11358,9 @@
 	    staticClass: "col-md-offset-5 col-md-3"
 	  }, [_c('div', {
 	    staticClass: "form-login"
-	  }, [_c('h4', [_vm._v("Bienvenue, pour continuer merci  de vous identifer:")]), _vm._v(" "), _c('input', {
+	  }, [_c('h4', [_vm._v("Bienvenue, pour continuer merci  de vous identifer:")]), _vm._v(" "), (_vm.error) ? _c('p', {
+	    staticClass: "text-danger"
+	  }, [_vm._v(_vm._s(_vm.message))]) : _vm._e(), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model.trim",
@@ -11439,14 +11445,10 @@
 	var __vue_styles__ = {}
 
 	/* script */
-	__vue_exports__ = __webpack_require__(8)
+	__vue_exports__ = __webpack_require__(12)
 
 	/* template */
-<<<<<<< HEAD
-	var __vue_template__ = __webpack_require__(12)
-=======
-	var __vue_template__ = __webpack_require__(37)
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
+	var __vue_template__ = __webpack_require__(41)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -11483,31 +11485,17 @@
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _vm._m(0)
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('p', [_vm._v("Account  View")]), _c('p')])
-	}]}
-	module.exports.render._withStripped = true
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-892253fa", module.exports)
-	  }
-	}
-=======
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
-	var _Bandeau = __webpack_require__(9);
+	var _Bandeau = __webpack_require__(13);
 
 	var _Bandeau2 = _interopRequireDefault(_Bandeau);
 
-	var _axios = __webpack_require__(12);
+	var _axios = __webpack_require__(16);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -11582,7 +11570,6 @@
 	        }
 	    }
 	};
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
 
 /***/ },
 /* 13 */
@@ -11592,14 +11579,10 @@
 	var __vue_styles__ = {}
 
 	/* script */
-	__vue_exports__ = __webpack_require__(10)
+	__vue_exports__ = __webpack_require__(14)
 
 	/* template */
-<<<<<<< HEAD
-	var __vue_template__ = __webpack_require__(14)
-=======
-	var __vue_template__ = __webpack_require__(11)
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
+	var __vue_template__ = __webpack_require__(15)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -11611,11 +11594,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-<<<<<<< HEAD
-	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountDetailsView.vue"
-=======
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\Bandeau.vue"
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
+	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\Bandeau.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -11626,15 +11605,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-<<<<<<< HEAD
-	    hotAPI.createRecord("data-v-1d85ee72", __vue_options__)
+	    hotAPI.createRecord("data-v-36f3b85c", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-1d85ee72", __vue_options__)
-=======
-	    hotAPI.createRecord("data-v-74a5c656", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-74a5c656", __vue_options__)
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
+	    hotAPI.reload("data-v-36f3b85c", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Bandeau.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11643,10 +11616,7 @@
 
 
 /***/ },
-<<<<<<< HEAD
 /* 14 */
-=======
-/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11680,8 +11650,7 @@
 	};
 
 /***/ },
-/* 11 */
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11733,45 +11702,26 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-<<<<<<< HEAD
-	     require("vue-hot-reload-api").rerender("data-v-1d85ee72", module.exports)
-=======
-	     require("vue-hot-reload-api").rerender("data-v-74a5c656", module.exports)
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
+	     require("vue-hot-reload-api").rerender("data-v-36f3b85c", module.exports)
 	  }
 	}
 
 /***/ },
-<<<<<<< HEAD
-/* 15 */
-=======
-/* 12 */
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(13);
+	module.exports = __webpack_require__(17);
 
-<<<<<<< HEAD
-	/* template */
-	var __vue_template__ = __webpack_require__(16)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-=======
 /***/ },
-/* 13 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(14);
-	var bind = __webpack_require__(15);
-	var Axios = __webpack_require__(16);
-	var defaults = __webpack_require__(17);
+	var utils = __webpack_require__(18);
+	var bind = __webpack_require__(19);
+	var Axios = __webpack_require__(20);
+	var defaults = __webpack_require__(21);
 
 	/**
 	 * Create an instance of Axios
@@ -11790,7 +11740,6 @@
 	  utils.extend(instance, context);
 
 	  return instance;
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
 	}
 
 	// Create the default instance to be exported
@@ -11805,15 +11754,15 @@
 	};
 
 	// Expose Cancel & CancelToken
-	axios.Cancel = __webpack_require__(34);
-	axios.CancelToken = __webpack_require__(35);
-	axios.isCancel = __webpack_require__(31);
+	axios.Cancel = __webpack_require__(38);
+	axios.CancelToken = __webpack_require__(39);
+	axios.isCancel = __webpack_require__(35);
 
 	// Expose all/spread
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(36);
+	axios.spread = __webpack_require__(40);
 
 	module.exports = axios;
 
@@ -11822,12 +11771,12 @@
 
 
 /***/ },
-/* 14 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var bind = __webpack_require__(15);
+	var bind = __webpack_require__(19);
 
 	/*global toString:true*/
 
@@ -11844,22 +11793,6 @@
 	function isArray(val) {
 	  return toString.call(val) === '[object Array]';
 	}
-<<<<<<< HEAD
-	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountStatisticsView.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7d05c8cd", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-7d05c8cd", __vue_options__)
-=======
 
 	/**
 	 * Determine if a value is an ArrayBuffer
@@ -11893,7 +11826,6 @@
 	    result = ArrayBuffer.isView(val);
 	  } else {
 	    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
 	  }
 	  return result;
 	}
@@ -11918,11 +11850,6 @@
 	  return typeof val === 'number';
 	}
 
-<<<<<<< HEAD
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-=======
 	/**
 	 * Determine if a value is undefined
 	 *
@@ -11932,7 +11859,6 @@
 	function isUndefined(val) {
 	  return typeof val === 'undefined';
 	}
->>>>>>> a533365d5541003558c8330f30abd10cdc1d4fda
 
 	/**
 	 * Determine if a value is an Object
@@ -12150,7 +12076,7 @@
 
 
 /***/ },
-/* 15 */
+/* 19 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12167,17 +12093,17 @@
 
 
 /***/ },
-/* 16 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var defaults = __webpack_require__(17);
-	var utils = __webpack_require__(14);
-	var InterceptorManager = __webpack_require__(28);
-	var dispatchRequest = __webpack_require__(29);
-	var isAbsoluteURL = __webpack_require__(32);
-	var combineURLs = __webpack_require__(33);
+	var defaults = __webpack_require__(21);
+	var utils = __webpack_require__(18);
+	var InterceptorManager = __webpack_require__(32);
+	var dispatchRequest = __webpack_require__(33);
+	var isAbsoluteURL = __webpack_require__(36);
+	var combineURLs = __webpack_require__(37);
 
 	/**
 	 * Create a new instance of Axios
@@ -12258,13 +12184,13 @@
 
 
 /***/ },
-/* 17 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(14);
-	var normalizeHeaderName = __webpack_require__(18);
+	var utils = __webpack_require__(18);
+	var normalizeHeaderName = __webpack_require__(22);
 
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -12281,10 +12207,10 @@
 	  var adapter;
 	  if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(19);
+	    adapter = __webpack_require__(23);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(19);
+	    adapter = __webpack_require__(23);
 	  }
 	  return adapter;
 	}
@@ -12358,12 +12284,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 18 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(14);
+	var utils = __webpack_require__(18);
 
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -12376,18 +12302,18 @@
 
 
 /***/ },
-/* 19 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(14);
-	var settle = __webpack_require__(20);
-	var buildURL = __webpack_require__(23);
-	var parseHeaders = __webpack_require__(24);
-	var isURLSameOrigin = __webpack_require__(25);
-	var createError = __webpack_require__(21);
-	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(26);
+	var utils = __webpack_require__(18);
+	var settle = __webpack_require__(24);
+	var buildURL = __webpack_require__(27);
+	var parseHeaders = __webpack_require__(28);
+	var isURLSameOrigin = __webpack_require__(29);
+	var createError = __webpack_require__(25);
+	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(30);
 
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -12483,7 +12409,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(27);
+	      var cookies = __webpack_require__(31);
 
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -12560,12 +12486,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 20 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var createError = __webpack_require__(21);
+	var createError = __webpack_require__(25);
 
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -12591,12 +12517,12 @@
 
 
 /***/ },
-/* 21 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var enhanceError = __webpack_require__(22);
+	var enhanceError = __webpack_require__(26);
 
 	/**
 	 * Create an Error with the specified message, config, error code, and response.
@@ -12614,7 +12540,7 @@
 
 
 /***/ },
-/* 22 */
+/* 26 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12639,12 +12565,12 @@
 
 
 /***/ },
-/* 23 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(14);
+	var utils = __webpack_require__(18);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -12713,12 +12639,12 @@
 
 
 /***/ },
-/* 24 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(14);
+	var utils = __webpack_require__(18);
 
 	/**
 	 * Parse headers into an object
@@ -12756,12 +12682,12 @@
 
 
 /***/ },
-/* 25 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(14);
+	var utils = __webpack_require__(18);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -12830,7 +12756,7 @@
 
 
 /***/ },
-/* 26 */
+/* 30 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12872,12 +12798,12 @@
 
 
 /***/ },
-/* 27 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(14);
+	var utils = __webpack_require__(18);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -12931,12 +12857,12 @@
 
 
 /***/ },
-/* 28 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(14);
+	var utils = __webpack_require__(18);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -12989,15 +12915,15 @@
 
 
 /***/ },
-/* 29 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(14);
-	var transformData = __webpack_require__(30);
-	var isCancel = __webpack_require__(31);
-	var defaults = __webpack_require__(17);
+	var utils = __webpack_require__(18);
+	var transformData = __webpack_require__(34);
+	var isCancel = __webpack_require__(35);
+	var defaults = __webpack_require__(21);
 
 	/**
 	 * Throws a `Cancel` if cancellation has been requested.
@@ -13074,12 +13000,12 @@
 
 
 /***/ },
-/* 30 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(14);
+	var utils = __webpack_require__(18);
 
 	/**
 	 * Transform the data for a request or a response
@@ -13100,7 +13026,7 @@
 
 
 /***/ },
-/* 31 */
+/* 35 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13111,7 +13037,7 @@
 
 
 /***/ },
-/* 32 */
+/* 36 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13131,7 +13057,7 @@
 
 
 /***/ },
-/* 33 */
+/* 37 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13149,7 +13075,7 @@
 
 
 /***/ },
-/* 34 */
+/* 38 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13174,12 +13100,12 @@
 
 
 /***/ },
-/* 35 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var Cancel = __webpack_require__(34);
+	var Cancel = __webpack_require__(38);
 
 	/**
 	 * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -13237,7 +13163,7 @@
 
 
 /***/ },
-/* 36 */
+/* 40 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13270,7 +13196,7 @@
 
 
 /***/ },
-/* 37 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -13310,22 +13236,22 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-292355ac", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-892253fa", module.exports)
 	  }
 	}
 
 /***/ },
-/* 38 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* script */
-	__vue_exports__ = __webpack_require__(39)
+	__vue_exports__ = __webpack_require__(43)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(40)
+	var __vue_template__ = __webpack_require__(44)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -13337,7 +13263,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountDetailsView.vue"
+	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountDetailsView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -13348,9 +13274,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-58bd3459", __vue_options__)
+	    hotAPI.createRecord("data-v-1d85ee72", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-58bd3459", __vue_options__)
+	    hotAPI.reload("data-v-1d85ee72", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] AccountDetailsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -13359,7 +13285,7 @@
 
 
 /***/ },
-/* 39 */
+/* 43 */
 /***/ function(module, exports) {
 
 	//
@@ -13398,7 +13324,7 @@
 	"use strict";
 
 /***/ },
-/* 40 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -13442,22 +13368,22 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-58bd3459", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-1d85ee72", module.exports)
 	  }
 	}
 
 /***/ },
-/* 41 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* script */
-	__vue_exports__ = __webpack_require__(42)
+	__vue_exports__ = __webpack_require__(46)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(43)
+	var __vue_template__ = __webpack_require__(47)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -13469,7 +13395,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountStatisticsView.vue"
+	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountStatisticsView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -13480,9 +13406,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-fb9534f4", __vue_options__)
+	    hotAPI.createRecord("data-v-7d05c8cd", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-fb9534f4", __vue_options__)
+	    hotAPI.reload("data-v-7d05c8cd", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] AccountStatisticsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -13491,7 +13417,7 @@
 
 
 /***/ },
-/* 42 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13500,11 +13426,11 @@
 	    value: true
 	});
 
-	var _Bandeau = __webpack_require__(9);
+	var _Bandeau = __webpack_require__(13);
 
 	var _Bandeau2 = _interopRequireDefault(_Bandeau);
 
-	var _axios = __webpack_require__(12);
+	var _axios = __webpack_require__(16);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -13680,7 +13606,7 @@
 	};
 
 /***/ },
-/* 43 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
