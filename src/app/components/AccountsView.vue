@@ -5,7 +5,7 @@
                 <div class="c-field__label">N° de compte:</div>
                 <!-- //'<div class="c-field__value" v-text="account.accountNum
                 " />' + -->
-                <div class="c-field__value"><span v-on:click="redirectToDetailsAccount">{{ account.accountNum }}</span router-link></div>
+                <div class="c-field__value"><span v-on:click="redirectToDetailsAccount(account.accountNum)">{{ account.accountNum }}</span router-link></div>
                 <div class="c-list-item__actions fa fa-angle-right"></div>
             </a>
             <div class="c-list-item__content js-account-details">
@@ -61,48 +61,40 @@ export default {
   },
   methods: {
       fetchData: function(){
-        console.log("call");
 
-        console.log(this.accounts);
         
         var vm = this;
 
         this.fetchClient('clients/4464a430-c692-11e6-bbcc-0bdb025a7cfa')
             .then(function(response) {
                 vm.detailUrl = response.data
-                console.log(response.data);
-                console.log(response.status);
-                console.log(response.statusText);
-                console.log(response.headers);
-                console.log(response.config);
                 vm.processClient(response.data, vm);
             });
       },
       fetchClient: function(url) {
           return axios.get(url);
       },
-      redirectToDetailsAccount: function() {
-          var test = '/accounts/' + this.accounts.accountNum;
+      redirectToDetailsAccount: function(obj) {
+          var test = '/accounts/' + obj;
           if(this.$router.push('/accounts/' + this.accounts.accountNum)){
-              console.debug("redirect-->ok");
+
           }
           else {
-              console.debug(test);
+
           }
       },
       processClient: function(data, thiz) {
-            console.log(thiz.accounts);
+
             thiz.accounts = [];
             data.accountsList.forEach(function(accountId) {
                 thiz.fetchAccount('accounts/' + accountId)
                     .then(function(response) {
-                        console.log("processaccount :");
-                        console.log(thiz.processAccount(response.data, thiz));
+
                         thiz.accounts.push(thiz.processAccount(response.data, thiz));
                     });
             }
             );
-            console.log(thiz.accounts);
+
         },
 
       fetchAccount: function(url) {

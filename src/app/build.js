@@ -11602,8 +11602,8 @@
 	        fetchClient: function fetchClient(url) {
 	            return _axios2.default.get(url);
 	        },
-	        redirectToDetailsAccount: function redirectToDetailsAccount() {
-	            var test = '/accounts/' + this.accounts.accountNum;
+	        redirectToDetailsAccount: function redirectToDetailsAccount(obj) {
+	            var test = '/accounts/' + obj;
 	            if (this.$router.push('/accounts/' + this.accounts.accountNum)) {
 	                console.debug("redirect-->ok");
 	            } else {
@@ -13303,7 +13303,9 @@
 	      staticClass: "c-field__value"
 	    }, [_c('span', {
 	      on: {
-	        "click": _vm.redirectToDetailsAccount
+	        "click": function($event) {
+	          _vm.redirectToDetailsAccount(account.accountNum)
+	        }
 	      }
 	    }, [_vm._v(_vm._s(account.accountNum))])]), _vm._v(" "), _c('div', {
 	      staticClass: "c-list-item__actions fa fa-angle-right"
