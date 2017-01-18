@@ -3,6 +3,7 @@ import AccountStore from '../../stores/AccountStore'
 import AccountService from '../../services/AccountService'
 import Operation from './Operation';
 import Chartist from '../Chartist';
+import './chartist.css';
 
 class Account extends React.Component {
 
@@ -52,7 +53,7 @@ class Account extends React.Component {
             ]
         };
         return(
-            <div class="o-panel-content">
+            <div className="o-panel-content">
                 <div className="c-list-item">
                     <div className="c-list-item__title">
                         <div className="u-fullWidth">Compte courant
