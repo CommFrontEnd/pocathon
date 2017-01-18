@@ -12,21 +12,22 @@ import { Client } from '../shared/domain/client';
 })
 
 export class LoginComponent {
-  loginFailed = false;
+  loginFailed: boolean = false;
   constructor(private clientService: ClientService, public routeur: Router) { }
 
   login(event: Event, username: string, password: string) {
     event.preventDefault();
+    this.loginFailed = false;
+    var component = this;
     this.clientService.login(username, password)
       .then(
       function () {
-        this.loginFailed = false;
-        this.router.navigate(['account-list']);
+        component.routeur.navigate(['accounts']);
       })
       .catch(
       error => {
         console.log(error);
-        this.loginFailed = true;
+        component.loginFailed = true;
       });
   }
 }

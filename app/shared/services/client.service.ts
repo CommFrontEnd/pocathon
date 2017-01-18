@@ -11,9 +11,9 @@ import { Client } from '../domain/client';
 export class ClientService {
     private clientsUrl = 'https://siipocathon.apispark.net:443/v1/clients/';  // URL to web api
 
-    private currentClient : Client = null;
+    private static currentClient : Client = null;
 
-    constructor(private http: Http, private authService : AuthService) { }
+    constructor(private http: Http, private authService : AuthService) {}
 
     private getClient(idClient: string): Promise<Client> {
         if(null == idClient || "" == idClient) {
@@ -50,18 +50,18 @@ export class ClientService {
     }
 
     getCurrentClient(): Promise<Client> {
-        if (null == this.currentClient) {
+        if (null == ClientService.currentClient) {
             return Promise.reject(new Error("Not connected"));
         } else {
-            return Promise.resolve(this.currentClient);
+            return Promise.resolve(ClientService.currentClient);
         }
     }
 
     logout(): void {
-        this.currentClient = null;
+        ClientService.currentClient = null;
     }
 
     private setCurrentClient(client: Client) {
-        this.currentClient = client;
+        ClientService.currentClient = client;
     }
 }

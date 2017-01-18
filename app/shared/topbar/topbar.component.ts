@@ -26,12 +26,13 @@ export class TopbarComponent implements OnInit {
         private router: Router) { }
 
     ngOnInit(): void {
+        var component = this;
         this.clientService.getCurrentClient().then(function (client) {
-            this.client = client;
+            component.client = client;
+            component.accountDetailsRoute = '/details/' + component.client.id;
+            component.clientLabel = component.client.label;
         }).catch(function () {
-            this.router.navigate(['login']);
+            component.router.navigate(['login']);
         });
-        this.accountDetailsRoute = '/details/' + this.client.id;
-        this.clientLabel = this.client.label;
     }
 }

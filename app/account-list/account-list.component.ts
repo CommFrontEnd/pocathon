@@ -25,20 +25,27 @@ export class AccountListComponent implements OnInit {
         private router: Router) { }
 
     ngOnInit(): void {
+        var component = this;
         this.clientService.getCurrentClient()
-            .then(function(client) { this.client = client })
+            .then(function(client) {
+                component.client = client;
+
+                component.accountService.getAccounts(component.client)
+                .then(function(accounts) {
+                     component.accounts = Observable.of<Account[]>(accounts);
+                     console.log(accounts);
+                 })
+                .catch(error => {
+                    console.log(error);
+                    component.accounts = Observable.of<Account[]>([]);
+                });
+            })
             .catch(
             error => {
                 console.log(error);
-                this.client = new Client();
+                component.client = new Client();
             });
-        this.accountService.getAccounts(this.client)
-            .then(function(accounts) { this.accounts = accounts })
-            .catch(
-            error => {
-                console.log(error);
-                this.accounts = Observable.of<Account[]>([]);
-            });
+       
     }
 
     goToDetail(account: Account): void {
