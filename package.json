@@ -5,7 +5,9 @@
   "main": "index.html",
   "scripts": {
     "mockups": "gulp mockups",
-    "server": "gulp server"
+    "server": "gulp server",
+    "clean": "gulp clean",
+    "default": "gulp"
   },
   "repository": {
     "type": "git",
@@ -24,12 +26,14 @@
   "dependencies": {
     "chartist": "^0.10.1",
     "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1"
+    "del": "^2.2.2"
   },
   "devDependencies": {
+    "del": "^2.2.2",
     "express": "^4.14.0",
     "gulp-nodemon": "^2.2.1",
     "gulp-notify": "^2.2.0",
+    "gulp-react": "^3.1.0",
     "serve-static": "^1.11.1"
   }
 }
