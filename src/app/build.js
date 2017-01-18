@@ -62,15 +62,15 @@
 
 	var _AccountsView2 = _interopRequireDefault(_AccountsView);
 
-	var _AccountDetailsView = __webpack_require__(8);
+	var _AccountDetailsView = __webpack_require__(38);
 
 	var _AccountDetailsView2 = _interopRequireDefault(_AccountDetailsView);
 
-	var _AccountStatisticsView = __webpack_require__(11);
+	var _AccountStatisticsView = __webpack_require__(41);
 
 	var _AccountStatisticsView2 = _interopRequireDefault(_AccountStatisticsView);
 
-	var _axios = __webpack_require__(16);
+	var _axios = __webpack_require__(12);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -11116,10 +11116,16 @@
 
 /***/ },
 /* 7 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
+
+	/* script */
+	__vue_exports__ = __webpack_require__(8)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(37)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -11132,6 +11138,21 @@
 	  __vue_options__ = __vue_options__.options
 	}
 	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountsView.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-292355ac", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-292355ac", __vue_options__)
+	  }
+	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] AccountsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 	module.exports = __vue_exports__
@@ -11141,193 +11162,17 @@
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
-	/* script */
-	__vue_exports__ = __webpack_require__(9)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(10)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountDetailsView.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-58bd3459", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-58bd3459", __vue_options__)
-	  }
-	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] AccountDetailsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
-
-
-/***/ },
-/* 9 */
-/***/ function(module, exports) {
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	"use strict";
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "o-panel-content"
-	  }, [_c('div', {
-	    staticClass: "c-list-item"
-	  }, [_c('div', {
-	    staticClass: "c-list-item__title"
-	  }, [_c('div', {
-	    staticClass: "u-fullWidth"
-	  }, [_vm._v(_vm._s(_vm.accountLabel) + "\r\n                "), _c('div', {
-	    staticClass: "c-list-item__subtitle c-field c-field--left"
-	  }, [_c('div', {
-	    staticClass: "c-field__label"
-	  }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
-	    staticClass: "c-field__value"
-	  }, [_vm._v(_vm._s(_vm.accountNumber))])]), _vm._v(" "), _c('div', {
-	    staticClass: "chart c-list-item__content"
-	  }, [_c('div', {
-	    staticClass: "js-d3-history"
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "c-heading c-field"
-	  }, [_c('div', {
-	    staticClass: "field__label"
-	  }, [_vm._v("Solde")]), _vm._v(" "), _c('div', {
-	    staticClass: "u-blank c-field__value is-valid"
-	  }, [_vm._v(_vm._s(_vm.accountSolde) + " €")])])])])])]), _vm._v(" "), _vm._l((_vm.operations), function(operation) {
-	    return _c('div', {
-	      staticClass: "c-list-item c-field c-field--default"
-	    }, [_c('div', {
-	      staticClass: "c-field__label"
-	    }, [_c('div', {
-	      staticClass: "c-ico fa fa-briefcase"
-	    }), _vm._v(_vm._s(operation.label) + "\r\n        ")]), _vm._v(" "), _c('div', {
-	      staticClass: "c-field__value"
-	    }, [_vm._v(_vm._s(operation.amount) + " €")])])
-	  })], 2)
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-58bd3459", module.exports)
-	  }
-	}
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
-	/* script */
-	__vue_exports__ = __webpack_require__(12)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(41)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountStatisticsView.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-fb9534f4", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-fb9534f4", __vue_options__)
-	  }
-	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] AccountStatisticsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
-
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
-	var _Bandeau = __webpack_require__(13);
+	var _Bandeau = __webpack_require__(9);
 
 	var _Bandeau2 = _interopRequireDefault(_Bandeau);
 
-	var _axios = __webpack_require__(16);
+	var _axios = __webpack_require__(12);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -11357,130 +11202,29 @@
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
 	exports.default = {
-	    name: 'account-statistic',
+	    name: 'accountsView',
+	    props: [],
 	    components: {
 	        Bandeau: _Bandeau2.default
 	    },
 	    data: function data() {
 	        var data = {
-	            account: {
-	                number: '923456789012345678'
-	            }
+	            accounts: [{
+	                accountNum: 424242,
+	                accountSolde: 15042,
+	                lastOperations: [{
+	                    label: 'Salaire',
+	                    amount: '4242'
+	                }, {
+	                    label: 'Stock options',
+	                    amount: 12342
+	                }, {
+	                    label: 'Achat Lamborghini',
+	                    amount: -424242.42
+	                }]
+	            }]
 	        };
 	        return data;
 	    },
@@ -11503,17 +11247,17 @@
 	};
 
 /***/ },
-/* 13 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* script */
-	__vue_exports__ = __webpack_require__(14)
+	__vue_exports__ = __webpack_require__(10)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(15)
+	var __vue_template__ = __webpack_require__(11)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -11547,7 +11291,7 @@
 
 
 /***/ },
-/* 14 */
+/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11581,7 +11325,7 @@
 	};
 
 /***/ },
-/* 15 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11638,21 +11382,21 @@
 	}
 
 /***/ },
-/* 16 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(17);
+	module.exports = __webpack_require__(13);
 
 /***/ },
-/* 17 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(18);
-	var bind = __webpack_require__(19);
-	var Axios = __webpack_require__(20);
-	var defaults = __webpack_require__(21);
+	var utils = __webpack_require__(14);
+	var bind = __webpack_require__(15);
+	var Axios = __webpack_require__(16);
+	var defaults = __webpack_require__(17);
 
 	/**
 	 * Create an instance of Axios
@@ -11685,15 +11429,15 @@
 	};
 
 	// Expose Cancel & CancelToken
-	axios.Cancel = __webpack_require__(38);
-	axios.CancelToken = __webpack_require__(39);
-	axios.isCancel = __webpack_require__(35);
+	axios.Cancel = __webpack_require__(34);
+	axios.CancelToken = __webpack_require__(35);
+	axios.isCancel = __webpack_require__(31);
 
 	// Expose all/spread
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(40);
+	axios.spread = __webpack_require__(36);
 
 	module.exports = axios;
 
@@ -11702,12 +11446,12 @@
 
 
 /***/ },
-/* 18 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var bind = __webpack_require__(19);
+	var bind = __webpack_require__(15);
 
 	/*global toString:true*/
 
@@ -12007,7 +11751,7 @@
 
 
 /***/ },
-/* 19 */
+/* 15 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12024,17 +11768,17 @@
 
 
 /***/ },
-/* 20 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var defaults = __webpack_require__(21);
-	var utils = __webpack_require__(18);
-	var InterceptorManager = __webpack_require__(32);
-	var dispatchRequest = __webpack_require__(33);
-	var isAbsoluteURL = __webpack_require__(36);
-	var combineURLs = __webpack_require__(37);
+	var defaults = __webpack_require__(17);
+	var utils = __webpack_require__(14);
+	var InterceptorManager = __webpack_require__(28);
+	var dispatchRequest = __webpack_require__(29);
+	var isAbsoluteURL = __webpack_require__(32);
+	var combineURLs = __webpack_require__(33);
 
 	/**
 	 * Create a new instance of Axios
@@ -12115,13 +11859,13 @@
 
 
 /***/ },
-/* 21 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(18);
-	var normalizeHeaderName = __webpack_require__(22);
+	var utils = __webpack_require__(14);
+	var normalizeHeaderName = __webpack_require__(18);
 
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -12138,10 +11882,10 @@
 	  var adapter;
 	  if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(23);
+	    adapter = __webpack_require__(19);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(23);
+	    adapter = __webpack_require__(19);
 	  }
 	  return adapter;
 	}
@@ -12215,12 +11959,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 22 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(18);
+	var utils = __webpack_require__(14);
 
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -12233,18 +11977,18 @@
 
 
 /***/ },
-/* 23 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(18);
-	var settle = __webpack_require__(24);
-	var buildURL = __webpack_require__(27);
-	var parseHeaders = __webpack_require__(28);
-	var isURLSameOrigin = __webpack_require__(29);
-	var createError = __webpack_require__(25);
-	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(30);
+	var utils = __webpack_require__(14);
+	var settle = __webpack_require__(20);
+	var buildURL = __webpack_require__(23);
+	var parseHeaders = __webpack_require__(24);
+	var isURLSameOrigin = __webpack_require__(25);
+	var createError = __webpack_require__(21);
+	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(26);
 
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -12340,7 +12084,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(31);
+	      var cookies = __webpack_require__(27);
 
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -12417,12 +12161,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 24 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var createError = __webpack_require__(25);
+	var createError = __webpack_require__(21);
 
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -12448,12 +12192,12 @@
 
 
 /***/ },
-/* 25 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var enhanceError = __webpack_require__(26);
+	var enhanceError = __webpack_require__(22);
 
 	/**
 	 * Create an Error with the specified message, config, error code, and response.
@@ -12471,7 +12215,7 @@
 
 
 /***/ },
-/* 26 */
+/* 22 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12496,12 +12240,12 @@
 
 
 /***/ },
-/* 27 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(18);
+	var utils = __webpack_require__(14);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -12570,12 +12314,12 @@
 
 
 /***/ },
-/* 28 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(18);
+	var utils = __webpack_require__(14);
 
 	/**
 	 * Parse headers into an object
@@ -12613,12 +12357,12 @@
 
 
 /***/ },
-/* 29 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(18);
+	var utils = __webpack_require__(14);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -12687,7 +12431,7 @@
 
 
 /***/ },
-/* 30 */
+/* 26 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12729,12 +12473,12 @@
 
 
 /***/ },
-/* 31 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(18);
+	var utils = __webpack_require__(14);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -12788,12 +12532,12 @@
 
 
 /***/ },
-/* 32 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(18);
+	var utils = __webpack_require__(14);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -12846,15 +12590,15 @@
 
 
 /***/ },
-/* 33 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(18);
-	var transformData = __webpack_require__(34);
-	var isCancel = __webpack_require__(35);
-	var defaults = __webpack_require__(21);
+	var utils = __webpack_require__(14);
+	var transformData = __webpack_require__(30);
+	var isCancel = __webpack_require__(31);
+	var defaults = __webpack_require__(17);
 
 	/**
 	 * Throws a `Cancel` if cancellation has been requested.
@@ -12931,12 +12675,12 @@
 
 
 /***/ },
-/* 34 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(18);
+	var utils = __webpack_require__(14);
 
 	/**
 	 * Transform the data for a request or a response
@@ -12957,7 +12701,7 @@
 
 
 /***/ },
-/* 35 */
+/* 31 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12968,7 +12712,7 @@
 
 
 /***/ },
-/* 36 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12988,7 +12732,7 @@
 
 
 /***/ },
-/* 37 */
+/* 33 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13006,7 +12750,7 @@
 
 
 /***/ },
-/* 38 */
+/* 34 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13031,12 +12775,12 @@
 
 
 /***/ },
-/* 39 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var Cancel = __webpack_require__(38);
+	var Cancel = __webpack_require__(34);
 
 	/**
 	 * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -13094,7 +12838,7 @@
 
 
 /***/ },
-/* 40 */
+/* 36 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13127,7 +12871,422 @@
 
 
 /***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "c-list-item"
+	  }, [_vm._l((_vm.accounts), function(account) {
+	    return _c('a', {
+	      staticClass: "c-list-item__title",
+	      attrs: {
+	        "href": "/accountDetail.html"
+	      }
+	    }, [_c('div', {
+	      staticClass: "c-field__label"
+	    }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
+	      staticClass: "c-field__value"
+	    }, [_vm._v(_vm._s(account.accountNum))]), _vm._v(" "), _c('div', {
+	      staticClass: "c-list-item__actions fa fa-angle-right"
+	    })])
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item__content js-account-details"
+	  }, [_c('div', {
+	    staticClass: "c-field"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value"
+	  }, [_vm._v(_vm._s(_vm.account.accountSolde) + "} "), _c('span', {
+	    staticClass: "down fa fa-angle-down"
+	  })])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item__detail"
+	  }, _vm._l((_vm.account.lastOperations), function(operation) {
+	    return _c('div', {
+	      staticClass: "c-field"
+	    }, [_c('div', {
+	      staticClass: "c-field__label"
+	    }, [_vm._v(_vm._s(operation.label))]), _vm._v(" "), _c('div', {
+	      staticClass: "c-field__value is-valid"
+	    }, [_vm._v(_vm._s(operation.amount) + " €")])])
+	  }))])], 2)
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-292355ac", module.exports)
+	  }
+	}
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* script */
+	__vue_exports__ = __webpack_require__(39)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(40)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountDetailsView.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-58bd3459", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-58bd3459", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] AccountDetailsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 39 */
+/***/ function(module, exports) {
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	"use strict";
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "o-panel-content"
+	  }, [_c('div', {
+	    staticClass: "c-list-item"
+	  }, [_c('div', {
+	    staticClass: "c-list-item__title"
+	  }, [_c('div', {
+	    staticClass: "u-fullWidth"
+	  }, [_vm._v(_vm._s(_vm.accountLabel) + "\r\n                "), _c('div', {
+	    staticClass: "c-list-item__subtitle c-field c-field--left"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value"
+	  }, [_vm._v(_vm._s(_vm.accountNumber))])]), _vm._v(" "), _c('div', {
+	    staticClass: "chart c-list-item__content"
+	  }, [_c('div', {
+	    staticClass: "js-d3-history"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "c-heading c-field"
+	  }, [_c('div', {
+	    staticClass: "field__label"
+	  }, [_vm._v("Solde")]), _vm._v(" "), _c('div', {
+	    staticClass: "u-blank c-field__value is-valid"
+	  }, [_vm._v(_vm._s(_vm.accountSolde) + " €")])])])])])]), _vm._v(" "), _vm._l((_vm.operations), function(operation) {
+	    return _c('div', {
+	      staticClass: "c-list-item c-field c-field--default"
+	    }, [_c('div', {
+	      staticClass: "c-field__label"
+	    }, [_c('div', {
+	      staticClass: "c-ico fa fa-briefcase"
+	    }), _vm._v(_vm._s(operation.label) + "\r\n        ")]), _vm._v(" "), _c('div', {
+	      staticClass: "c-field__value"
+	    }, [_vm._v(_vm._s(operation.amount) + " €")])])
+	  })], 2)
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-58bd3459", module.exports)
+	  }
+	}
+
+/***/ },
 /* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* script */
+	__vue_exports__ = __webpack_require__(42)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(43)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountStatisticsView.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-fb9534f4", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-fb9534f4", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] AccountStatisticsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _Bandeau = __webpack_require__(9);
+
+	var _Bandeau2 = _interopRequireDefault(_Bandeau);
+
+	var _axios = __webpack_require__(12);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	exports.default = {
+	    name: 'account-statistic',
+	    components: {
+	        Bandeau: _Bandeau2.default
+	    },
+	    data: function data() {
+	        var data = {
+	            account: {
+	                number: '923456789012345678'
+	            }
+	        };
+	        return data;
+	    },
+
+	    mounted: function mounted() {
+	        this.fetchData();
+	    },
+	    methods: {
+	        fetchData: function fetchData() {
+	            console.log("call");
+	            _axios2.default.get('agencies/').then(function (response) {
+	                console.log(response.data);
+	                console.log(response.status);
+	                console.log(response.statusText);
+	                console.log(response.headers);
+	                console.log(response.config);
+	            });
+	        }
+	    }
+	};
+
+/***/ },
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
