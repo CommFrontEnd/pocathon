@@ -17,40 +17,40 @@ export class ClientService {
 
     private getClient(idClient: string): Promise<Client> {
         let client = null;
-        for(let i in CLIENTS) {
-            if(idClient == CLIENTS[i].id) {
+        for (let i in CLIENTS) {
+            if (idClient == CLIENTS[i].id) {
                 client = CLIENTS[i];
             }
         }
-        if(null == client) {
-            return Promise.reject(new Error("Client "+idClient+" not found"));
+        if (null == client) {
+            return Promise.reject(new Error("Client " + idClient + " not found"));
         } else {
             return Promise.resolve(client);
         }
     }
 
-    login(username : string, password : string) {
-        return new Promise((resolve,reject) => {
+    login(username: string, password: string) {
+        return new Promise((resolve, reject) => {
             this.getClient("000000001")
-            .then((res) =>{
-                this.setCurrentClient(res);
-                resolve(res);
-            })
-            .catch(() =>{
-                reject(new Error("Bad user/password"));
-            })  
+                .then((res) => {
+                    this.setCurrentClient(res);
+                    resolve(res);
+                })
+                .catch(() => {
+                    reject(new Error("Bad user/password"));
+                })
         });
     }
 
     getCurrentClient(): Promise<Client> {
-        if(null == this.currentClient) {
+        if (null == this.currentClient) {
             return Promise.reject(new Error("Not connected"));
         } else {
             return Promise.resolve(this.currentClient);
         }
     }
 
-    logout() : void {
+    logout(): void {
         this.currentClient = null;
     }
 
