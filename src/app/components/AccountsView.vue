@@ -5,7 +5,7 @@
                 <div class="c-field__label">N° de compte:</div>
                 <!-- //'<div class="c-field__value" v-text="account.accountNum
                 " />' + -->
-                <div class="c-field__value"><a bind-router-link to="accounts/account.accountNum">{{ account.accountNum }}</a router-link></div>
+                <div class="c-field__value"><span v-on:click="redirectToDetailsAccount">{{ account.accountNum }}</span router-link></div>
                 <div class="c-list-item__actions fa fa-angle-right"></div>
             </a>
             <div class="c-list-item__content js-account-details">
@@ -78,11 +78,18 @@ export default {
                 vm.processClient(response.data, vm);
             });
       },
-
       fetchClient: function(url) {
           return axios.get(url);
       },
-
+      redirectToDetailsAccount: function() {
+          var test = '/accounts/' + this.accounts.accountNum;
+          if(this.$router.push('/accounts/' + this.accounts.accountNum)){
+              console.debug("redirect-->ok");
+          }
+          else {
+              console.debug(test);
+          }
+      },
       processClient: function(data, thiz) {
             console.log(thiz.accounts);
             thiz.accounts = [];

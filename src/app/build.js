@@ -11590,7 +11590,7 @@
 	            var vm = this;
 
 	            this.fetchClient('clients/4464a430-c692-11e6-bbcc-0bdb025a7cfa').then(function (response) {
-
+	                vm.detailUrl = response.data;
 	                console.log(response.data);
 	                console.log(response.status);
 	                console.log(response.statusText);
@@ -11599,11 +11599,17 @@
 	                vm.processClient(response.data, vm);
 	            });
 	        },
-
 	        fetchClient: function fetchClient(url) {
 	            return _axios2.default.get(url);
 	        },
-
+	        redirectToDetailsAccount: function redirectToDetailsAccount() {
+	            var test = '/accounts/' + this.accounts.accountNum;
+	            if (this.$router.push('/accounts/' + this.accounts.accountNum)) {
+	                console.debug("redirect-->ok");
+	            } else {
+	                console.debug(test);
+	            }
+	        },
 	        processClient: function processClient(data, thiz) {
 	            console.log(thiz.accounts);
 	            thiz.accounts = [];
@@ -11614,25 +11620,6 @@
 	                    thiz.accounts.push(thiz.processAccount(response.data, thiz));
 	                });
 	            });
-=======
-	            });
-	        },
-
-	        fetchClient: function fetchClient(url) {
-	            return _axios2.default.get(url);
-	        },
-
-	        processClient: function processClient(data, thiz) {
-	            console.log(thiz.accounts);
-	            thiz.accounts = [];
-	            data.accountsList.forEach(function (accountId) {
-	                thiz.fetchAccount('accounts/' + accountId).then(function (response) {
-	                    console.log("processaccount :");
-	                    console.log(thiz.processAccount(response.data, thiz));
-	                    thiz.accounts.push(thiz.processAccount(response.data, thiz));
-	                });
-	            });
->>>>>>> c1f53a4537880d188c1e824b317add2bfadd0a08
 	            console.log(thiz.accounts);
 	        },
 
@@ -13314,20 +13301,11 @@
 	      staticClass: "c-field__label"
 	    }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
 	      staticClass: "c-field__value"
-<<<<<<< HEAD
-	    }, [_c('a', {
-	      attrs: {
-	        "bind-router-link": "",
-	        "to": "accounts/account.accountNum"
+	    }, [_c('span', {
+	      on: {
+	        "click": _vm.redirectToDetailsAccount
 	      }
 	    }, [_vm._v(_vm._s(account.accountNum))])]), _vm._v(" "), _c('div', {
-=======
-	    }, [_c('router-link', {
-	      attrs: {
-	        "to": "#"
-	      }
-	    }, [_vm._v(_vm._s(account.accountNum))])], 1), _vm._v(" "), _c('div', {
->>>>>>> c1f53a4537880d188c1e824b317add2bfadd0a08
 	      staticClass: "c-list-item__actions fa fa-angle-right"
 	    }), _vm._v(" "), _c('div', {
 	      staticClass: "c-list-item__content js-account-details"
