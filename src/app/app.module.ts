@@ -25,10 +25,10 @@ import { ClientService }    from './shared/services/client.service';
   ],
   declarations: [
     AppComponent,
-  AccountListComponent,
-  AccountDetailsComponent,
-  LoginComponent,
-  StatComponent
+    AccountListComponent,
+    AccountDetailsComponent,
+    LoginComponent,
+    StatComponent
   ],
   providers: [
     AccountService,

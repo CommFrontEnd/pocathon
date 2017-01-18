@@ -9,15 +9,19 @@
         <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="all" />
     </head>
     <body>
-        <h1>Your server is online.  </h1>
-        <p>"-Your orders, Templar?"</p>
+        <my-app>Loading...</my-app>
     </body>
+
+    <maps>Loading maps...</maps>
 
   
     <!-- SCRIPTS -->
 
     <!-- GOOGLE MAPS -->
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZCsMSV5KhnOaKVGfxidaR60q6ZH6O9M&callback=initMap"> </script>
+    <script>
+        function initMap() { var uluru = {lat: -25.363, lng: 131.044}; var map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: uluru }); var marker = new google.maps.Marker({ position: uluru, map: map }); }
+    </script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSXVSIegDwxmT3vc1AuiEUDRmunfjDP1w&callback=initMap"> </script>
 
     <script src="/vendors/chartist/dist/chartist.min.js" defer></script>
 </html>
