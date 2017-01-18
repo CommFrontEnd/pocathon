@@ -1,6 +1,20 @@
 import React from 'react';
 
 class Accounts extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {isSelected: false};
+
+        this.open = this.open.bind(this);
+    }
+
+    open() {
+        this.setState(prevState => ({
+            isSelected: !prevState.isSelected
+        }))
+    }
+
     render() {
         return(
             <div className="c-list-item">
@@ -18,7 +32,7 @@ class Accounts extends React.Component {
                     </div>
                 </a>
 
-                <div className="c-list-item__content js-account-details">
+                <div className={this.state.isSelected ? 'c-list-item__content js-account-details is-selected' : 'c-list-item__content js-account-details'} onClick={this.open}>
 
                     <div className="c-field">
                         <div className="c-field__label"></div>
