@@ -2,14 +2,13 @@ import React from 'react';
 import AccountStore from '../../stores/AccountStore'
 import AccountService from '../../services/AccountService'
 import Operation from './Operation';
+import Chartist from '../Chartist';
 
 class Account extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state = {isSelected: false};
         this.state = this.getAccountState();
-        this._open = this._open.bind(this);
         this._onChange = this._onChange.bind(this);
     }
 
@@ -22,12 +21,6 @@ class Account extends React.Component {
 
     componentWillUnmount() {
         AccountStore.removeChangeListener(this._onChange);
-    }
-
-    _open() {
-        this.setState(prevState => ({
-            isSelected: !prevState.isSelected
-        }))
     }
 
     _onChange() {
@@ -52,14 +45,23 @@ class Account extends React.Component {
         const operations = Object
             .keys(account.operationsList)
             .map(key => <Operation key={key} id={account.operationsList[key]}/>);
+
+        var data = {
+            series: [
+                [1, 2, 4, 8, 6, -2, -1, -4, -6, -2]
+            ]
+        };
         return(
-            <div>
+            <div class="o-panel-content">
                 <div className="c-list-item">
                     <div className="c-list-item__title">
                         <div className="u-fullWidth">Compte courant
                             <div className="c-list-item__subtitle c-field c-field--left">
                                 <div className="c-field__label">N° de compte:</div>
                                 <div className="c-field__value">{account.accountNumber}</div>
+                            </div>
+                            <div className="chart c-list-item__content">
+                                <Chartist data={data} className="js-d3-history" />
                             </div>
                             <div className="c-heading c-field">
                                 <div className="field__label">Solde</div>
