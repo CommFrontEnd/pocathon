@@ -38,6 +38,7 @@ import Bandeau from './Bandeau.vue';
 import axios from 'axios';
 export default {
   name: 'accounts',
+  props: [],
   components: {
      Bandeau
   },
@@ -45,22 +46,24 @@ export default {
     const data = {
         accountNumber: '',
         accountSolde: '',
-        operations: '',
+        operations: [],
     }
     return data;
   },
   mounted:function(){
-     var rez = this.fetchData();
-     console.debug(rez);
+      this.fetchData();
   },
   methods: {
       fetchData: function(){
+          var vm = this;
           console.log("call");
         axios.get('accounts/'+ "7d0f5db0-c693-11e6-81ea-fdbe71bceebb")
         .then(function(response) {
             var data = response.data;
-            console.debug(data);
-            return data;
+            vm.accountNumber = data.accountNumber;
+            vm.accountSolde = data.balance;
+            vm.operations = data.operationsList;
+            console.log(data);
         });
       }
   }

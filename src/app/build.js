@@ -10948,7 +10948,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\LoginView.vue"
+	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\LoginView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10959,9 +10959,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-2195b63f", __vue_options__)
+	    hotAPI.createRecord("data-v-5ba38c06", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-2195b63f", __vue_options__)
+	    hotAPI.reload("data-v-5ba38c06", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] LoginView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -10985,8 +10985,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2195b63f!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginView.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2195b63f!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginView.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5ba38c06!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginView.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5ba38c06!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginView.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -11432,7 +11432,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-2195b63f", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-5ba38c06", module.exports)
 	  }
 	}
 
@@ -11459,7 +11459,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountsView.vue"
+	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountsView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -11470,9 +11470,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-292355ac", __vue_options__)
+	    hotAPI.createRecord("data-v-892253fa", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-292355ac", __vue_options__)
+	    hotAPI.reload("data-v-892253fa", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] AccountsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11593,7 +11593,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\Bandeau.vue"
+	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\Bandeau.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -11604,9 +11604,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-74a5c656", __vue_options__)
+	    hotAPI.createRecord("data-v-36f3b85c", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-74a5c656", __vue_options__)
+	    hotAPI.reload("data-v-36f3b85c", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Bandeau.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11701,7 +11701,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-74a5c656", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-36f3b85c", module.exports)
 	  }
 	}
 
@@ -13235,7 +13235,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-292355ac", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-892253fa", module.exports)
 	  }
 	}
 
@@ -13262,7 +13262,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountDetailsView.vue"
+	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountDetailsView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -13273,9 +13273,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-58bd3459", __vue_options__)
+	    hotAPI.createRecord("data-v-1d85ee72", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-58bd3459", __vue_options__)
+	    hotAPI.reload("data-v-1d85ee72", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] AccountDetailsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -13341,6 +13341,7 @@
 
 	exports.default = {
 	    name: 'accounts',
+	    props: [],
 	    components: {
 	        Bandeau: _Bandeau2.default
 	    },
@@ -13348,22 +13349,24 @@
 	        var data = {
 	            accountNumber: '',
 	            accountSolde: '',
-	            operations: ''
+	            operations: []
 	        };
 	        return data;
 	    },
 
 	    mounted: function mounted() {
-	        var rez = this.fetchData();
-	        console.debug(rez);
+	        this.fetchData();
 	    },
 	    methods: {
 	        fetchData: function fetchData() {
+	            var vm = this;
 	            console.log("call");
 	            _axios2.default.get('accounts/' + "7d0f5db0-c693-11e6-81ea-fdbe71bceebb").then(function (response) {
 	                var data = response.data;
-	                console.debug(data);
-	                return data;
+	                vm.accountNumber = data.accountNumber;
+	                vm.accountSolde = data.balance;
+	                vm.operations = data.operationsList;
+	                console.log(data);
 	            });
 	        }
 	    }
@@ -13416,7 +13419,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-58bd3459", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-1d85ee72", module.exports)
 	  }
 	}
 
@@ -13443,7 +13446,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\AccountStatisticsView.vue"
+	__vue_options__.__file = "C:\\Users\\jjain\\pocathon\\src\\app\\components\\AccountStatisticsView.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -13454,9 +13457,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-fb9534f4", __vue_options__)
+	    hotAPI.createRecord("data-v-7d05c8cd", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-fb9534f4", __vue_options__)
+	    hotAPI.reload("data-v-7d05c8cd", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] AccountStatisticsView.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -13927,7 +13930,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-fb9534f4", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-7d05c8cd", module.exports)
 	  }
 	}
 
