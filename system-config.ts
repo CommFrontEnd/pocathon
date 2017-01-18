@@ -15,6 +15,8 @@ System.config({
     'app': 'app',
     'main': 'app/main.js',
 
+    'ng2-charts': 'node_modules/ng2-charts',
+
     // angular bundles
     '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
     '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
@@ -27,12 +29,13 @@ System.config({
     '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
 
     // other libraries
-    'rxjs':                      'npm:rxjs'
+    'rxjs': 'npm:rxjs'
   },
   // packages tells the System loader how to load when no filename and/or no extension
   packages: {
     'app': { main: './main.js', defaultExtension: 'js' },
-    'api' : { defaultExtension : 'js' },
-    'rxjs': { defaultExtension: 'js' }
+    'api': { defaultExtension: 'js' },
+    'rxjs': { defaultExtension: 'js' },
+    'ng2-charts': { main: 'ng2-charts.js', defaultExtension: 'js' }
   }
 });
