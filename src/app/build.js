@@ -11330,7 +11330,6 @@
 	      if (this.userName == FakeApiData.login && this.password == FakeApiData.pwd) {
 	        this.$router.push('/accounts');
 	      } else {
-	        console.debug("error bordel!!");
 	        this.error = true;
 	        this.message = 'Bad login or password, try again';
 	      }
@@ -13286,7 +13285,23 @@
 
 /***/ },
 /* 43 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _Bandeau = __webpack_require__(13);
+
+	var _Bandeau2 = _interopRequireDefault(_Bandeau);
+
+	var _axios = __webpack_require__(16);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//
 	//
@@ -13321,7 +13336,38 @@
 	//
 	//
 	//
-	"use strict";
+	//
+	//
+
+	exports.default = {
+	    name: 'accounts',
+	    components: {
+	        Bandeau: _Bandeau2.default
+	    },
+	    data: function data() {
+	        var data = {
+	            accountNumber: '',
+	            accountSolde: '',
+	            operations: ''
+	        };
+	        return data;
+	    },
+
+	    mounted: function mounted() {
+	        var rez = this.fetchData();
+	        console.debug(rez);
+	    },
+	    methods: {
+	        fetchData: function fetchData() {
+	            console.log("call");
+	            _axios2.default.get('accounts/' + "7d0f5db0-c693-11e6-81ea-fdbe71bceebb").then(function (response) {
+	                var data = response.data;
+	                console.debug(data);
+	                return data;
+	            });
+	        }
+	    }
+	};
 
 /***/ },
 /* 44 */
@@ -13329,6 +13375,8 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
+	    staticClass: "o-panel"
+	  }, [_c('bandeau'), _vm._v(" "), _c('div', {
 	    staticClass: "o-panel-content"
 	  }, [_c('div', {
 	    staticClass: "c-list-item"
@@ -13336,7 +13384,7 @@
 	    staticClass: "c-list-item__title"
 	  }, [_c('div', {
 	    staticClass: "u-fullWidth"
-	  }, [_vm._v(_vm._s(_vm.accountLabel) + "\r\n                "), _c('div', {
+	  }, [_c('div', {
 	    staticClass: "c-list-item__subtitle c-field c-field--left"
 	  }, [_c('div', {
 	    staticClass: "c-field__label"
@@ -13359,10 +13407,10 @@
 	      staticClass: "c-field__label"
 	    }, [_c('div', {
 	      staticClass: "c-ico fa fa-briefcase"
-	    }), _vm._v(_vm._s(operation.label) + "\r\n        ")]), _vm._v(" "), _c('div', {
+	    }), _vm._v(_vm._s(operation.label) + "\n            ")]), _vm._v(" "), _c('div', {
 	      staticClass: "c-field__value"
 	    }, [_vm._v(_vm._s(operation.amount) + " €")])])
-	  })], 2)
+	  })], 2)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {

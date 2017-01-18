@@ -33,7 +33,6 @@
           this.$router.push('/accounts');
         }
         else {
-          console.debug("error bordel!!");
           this.error= true;
           this.message= 'Bad login or password, try again';
         }
