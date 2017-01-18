@@ -7,11 +7,11 @@
         </h1>
         <div class="c-user menu-container js-user-menu">
             <div class="fa fa-user-circle-o c-user__ico"></div>
-            Hervé Lepinard
+            {{user.name}}
             <div class="fa fa-angle-down"></div>
             <ul class="menu">
-                <li class="menu__item"><a href="#"><span class="fa fa-gear"></span> Preferences</a>
-                <li class="menu__item"><a href="/login.html"><span class="fa fa-unlock-alt"></span> Logout</a>
+                <li class="menu__item" v-on:click="switchLanguage"><span class="fa fa-gear"></span>Go English
+                <li class="menu__item"><router-link to="/login"><span class="fa fa-unlock-alt"></span>{{disconnect}}</router-link></a>
             </ul>
         </div>
         <div class="c-options"></div>
@@ -20,6 +20,21 @@
 
 <script>
 export default{
-    name: 'bandeau'
+    name: 'bandeau',
+    data(){
+        const data = {
+            user:{
+                name : 'Hervé Lepinard'
+            },
+            disconnect: this.$t('header.disconnect')
+        };
+        return data;
+    },
+    methods:{
+        switchLanguage: function(){
+            //switched language
+           this.$t.config.lang = 'en'; 
+        }
+    }
 }
 </script>

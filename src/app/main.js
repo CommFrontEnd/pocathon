@@ -5,10 +5,33 @@ import AccountsView from './components/AccountsView.vue';
 import AccountDetailsView from './components/AccountDetailsView.vue';
 import AccountStatisticsView from './components/AccountStatisticsView.vue';
 import axios from 'axios';
-
+var VueI18n = require('vue-i18n')
 // install router
 Vue.use(Router)
 
+
+Vue.use(VueI18n)
+Vue.config.lang = 'fr'
+
+
+Vue.locale('fr', {
+    "login":{
+        "welcome": "Bienvenue, pour continuer merci  de vous identifier",
+        "login": "Connexion"
+    },
+    "header": {
+      "disconnect": "Deconnexion"
+    }
+});
+Vue.locale('en', {
+    "login":{
+        "welcome": "Hello, please authenticate ",
+        "login": "Login"
+    },
+    "header": {
+      "disconnect": "Logout"
+    }
+});
 // routing
 
 const routes = [

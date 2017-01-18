@@ -76,9 +76,31 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var VueI18n = __webpack_require__(48);
 	// install router
 	_vue2.default.use(_vueRouter2.default);
 
+	_vue2.default.use(VueI18n);
+	_vue2.default.config.lang = 'fr';
+
+	_vue2.default.locale('fr', {
+	    "login": {
+	        "welcome": "Bienvenue, pour continuer merci  de vous identifier",
+	        "login": "Connexion"
+	    },
+	    "header": {
+	        "disconnect": "Deconnexion"
+	    }
+	});
+	_vue2.default.locale('en', {
+	    "login": {
+	        "welcome": "Hello, please authenticate ",
+	        "login": "Login"
+	    },
+	    "header": {
+	        "disconnect": "Logout"
+	    }
+	});
 	// routing
 
 	var routes = [{ path: '/login', component: _LoginView2.default }, { path: '/accounts', component: _AccountsView2.default }, { path: '/accounts/:id', component: _AccountDetailsView2.default }, { path: '/accounts/:id/stats', component: _AccountStatisticsView2.default }];
@@ -91,7 +113,7 @@
 	_axios2.default.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
 	var app = new _vue2.default({
-	  router: router
+	    router: router
 	}).$mount('#app');
 
 /***/ },
@@ -11337,9 +11359,12 @@
 	  },
 	  data: function data() {
 	    return {
+	      welcome: this.$t('login.welcome'),
+	      login: this.$t('login.login'),
 	      userName: 'username',
 	      password: 'password',
-	      error: false
+	      error: false,
+	      message: ''
 	    };
 	  }
 	};
@@ -11357,7 +11382,7 @@
 	    staticClass: "col-md-offset-5 col-md-3"
 	  }, [_c('div', {
 	    staticClass: "form-login"
-	  }, [_c('h4', [_vm._v("Bienvenue, pour continuer merci  de vous identifer:")]), _vm._v(" "), (_vm.error) ? _c('p', {
+	  }, [_c('h4', [_vm._v(_vm._s(_vm.welcome) + ":")]), _vm._v(" "), (_vm.error) ? _c('p', {
 	    staticClass: "text-danger"
 	  }, [_vm._v(_vm._s(_vm.message))]) : _vm._e(), _vm._v(" "), _c('input', {
 	    directives: [{
@@ -11424,7 +11449,7 @@
 	    on: {
 	      "click": _vm.formIsValid
 	    }
-	  }, [_vm._v("login "), _c('i', {
+	  }, [_vm._v(_vm._s(_vm.login) + " "), _c('i', {
 	    staticClass: "fa fa-sign-in"
 	  })])])])])])])])
 	},staticRenderFns: []}
@@ -11565,7 +11590,7 @@
 	            var vm = this;
 
 	            this.fetchClient('clients/4464a430-c692-11e6-bbcc-0bdb025a7cfa').then(function (response) {
-	                vm.detailUrl = response.data;
+
 	                console.log(response.data);
 	                console.log(response.status);
 	                console.log(response.statusText);
@@ -11589,6 +11614,25 @@
 	                    thiz.accounts.push(thiz.processAccount(response.data, thiz));
 	                });
 	            });
+=======
+	            });
+	        },
+
+	        fetchClient: function fetchClient(url) {
+	            return _axios2.default.get(url);
+	        },
+
+	        processClient: function processClient(data, thiz) {
+	            console.log(thiz.accounts);
+	            thiz.accounts = [];
+	            data.accountsList.forEach(function (accountId) {
+	                thiz.fetchAccount('accounts/' + accountId).then(function (response) {
+	                    console.log("processaccount :");
+	                    console.log(thiz.processAccount(response.data, thiz));
+	                    thiz.accounts.push(thiz.processAccount(response.data, thiz));
+	                });
+	            });
+>>>>>>> c1f53a4537880d188c1e824b317add2bfadd0a08
 	            console.log(thiz.accounts);
 	        },
 
@@ -11696,7 +11740,23 @@
 	//
 
 	exports.default = {
-	    name: 'bandeau'
+	    name: 'bandeau',
+	    data: function data() {
+	        var data = {
+	            user: {
+	                name: 'Hervé Lepinard'
+	            },
+	            disconnect: this.$t('header.disconnect')
+	        };
+	        return data;
+	    },
+
+	    methods: {
+	        switchLanguage: function switchLanguage() {
+	            //switched language
+	            this.$t.config.lang = 'en';
+	        }
+	    }
 	};
 
 /***/ },
@@ -11718,36 +11778,33 @@
 	    attrs: {
 	      "xlink:href": "#logo-min"
 	    }
-	  })])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
-	    staticClass: "c-options"
-	  })])
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
+	  })])]), _vm._v(" "), _c('div', {
 	    staticClass: "c-user menu-container js-user-menu"
 	  }, [_c('div', {
 	    staticClass: "fa fa-user-circle-o c-user__ico"
-	  }), _vm._v("\n        Hervé Lepinard\n        "), _c('div', {
+	  }), _vm._v("\n        " + _vm._s(_vm.user.name) + "\n        "), _c('div', {
 	    staticClass: "fa fa-angle-down"
 	  }), _vm._v(" "), _c('ul', {
 	    staticClass: "menu"
 	  }, [_c('li', {
-	    staticClass: "menu__item"
-	  }, [_c('a', {
-	    attrs: {
-	      "href": "#"
+	    staticClass: "menu__item",
+	    on: {
+	      "click": _vm.switchLanguage
 	    }
 	  }, [_c('span', {
 	    staticClass: "fa fa-gear"
-	  }), _vm._v(" Preferences")])]), _c('li', {
+	  }), _vm._v("Go English\n            ")]), _c('li', {
 	    staticClass: "menu__item"
-	  }, [_c('a', {
+	  }, [_c('router-link', {
 	    attrs: {
-	      "href": "/login.html"
+	      "to": "/login"
 	    }
 	  }, [_c('span', {
 	    staticClass: "fa fa-unlock-alt"
-	  }), _vm._v(" Logout")])])])])
-	}]}
+	  }), _vm._v(_vm._s(_vm.disconnect))])], 1)])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-options"
+	  })])
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
@@ -13257,12 +13314,20 @@
 	      staticClass: "c-field__label"
 	    }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
 	      staticClass: "c-field__value"
+<<<<<<< HEAD
 	    }, [_c('a', {
 	      attrs: {
 	        "bind-router-link": "",
 	        "to": "accounts/account.accountNum"
 	      }
 	    }, [_vm._v(_vm._s(account.accountNum))])]), _vm._v(" "), _c('div', {
+=======
+	    }, [_c('router-link', {
+	      attrs: {
+	        "to": "#"
+	      }
+	    }, [_vm._v(_vm._s(account.accountNum))])], 1), _vm._v(" "), _c('div', {
+>>>>>>> c1f53a4537880d188c1e824b317add2bfadd0a08
 	      staticClass: "c-list-item__actions fa fa-angle-right"
 	    }), _vm._v(" "), _c('div', {
 	      staticClass: "c-list-item__content js-account-details"
@@ -13660,26 +13725,6 @@
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
 	exports.default = {
 	    name: 'account-statistic',
@@ -13690,7 +13735,20 @@
 	        var data = {
 	            account: {
 	                number: '923456789012345678'
+	            },
+	            categorieRepartition: [0, 20, 14, 3, 33, 46],
+	            history: [[2000000, 1999957, 1999884, 1999831, 1999765, 1999697, 1999549, 1999404, 1999234, 1999202, 1999024, 1998974, 1998789, 1998631, 1998623, 1998525, 1998409, 1998360, 1998255, 1998211, 1998088, 1998069, 1997991, 1997991, 1997954, 1997928, 1997870, 1997708, 1997541, 1997427, 1997322, 1997126, 1997122, 1997028, 1996934, 1996879, 1996753, 1996563, 1996392, 1996196, 1996164, 1995995, 1995820, 1995711, 1995679, 1995589, 1995558, 1995360, 1995193, 1995047, 1994853, 1994825, 1994677, 1994487, 1994447, 1994282, 1994227, 1994188, 1994036, 1993861, 1993677]],
+	            gainsRepartition: [80, 0, 0, 0, 0, 20],
+	            categoryHistory: [[2000000, 1999957, 1999884, 1999831, 1999765, 1999697, 1999549, 1999404, 1999234, 1999202, 1999024, 1998974, 1998789, 1998631, 1998623, 1998525, 1998409, 1998360, 1998255, 1998211], [1998088, 1998069, 1997991, 1997991, 1997954, 1997928, 1997870, 1997708, 1997541, 1997427, 1997322, 1997126, 1997122, 1997028, 1996934, 1996879, 1996753, 1996563, 1996392, 1996196, 1996164, 1995995, 1995820], [1995711, 1995679, 1995589, 1995558, 1995360, 1995193, 1995047, 1994853, 1994825, 1994677, 1994487, 1994447, 1994282, 1994227, 1994188, 1994036, 1993861, 1993677]],
+	            monthComparison: [[100, 200, 30, 0, 50, 302, 40, 10, 102, 78, 65, 401], [450, 450, 54, 450, 650, 840, 40, 10, 102, 120, 50, 70], [150, 50, 504, 150, 350, 740, 140, 160, 902, 120, 100, 20]],
+	            categorieslabels: ['Boulot', 'Impôts', 'Courses', 'Véhicule', 'Santé', 'Dépenses autre', 'Logement'],
+	            defaultConf: {
+	                showArea: true,
+	                fullWidth: true,
+	                showPoint: false,
+	                lineSmooth: false
 	            }
+
 	        };
 	        return data;
 	    },
@@ -13711,57 +13769,38 @@
 	            });
 	        },
 	        initiateCharts: function initiateCharts() {
+	            var vm = this;
+	            console.log("repartition", this.categorieRepartition);
 	            // HISTORIQUE POUR COMPTE COURANT
-	            var history = new Chartist.Line('.js-d3-history', {
-	                series: [[2000000, 1999957, 1999884, 1999831, 1999765, 1999697, 1999549, 1999404, 1999234, 1999202, 1999024, 1998974, 1998789, 1998631, 1998623, 1998525, 1998409, 1998360, 1998255, 1998211, 1998088, 1998069, 1997991, 1997991, 1997954, 1997928, 1997870, 1997708, 1997541, 1997427, 1997322, 1997126, 1997122, 1997028, 1996934, 1996879, 1996753, 1996563, 1996392, 1996196, 1996164, 1995995, 1995820, 1995711, 1995679, 1995589, 1995558, 1995360, 1995193, 1995047, 1994853, 1994825, 1994677, 1994487, 1994447, 1994282, 1994227, 1994188, 1994036, 1993861, 1993677]]
-	            }, {
-	                showArea: true,
-	                fullWidth: true,
-	                showPoint: false,
-	                lineSmooth: false
-	            });
+	            var history = new Chartist.Line('.js-d3-history', { series: vm.history }, vm.defaultConf);
 	            // REPARTITION DEPENSES PAR CATEGORIE
-	            var data = [0, 20, 14, 3, 33, 46];
-	            new Chartist.Pie('.js-d3-categories-repartition', {
-	                series: data,
-	                labels: ['Boulot', 'Impôts', 'Courses', 'Véhicule', 'Santé', 'Dépenses autre', 'Logement']
+	            var categorieRepartition = new Chartist.Pie('.js-d3-categories-repartition', {
+	                series: vm.categorieRepartition,
+	                labels: vm.categorieslabels
 	            }, {
 	                labelInterpolationFnc: function labelInterpolationFnc(label, index) {
-	                    return data[index] + '%';
+	                    return vm.categorieRepartition[index] + '%';
 	                }
 	            });
 
 	            // REPARTITION GAINS PAR CATEGORIE
-	            var data = [80, 0, 0, 0, 0, 20];
-	            new Chartist.Pie('.js-d3-categories-repartition-gains', {
-	                series: data,
-	                labels: ['Boulot', 'Impôts', 'Courses', 'Véhicule', 'Santé', 'Dépenses autre', 'Logement']
+	            var gainsRepartition = new Chartist.Pie('.js-d3-categories-repartition-gains', {
+	                series: vm.gainsRepartition,
+	                labels: vm.categorieslabels
 	            }, {
 	                labelInterpolationFnc: function labelInterpolationFnc(label, index) {
-	                    return data[index] + '%';
+	                    return vm.gainsRepartition[index] + '%';
 	                }
 	            });
 
 	            // HISTORIQUE PAR CATEGORIE
-	            new Chartist.Line('.js-d3-history-by-category', {
-	                series: [[2000000, 1999957, 1999884, 1999831, 1999765, 1999697, 1999549, 1999404, 1999234, 1999202, 1999024, 1998974, 1998789, 1998631, 1998623, 1998525, 1998409, 1998360, 1998255, 1998211], [1998088, 1998069, 1997991, 1997991, 1997954, 1997928, 1997870, 1997708, 1997541, 1997427, 1997322, 1997126, 1997122, 1997028, 1996934, 1996879, 1996753, 1996563, 1996392, 1996196, 1996164, 1995995, 1995820], [1995711, 1995679, 1995589, 1995558, 1995360, 1995193, 1995047, 1994853, 1994825, 1994677, 1994487, 1994447, 1994282, 1994227, 1994188, 1994036, 1993861, 1993677]]
-	            }, {
-	                showArea: true,
-	                fullWidth: true,
-	                showPoint: false,
-	                lineSmooth: false
-	            });
+	            var categoryHistory = new Chartist.Line('.js-d3-history-by-category', { series: vm.categoryHistory }, vm.defaultConf);
 
 	            // COMPARAISON MOIS PRECEDENT
-	            new Chartist.Line('.js-d3-history-month', {
-	                labels: ['Janv.', 'Fev.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Aout', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
-	                series: [[100, 200, 30, 0, 50, 302, 40, 10, 102, 78, 65, 401], [450, 450, 54, 450, 650, 840, 40, 10, 102, 120, 50, 70], [150, 50, 504, 150, 350, 740, 140, 160, 902, 120, 100, 20]]
-	            }, {
-	                showArea: true,
-	                fullWidth: true,
-	                showPoint: false,
-	                lineSmooth: false
-	            });
+	            var monthComparison = new Chartist.Line('.js-d3-history-month', {
+	                labels: vm.categorieslabels,
+	                series: vm.monthComparison
+	            }, vm.defaultConf);
 
 	            document.querySelector('.js-localization').addEventListener('click', function () {
 	                document.querySelector('.js-localization-modal').setAttribute('aria-hidden', 'false');
@@ -13812,11 +13851,26 @@
 	    staticClass: "c-field__label"
 	  }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
 	    staticClass: "c-field__value"
-	  }, [_vm._v(_vm._s(_vm.account.number))])])])]), _vm._v(" "), _vm._m(0)])])], 1)
+	  }, [_vm._v(_vm._s(_vm.account.number))])])])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item__content"
+	  }, [_vm._m(0), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item"
+	  }, [_c('div', {
+	    staticClass: "c-list-item__title"
+	  }, [_vm._v("Répartition des gains par catégorie")]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+	    staticClass: "btn-group"
+	  }, _vm._l((_vm.categorieslabels), function(categoryLabel, index) {
+	    return _c('div', {
+	      staticClass: "btn btn--selectable is-selected js-btn--selectable",
+	      class: ['u-bg-' + index]
+	    }, [_c('div', {
+	      staticClass: "fa fa-briefcase"
+	    }), _vm._v(" "), _c('div', {
+	      staticClass: "btn__label"
+	    }, [_vm._v(_vm._s(categoryLabel))])])
+	  }))]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)])])])], 1)
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "c-list-item__content"
-	  }, [_c('div', {
 	    staticClass: "c-list-item"
 	  }, [_c('div', {
 	    staticClass: "c-list-item__title"
@@ -13862,53 +13916,15 @@
 	    staticClass: "fa fa-car"
 	  }), _vm._v(" "), _c('div', {
 	    staticClass: "btn__label"
-	  }, [_vm._v("Voiture")])])])]), _vm._v(" "), _c('div', {
-	    staticClass: "c-list-item"
-	  }, [_c('div', {
-	    staticClass: "c-list-item__title"
-	  }, [_vm._v("Répartition des gains par catégorie")]), _vm._v(" "), _c('div', {
+	  }, [_vm._v("Voiture")])])])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
 	    staticClass: "c-list-item__content"
 	  }, [_c('div', {
 	    staticClass: "chart js-d3-categories-repartition-gains"
-	  })]), _vm._v(" "), _c('div', {
-	    staticClass: "btn-group"
-	  }, [_c('div', {
-	    staticClass: "u-bg-1 btn btn--selectable is-selected js-btn--selectable"
-	  }, [_c('div', {
-	    staticClass: "fa fa-briefcase"
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "btn__label"
-	  }, [_vm._v("Boulot")])]), _vm._v(" "), _c('div', {
-	    staticClass: "u-bg-2 btn btn--selectable is-selected js-btn--selectable"
-	  }, [_c('div', {
-	    staticClass: "fa fa-money"
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "btn__label"
-	  }, [_vm._v("Impôts")])]), _vm._v(" "), _c('div', {
-	    staticClass: "u-bg-3 btn btn--selectable is-selected js-btn--selectable"
-	  }, [_c('div', {
-	    staticClass: "fa fa-shopping-cart"
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "btn__label"
-	  }, [_vm._v("Dépenses diverses")])]), _vm._v(" "), _c('div', {
-	    staticClass: "u-bg-4 btn btn--selectable is-selected js-btn--selectable"
-	  }, [_c('div', {
-	    staticClass: "fa fa-building"
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "btn__label"
-	  }, [_vm._v("Logement")])]), _vm._v(" "), _c('div', {
-	    staticClass: "u-bg-5 btn btn--selectable is-selected js-btn--selectable"
-	  }, [_c('div', {
-	    staticClass: "fa fa-user-md"
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "btn__label"
-	  }, [_vm._v("Santé")])]), _vm._v(" "), _c('div', {
-	    staticClass: "u-bg-6 btn btn--selectable is-selected js-btn--selectable"
-	  }, [_c('div', {
-	    staticClass: "fa fa-car"
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "btn__label"
-	  }, [_vm._v("Voiture")])])])]), _vm._v(" "), _c('div', {
+	  })])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
 	    staticClass: "c-list-item"
 	  }, [_c('div', {
 	    staticClass: "c-list-item__title"
@@ -13956,7 +13972,9 @@
 	    staticClass: "fa fa-car"
 	  }), _vm._v(" "), _c('div', {
 	    staticClass: "btn__label"
-	  }, [_vm._v("Voiture")])])])])]), _vm._v(" "), _c('div', {
+	  }, [_vm._v("Voiture")])])])])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
 	    staticClass: "c-list-item"
 	  }, [_c('div', {
 	    staticClass: "c-list-item__title"
@@ -13980,7 +13998,7 @@
 	    staticClass: "u-bg-3 btn btn--selectable is-selected js-btn--selectable"
 	  }, [_c('div', {
 	    staticClass: "btn__label"
-	  }, [_vm._v("Moyenne Annuelle")])])])])])])
+	  }, [_vm._v("Moyenne Annuelle")])])])])])
 	}]}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -13989,6 +14007,1078 @@
 	     require("vue-hot-reload-api").rerender("data-v-7d05c8cd", module.exports)
 	  }
 	}
+
+/***/ },
+/* 48 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/*!
+	 * vue-i18n v4.10.0
+	 * (c) 2017 kazuya kawaguchi
+	 * Released under the MIT License.
+	 */
+	'use strict';
+
+	var babelHelpers = {};
+	babelHelpers.typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+	  return typeof obj;
+	} : function (obj) {
+	  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+	};
+	babelHelpers;
+
+	/**
+	 * warn
+	 *
+	 * @param {String} msg
+	 * @param {Error} [err]
+	 *
+	 */
+
+	function warn(msg, err) {
+	  if (window.console) {
+	    console.warn('[vue-i18n] ' + msg);
+	    if (err) {
+	      console.warn(err.stack);
+	    }
+	  }
+	}
+
+	function Asset (Vue, langVM) {
+	  /**
+	   * Register or retrieve a global locale definition.
+	   *
+	   * @param {String} id
+	   * @param {Object | Function | Promise} definition
+	   * @param {Function} cb
+	   */
+
+	  Vue.locale = function (id, definition, cb) {
+	    if (definition === undefined) {
+	      // gettter
+	      return langVM.locales[id];
+	    } else {
+	      // setter
+	      if (definition === null) {
+	        langVM.locales[id] = undefined;
+	        delete langVM.locales[id];
+	      } else {
+	        setLocale(id, definition, function (locale) {
+	          if (locale) {
+	            langVM.locales[id] = locale;
+	          } else {
+	            warn('failed set `' + id + '` locale');
+	          }
+	          cb && cb();
+	        });
+	      }
+	    }
+	  };
+	}
+
+	function setLocale(id, definition, cb) {
+	  var _this = this;
+
+	  if ((typeof definition === 'undefined' ? 'undefined' : babelHelpers.typeof(definition)) === 'object') {
+	    // sync
+	    cb(definition);
+	  } else {
+	    (function () {
+	      var future = definition.call(_this);
+	      if (typeof future === 'function') {
+	        if (future.resolved) {
+	          // cached
+	          cb(future.resolved);
+	        } else if (future.requested) {
+	          // pool callbacks
+	          future.pendingCallbacks.push(cb);
+	        } else {
+	          (function () {
+	            future.requested = true;
+	            var cbs = future.pendingCallbacks = [cb];
+	            future(function (locale) {
+	              // resolve
+	              future.resolved = locale;
+	              for (var i = 0, l = cbs.length; i < l; i++) {
+	                cbs[i](locale);
+	              }
+	            }, function () {
+	              // reject
+	              cb();
+	            });
+	          })();
+	        }
+	      } else if (isPromise(future)) {
+	        // promise
+	        future.then(function (locale) {
+	          // resolve
+	          cb(locale);
+	        }, function () {
+	          // reject
+	          cb();
+	        }).catch(function (err) {
+	          console.error(err);
+	          cb();
+	        });
+	      }
+	    })();
+	  }
+	}
+
+	/**
+	 * Forgiving check for a promise
+	 *
+	 * @param {Object} p
+	 * @return {Boolean}
+	 */
+
+	function isPromise(p) {
+	  return p && typeof p.then === 'function';
+	}
+
+	function Override (Vue, langVM, version) {
+	  function update(vm) {
+	    if (version > 1) {
+	      vm.$forceUpdate();
+	    } else {
+	      var i = vm._watchers.length;
+	      while (i--) {
+	        vm._watchers[i].update(true); // shallow updates
+	      }
+	    }
+	  }
+
+	  // override _init
+	  var init = Vue.prototype._init;
+	  Vue.prototype._init = function (options) {
+	    var _this = this;
+
+	    init.call(this, options);
+
+	    if (!this.$parent) {
+	      // root
+	      this._$lang = langVM;
+	      this._langUnwatch = this._$lang.$watch('$data', function (val, old) {
+	        update(_this);
+	      }, { deep: true });
+	    }
+	  };
+
+	  // override _destroy
+	  var destroy = Vue.prototype._destroy;
+	  Vue.prototype._destroy = function () {
+	    if (!this.$parent && this._langUnwatch) {
+	      this._langUnwatch();
+	      this._langUnwatch = null;
+	      this._$lang = null;
+	    }
+
+	    destroy.apply(this, arguments);
+	  };
+	}
+
+	/**
+	 * Observer
+	 */
+
+	var Watcher = void 0;
+	/**
+	 * getWatcher
+	 *
+	 * @param {Vue} vm
+	 * @return {Watcher}
+	 */
+
+	function getWatcher(vm) {
+	  if (!Watcher) {
+	    var unwatch = vm.$watch('__watcher__', function (a) {});
+	    Watcher = vm._watchers[0].constructor;
+	    unwatch();
+	  }
+	  return Watcher;
+	}
+
+	var Dep = void 0;
+	/**
+	 * getDep
+	 *
+	 * @param {Vue} vm
+	 * @return {Dep}
+	 */
+
+	function getDep(vm) {
+	  if (!Dep && vm && vm._data && vm._data.__ob__ && vm._data.__ob__.dep) {
+	    Dep = vm._data.__ob__.dep.constructor;
+	  }
+	  return Dep;
+	}
+
+	var fallback = void 0; // fallback lang
+	var missingHandler = null; // missing handler
+	var i18nFormatter = null; // custom formatter
+
+	function Config (Vue, langVM, lang) {
+	  var bind = Vue.util.bind;
+
+	  var Watcher = getWatcher(langVM);
+	  var Dep = getDep(langVM);
+
+	  function makeComputedGetter(getter, owner) {
+	    var watcher = new Watcher(owner, getter, null, {
+	      lazy: true
+	    });
+
+	    return function computedGetter() {
+	      watcher.dirty && watcher.evaluate();
+	      Dep && Dep.target && watcher.depend();
+	      return watcher.value;
+	    };
+	  }
+
+	  // define Vue.config.lang configration
+	  Object.defineProperty(Vue.config, 'lang', {
+	    enumerable: true,
+	    configurable: true,
+	    get: makeComputedGetter(function () {
+	      return langVM.lang;
+	    }, langVM),
+	    set: bind(function (val) {
+	      langVM.lang = val;
+	    }, langVM)
+	  });
+
+	  // define Vue.config.fallbackLang configration
+	  fallback = lang;
+	  Object.defineProperty(Vue.config, 'fallbackLang', {
+	    enumerable: true,
+	    configurable: true,
+	    get: function get() {
+	      return fallback;
+	    },
+	    set: function set(val) {
+	      fallback = val;
+	    }
+	  });
+
+	  // define Vue.config.missingHandler configration
+	  Object.defineProperty(Vue.config, 'missingHandler', {
+	    enumerable: true,
+	    configurable: true,
+	    get: function get() {
+	      return missingHandler;
+	    },
+	    set: function set(val) {
+	      missingHandler = val;
+	    }
+	  });
+
+	  // define Vue.config.i18Formatter configration
+	  Object.defineProperty(Vue.config, 'i18nFormatter', {
+	    enumerable: true,
+	    configurable: true,
+	    get: function get() {
+	      return i18nFormatter;
+	    },
+	    set: function set(val) {
+	      i18nFormatter = val;
+	    }
+	  });
+	}
+
+	/**
+	 * utilites
+	 */
+
+	/**
+	 * isNil
+	 *
+	 * @param {*} val
+	 * @return Boolean
+	 */
+	function isNil(val) {
+	  return val === null || val === undefined;
+	}
+
+	/**
+	 *  String format template
+	 *  - Inspired:
+	 *    https://github.com/Matt-Esch/string-template/index.js
+	 */
+
+	var RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
+
+	function Format (Vue) {
+	  var hasOwn = Vue.util.hasOwn;
+
+	  /**
+	   * template
+	   *
+	   * @param {String} string
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+
+	  function template(string) {
+	    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	      args[_key - 1] = arguments[_key];
+	    }
+
+	    if (args.length === 1 && babelHelpers.typeof(args[0]) === 'object') {
+	      args = args[0];
+	    } else {
+	      args = {};
+	    }
+
+	    if (!args || !args.hasOwnProperty) {
+	      args = {};
+	    }
+
+	    return string.replace(RE_NARGS, function (match, prefix, i, index) {
+	      var result = void 0;
+
+	      if (string[index - 1] === '{' && string[index + match.length] === '}') {
+	        return i;
+	      } else {
+	        result = hasOwn(args, i) ? args[i] : match;
+	        if (isNil(result)) {
+	          return '';
+	        }
+
+	        return result;
+	      }
+	    });
+	  }
+
+	  return template;
+	}
+
+	/**
+	 *  Path paerser
+	 *  - Inspired:  
+	 *    Vue.js Path parser
+	 */
+
+	// cache
+	var pathCache = Object.create(null);
+
+	// actions
+	var APPEND = 0;
+	var PUSH = 1;
+	var INC_SUB_PATH_DEPTH = 2;
+	var PUSH_SUB_PATH = 3;
+
+	// states
+	var BEFORE_PATH = 0;
+	var IN_PATH = 1;
+	var BEFORE_IDENT = 2;
+	var IN_IDENT = 3;
+	var IN_SUB_PATH = 4;
+	var IN_SINGLE_QUOTE = 5;
+	var IN_DOUBLE_QUOTE = 6;
+	var AFTER_PATH = 7;
+	var ERROR = 8;
+
+	var pathStateMachine = [];
+
+	pathStateMachine[BEFORE_PATH] = {
+	  'ws': [BEFORE_PATH],
+	  'ident': [IN_IDENT, APPEND],
+	  '[': [IN_SUB_PATH],
+	  'eof': [AFTER_PATH]
+	};
+
+	pathStateMachine[IN_PATH] = {
+	  'ws': [IN_PATH],
+	  '.': [BEFORE_IDENT],
+	  '[': [IN_SUB_PATH],
+	  'eof': [AFTER_PATH]
+	};
+
+	pathStateMachine[BEFORE_IDENT] = {
+	  'ws': [BEFORE_IDENT],
+	  'ident': [IN_IDENT, APPEND],
+	  '0': [IN_IDENT, APPEND],
+	  'number': [IN_IDENT, APPEND]
+	};
+
+	pathStateMachine[IN_IDENT] = {
+	  'ident': [IN_IDENT, APPEND],
+	  '0': [IN_IDENT, APPEND],
+	  'number': [IN_IDENT, APPEND],
+	  'ws': [IN_PATH, PUSH],
+	  '.': [BEFORE_IDENT, PUSH],
+	  '[': [IN_SUB_PATH, PUSH],
+	  'eof': [AFTER_PATH, PUSH]
+	};
+
+	pathStateMachine[IN_SUB_PATH] = {
+	  "'": [IN_SINGLE_QUOTE, APPEND],
+	  '"': [IN_DOUBLE_QUOTE, APPEND],
+	  '[': [IN_SUB_PATH, INC_SUB_PATH_DEPTH],
+	  ']': [IN_PATH, PUSH_SUB_PATH],
+	  'eof': ERROR,
+	  'else': [IN_SUB_PATH, APPEND]
+	};
+
+	pathStateMachine[IN_SINGLE_QUOTE] = {
+	  "'": [IN_SUB_PATH, APPEND],
+	  'eof': ERROR,
+	  'else': [IN_SINGLE_QUOTE, APPEND]
+	};
+
+	pathStateMachine[IN_DOUBLE_QUOTE] = {
+	  '"': [IN_SUB_PATH, APPEND],
+	  'eof': ERROR,
+	  'else': [IN_DOUBLE_QUOTE, APPEND]
+	};
+
+	/**
+	 * Check if an expression is a literal value.
+	 *
+	 * @param {String} exp
+	 * @return {Boolean}
+	 */
+
+	var literalValueRE = /^\s?(true|false|-?[\d.]+|'[^']*'|"[^"]*")\s?$/;
+	function isLiteral(exp) {
+	  return literalValueRE.test(exp);
+	}
+
+	/**
+	 * Strip quotes from a string
+	 *
+	 * @param {String} str
+	 * @return {String | false}
+	 */
+
+	function stripQuotes(str) {
+	  var a = str.charCodeAt(0);
+	  var b = str.charCodeAt(str.length - 1);
+	  return a === b && (a === 0x22 || a === 0x27) ? str.slice(1, -1) : str;
+	}
+
+	/**
+	 * Determine the type of a character in a keypath.
+	 *
+	 * @param {Char} ch
+	 * @return {String} type
+	 */
+
+	function getPathCharType(ch) {
+	  if (ch === undefined) {
+	    return 'eof';
+	  }
+
+	  var code = ch.charCodeAt(0);
+
+	  switch (code) {
+	    case 0x5B: // [
+	    case 0x5D: // ]
+	    case 0x2E: // .
+	    case 0x22: // "
+	    case 0x27: // '
+	    case 0x30:
+	      // 0
+	      return ch;
+
+	    case 0x5F: // _
+	    case 0x24: // $
+	    case 0x2D:
+	      // -
+	      return 'ident';
+
+	    case 0x20: // Space
+	    case 0x09: // Tab
+	    case 0x0A: // Newline
+	    case 0x0D: // Return
+	    case 0xA0: // No-break space
+	    case 0xFEFF: // Byte Order Mark
+	    case 0x2028: // Line Separator
+	    case 0x2029:
+	      // Paragraph Separator
+	      return 'ws';
+	  }
+
+	  // a-z, A-Z
+	  if (code >= 0x61 && code <= 0x7A || code >= 0x41 && code <= 0x5A) {
+	    return 'ident';
+	  }
+
+	  // 1-9
+	  if (code >= 0x31 && code <= 0x39) {
+	    return 'number';
+	  }
+
+	  return 'else';
+	}
+
+	/**
+	 * Format a subPath, return its plain form if it is
+	 * a literal string or number. Otherwise prepend the
+	 * dynamic indicator (*).
+	 *
+	 * @param {String} path
+	 * @return {String}
+	 */
+
+	function formatSubPath(path) {
+	  var trimmed = path.trim();
+	  // invalid leading 0
+	  if (path.charAt(0) === '0' && isNaN(path)) {
+	    return false;
+	  }
+
+	  return isLiteral(trimmed) ? stripQuotes(trimmed) : '*' + trimmed;
+	}
+
+	/**
+	 * Parse a string path into an array of segments
+	 *
+	 * @param {String} path
+	 * @return {Array|undefined}
+	 */
+
+	function parse(path) {
+	  var keys = [];
+	  var index = -1;
+	  var mode = BEFORE_PATH;
+	  var subPathDepth = 0;
+	  var c = void 0,
+	      newChar = void 0,
+	      key = void 0,
+	      type = void 0,
+	      transition = void 0,
+	      action = void 0,
+	      typeMap = void 0;
+
+	  var actions = [];
+
+	  actions[PUSH] = function () {
+	    if (key !== undefined) {
+	      keys.push(key);
+	      key = undefined;
+	    }
+	  };
+
+	  actions[APPEND] = function () {
+	    if (key === undefined) {
+	      key = newChar;
+	    } else {
+	      key += newChar;
+	    }
+	  };
+
+	  actions[INC_SUB_PATH_DEPTH] = function () {
+	    actions[APPEND]();
+	    subPathDepth++;
+	  };
+
+	  actions[PUSH_SUB_PATH] = function () {
+	    if (subPathDepth > 0) {
+	      subPathDepth--;
+	      mode = IN_SUB_PATH;
+	      actions[APPEND]();
+	    } else {
+	      subPathDepth = 0;
+	      key = formatSubPath(key);
+	      if (key === false) {
+	        return false;
+	      } else {
+	        actions[PUSH]();
+	      }
+	    }
+	  };
+
+	  function maybeUnescapeQuote() {
+	    var nextChar = path[index + 1];
+	    if (mode === IN_SINGLE_QUOTE && nextChar === "'" || mode === IN_DOUBLE_QUOTE && nextChar === '"') {
+	      index++;
+	      newChar = '\\' + nextChar;
+	      actions[APPEND]();
+	      return true;
+	    }
+	  }
+
+	  while (mode != null) {
+	    index++;
+	    c = path[index];
+
+	    if (c === '\\' && maybeUnescapeQuote()) {
+	      continue;
+	    }
+
+	    type = getPathCharType(c);
+	    typeMap = pathStateMachine[mode];
+	    transition = typeMap[type] || typeMap['else'] || ERROR;
+
+	    if (transition === ERROR) {
+	      return; // parse error
+	    }
+
+	    mode = transition[0];
+	    action = actions[transition[1]];
+	    if (action) {
+	      newChar = transition[2];
+	      newChar = newChar === undefined ? c : newChar;
+	      if (action() === false) {
+	        return;
+	      }
+	    }
+
+	    if (mode === AFTER_PATH) {
+	      keys.raw = path;
+	      return keys;
+	    }
+	  }
+	}
+
+	/**
+	 * External parse that check for a cache hit first
+	 *
+	 * @param {String} path
+	 * @return {Array|undefined}
+	 */
+
+	function parsePath(path) {
+	  var hit = pathCache[path];
+	  if (!hit) {
+	    hit = parse(path);
+	    if (hit) {
+	      pathCache[path] = hit;
+	    }
+	  }
+	  return hit;
+	}
+
+	function Path (Vue) {
+	  var _Vue$util = Vue.util,
+	      isObject = _Vue$util.isObject,
+	      isPlainObject = _Vue$util.isPlainObject,
+	      hasOwn = _Vue$util.hasOwn;
+
+
+	  function empty(target) {
+	    if (target === null || target === undefined) {
+	      return true;
+	    }
+
+	    if (Array.isArray(target)) {
+	      if (target.length > 0) {
+	        return false;
+	      }
+	      if (target.length === 0) {
+	        return true;
+	      }
+	    } else if (isPlainObject(target)) {
+	      /* eslint-disable prefer-const */
+	      for (var key in target) {
+	        if (hasOwn(target, key)) {
+	          return false;
+	        }
+	      }
+	      /* eslint-enable prefer-const */
+	    }
+
+	    return true;
+	  }
+
+	  /**
+	   * Get value from path string
+	   *
+	   * @param {Object} obj
+	   * @param {String} path
+	   * @return value
+	   */
+
+	  function getValue(obj, path) {
+	    if (!isObject(obj)) {
+	      return null;
+	    }
+
+	    var paths = parsePath(path);
+	    if (empty(paths)) {
+	      return null;
+	    }
+
+	    var length = paths.length;
+	    var ret = null;
+	    var last = obj;
+	    var i = 0;
+	    while (i < length) {
+	      var value = last[paths[i]];
+	      if (value === undefined) {
+	        last = null;
+	        break;
+	      }
+	      last = value;
+	      i++;
+	    }
+
+	    ret = last;
+	    return ret;
+	  }
+
+	  return getValue;
+	}
+
+	/**
+	 * extend
+	 *
+	 * @param {Vue} Vue
+	 * @return {Vue}
+	 */
+
+	function Extend (Vue) {
+	  var _Vue$util = Vue.util,
+	      isObject = _Vue$util.isObject,
+	      bind = _Vue$util.bind;
+
+	  var format = Format(Vue);
+	  var getValue = Path(Vue);
+
+	  function parseArgs() {
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    var lang = Vue.config.lang;
+	    var fallback = Vue.config.fallbackLang;
+
+	    if (args.length === 1) {
+	      if (isObject(args[0]) || Array.isArray(args[0])) {
+	        args = args[0];
+	      } else if (typeof args[0] === 'string') {
+	        lang = args[0];
+	      }
+	    } else if (args.length === 2) {
+	      if (typeof args[0] === 'string') {
+	        lang = args[0];
+	      }
+	      if (isObject(args[1]) || Array.isArray(args[1])) {
+	        args = args[1];
+	      }
+	    }
+
+	    return { lang: lang, fallback: fallback, params: args };
+	  }
+
+	  function exist(locale, key) {
+	    if (!locale || !key) {
+	      return false;
+	    }
+	    return !isNil(getValue(locale, key));
+	  }
+
+	  function interpolate(locale, key, args) {
+	    if (!locale) {
+	      return null;
+	    }
+
+	    var val = getValue(locale, key);
+	    if (Array.isArray(val)) {
+	      return val;
+	    }
+	    if (isNil(val)) {
+	      val = locale[key];
+	    }
+	    if (isNil(val)) {
+	      return null;
+	    }
+	    if (typeof val !== 'string') {
+	      warn("Value of key '" + key + "' is not a string!");return null;
+	    }
+
+	    // Check for the existance of links within the translated string
+	    if (val.indexOf('@:') >= 0) {
+	      // Match all the links within the local
+	      // We are going to replace each of
+	      // them with its translation
+	      var matches = val.match(/(@:[\w|.]+)/g);
+	      for (var idx in matches) {
+	        var link = matches[idx];
+	        // Remove the leading @:
+	        var linkPlaceholder = link.substr(2);
+	        // Translate the link
+	        var translatedstring = interpolate(locale, linkPlaceholder, args);
+	        // Replace the link with the translated string
+	        val = val.replace(link, translatedstring);
+	      }
+	    }
+
+	    return !args ? val : Vue.config.i18nFormatter ? Vue.config.i18nFormatter.apply(null, [val].concat(args)) : format(val, args);
+	  }
+
+	  function translate(getter, lang, fallback, key, params) {
+	    var res = null;
+	    res = interpolate(getter(lang), key, params);
+	    if (!isNil(res)) {
+	      return res;
+	    }
+
+	    res = interpolate(getter(fallback), key, params);
+	    if (!isNil(res)) {
+	      if (process.env.NODE_ENV !== 'production') {
+	        warn('Fall back to translate the keypath "' + key + '" with "' + fallback + '" language.');
+	      }
+	      return res;
+	    } else {
+	      return null;
+	    }
+	  }
+
+	  function warnDefault(lang, key, vm, result) {
+	    if (!isNil(result)) {
+	      return result;
+	    }
+	    if (Vue.config.missingHandler) {
+	      Vue.config.missingHandler.apply(null, [lang, key, vm]);
+	    } else {
+	      if (process.env.NODE_ENV !== 'production') {
+	        warn('Cannot translate the value of keypath "' + key + '". ' + 'Use the value of keypath as default');
+	      }
+	    }
+	    return key;
+	  }
+
+	  function getAssetLocale(lang) {
+	    return Vue.locale(lang);
+	  }
+
+	  function getComponentLocale(lang) {
+	    return this.$options.locales[lang];
+	  }
+
+	  function getOldChoiceIndexFixed(choice) {
+	    return choice ? choice > 1 ? 1 : 0 : 1;
+	  }
+
+	  function getChoiceIndex(choice, choicesLength) {
+	    choice = Math.abs(choice);
+
+	    if (choicesLength === 2) {
+	      return getOldChoiceIndexFixed(choice);
+	    }
+
+	    return choice ? Math.min(choice, 2) : 0;
+	  }
+
+	  function fetchChoice(locale, choice) {
+	    if (!locale && typeof locale !== 'string') {
+	      return null;
+	    }
+	    var choices = locale.split('|');
+
+	    choice = getChoiceIndex(choice, choices.length);
+	    if (!choices[choice]) {
+	      return locale;
+	    }
+	    return choices[choice].trim();
+	  }
+
+	  /**
+	   * Vue.t
+	   *
+	   * @param {String} key
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+
+	  Vue.t = function (key) {
+	    for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+	      args[_key2 - 1] = arguments[_key2];
+	    }
+
+	    if (!key) {
+	      return '';
+	    }
+
+	    var _parseArgs = parseArgs.apply(undefined, args),
+	        lang = _parseArgs.lang,
+	        fallback = _parseArgs.fallback,
+	        params = _parseArgs.params;
+
+	    return warnDefault(lang, key, null, translate(getAssetLocale, lang, fallback, key, params));
+	  };
+
+	  /**
+	   * Vue.tc
+	   *
+	   * @param {String} key
+	   * @param {number|undefined} choice
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+
+	  Vue.tc = function (key, choice) {
+	    for (var _len3 = arguments.length, args = Array(_len3 > 2 ? _len3 - 2 : 0), _key3 = 2; _key3 < _len3; _key3++) {
+	      args[_key3 - 2] = arguments[_key3];
+	    }
+
+	    return fetchChoice(Vue.t.apply(Vue, [key].concat(args)), choice);
+	  };
+
+	  /**
+	   * Vue.te
+	   *
+	   * @param {String} key
+	   * @param {Array} ...args
+	   * @return {Boolean}
+	   */
+
+	  Vue.te = function (key) {
+	    for (var _len4 = arguments.length, args = Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
+	      args[_key4 - 1] = arguments[_key4];
+	    }
+
+	    var _parseArgs2 = parseArgs.apply(undefined, args),
+	        lang = _parseArgs2.lang;
+
+	    return exist(getAssetLocale(lang), key);
+	  };
+
+	  /**
+	   * $t
+	   *
+	   * @param {String} key
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+
+	  Vue.prototype.$t = function (key) {
+	    if (!key) {
+	      return '';
+	    }
+
+	    for (var _len5 = arguments.length, args = Array(_len5 > 1 ? _len5 - 1 : 0), _key5 = 1; _key5 < _len5; _key5++) {
+	      args[_key5 - 1] = arguments[_key5];
+	    }
+
+	    var _parseArgs3 = parseArgs.apply(undefined, args),
+	        lang = _parseArgs3.lang,
+	        fallback = _parseArgs3.fallback,
+	        params = _parseArgs3.params;
+
+	    var res = null;
+	    if (this.$options.locales) {
+	      res = translate(bind(getComponentLocale, this), lang, fallback, key, params);
+	      if (res) {
+	        return res;
+	      }
+	    }
+	    return warnDefault(lang, key, this, translate(getAssetLocale, lang, fallback, key, params));
+	  };
+
+	  /**
+	   * $tc
+	   *
+	   * @param {String} key
+	   * @param {number|undefined} choice
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+
+	  Vue.prototype.$tc = function (key, choice) {
+	    if (typeof choice !== 'number' && typeof choice !== 'undefined') {
+	      return key;
+	    }
+
+	    for (var _len6 = arguments.length, args = Array(_len6 > 2 ? _len6 - 2 : 0), _key6 = 2; _key6 < _len6; _key6++) {
+	      args[_key6 - 2] = arguments[_key6];
+	    }
+
+	    return fetchChoice(this.$t.apply(this, [key].concat(args)), choice);
+	  };
+
+	  /**
+	   * $te
+	   *
+	   * @param {String} key
+	   * @param {Array} ...args
+	   * @return {Boolean}
+	   *
+	   */
+
+	  Vue.prototype.$te = function (key) {
+	    for (var _len7 = arguments.length, args = Array(_len7 > 1 ? _len7 - 1 : 0), _key7 = 1; _key7 < _len7; _key7++) {
+	      args[_key7 - 1] = arguments[_key7];
+	    }
+
+	    var _parseArgs4 = parseArgs.apply(undefined, args),
+	        lang = _parseArgs4.lang;
+
+	    var found = false;
+	    if (this.$options.locales) {
+	      // exist component locale
+	      found = exist(bind(getComponentLocale)(lang), key);
+	    }
+	    if (!found) {
+	      found = exist(getAssetLocale(lang), key);
+	    }
+	    return found;
+	  };
+
+	  Vue.mixin({
+	    computed: {
+	      $lang: function $lang() {
+	        return Vue.config.lang;
+	      }
+	    }
+	  });
+
+	  return Vue;
+	}
+
+	var langVM = void 0; // singleton
+
+
+	/**
+	 * plugin
+	 *
+	 * @param {Object} Vue
+	 * @param {Object} opts
+	 */
+
+	function plugin(Vue) {
+	  var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+	  var version = Vue.version && Number(Vue.version.split('.')[0]) || -1;
+
+	  if (process.env.NODE_ENV !== 'production' && plugin.installed) {
+	    warn('already installed.');
+	    return;
+	  }
+
+	  if (process.env.NODE_ENV !== 'production' && version < 1) {
+	    warn('vue-i18n (' + plugin.version + ') need to use vue version 1.0 or later (vue version: ' + Vue.version + ').');
+	    return;
+	  }
+
+	  var lang = 'en';
+	  setupLangVM(Vue, lang);
+
+	  Asset(Vue, langVM);
+	  Override(Vue, langVM, version);
+	  Config(Vue, langVM, lang);
+	  Extend(Vue);
+	}
+
+	function setupLangVM(Vue, lang) {
+	  var silent = Vue.config.silent;
+	  Vue.config.silent = true;
+	  if (!langVM) {
+	    langVM = new Vue({ data: { lang: lang, locales: {} } });
+	  }
+	  Vue.config.silent = silent;
+	}
+
+	plugin.version = '__VERSION__';
+
+	if (typeof window !== 'undefined' && window.Vue) {
+	  window.Vue.use(plugin);
+	}
+
+	module.exports = plugin;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }
 /******/ ]);

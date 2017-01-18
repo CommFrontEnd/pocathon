@@ -4,7 +4,7 @@
         <div class="col-md-offset-5 col-md-3">
             <div 
             <div class="form-login">
-            <h4>Bienvenue, pour continuer merci  de vous identifer:</h4>
+            <h4>{{ welcome }}:</h4>
             <p class="text-danger"v-if="error">{{message}}</p>
             <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" v-model.trim="userName"/>
             </br>
@@ -13,7 +13,7 @@
             </br>
             <div class="wrapper">
             <span class="group-btn">     
-                <span class="btn btn-primary btn-md" v-on:click="formIsValid">login <i class="fa fa-sign-in"></i></span>
+                <span class="btn btn-primary btn-md" v-on:click="formIsValid">{{ login }} <i class="fa fa-sign-in"></i></span>
             </span>
             </div>
             </div>
@@ -40,9 +40,12 @@
     },
     data () {
       return {
+        welcome : this.$t('login.welcome'),
+        login : this.$t('login.login'),
         userName: 'username',
         password: 'password',
-        error: false
+        error: false,
+        message: ''
       }
     }
 
