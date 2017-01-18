@@ -10,7 +10,7 @@ import { Client } from '../domain/client';
 export class AccountService {
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
-    private accountsUrl = '/v1/accounts/';  // URL to web api
+    private accountsUrl = 'https://siipocathon.apispark.net:443/v1/accounts/';  // URL to web api
 
     constructor(private http: Http) { }
 
