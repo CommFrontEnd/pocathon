@@ -27,6 +27,7 @@
     "chartist": "^0.10.1",
     "del": "^2.2.2",
     "font-awesome": "^4.7.0",
+    "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.1"
   },
@@ -36,7 +37,7 @@
     "gulp-nodemon": "^2.2.1",
     "gulp-notify": "^2.2.0",
     "gulp-react": "^3.1.0",
-    "react-scripts": "^0.7.0",
+    "react-scripts": "^0.8.5",
     "serve-static": "^1.11.1"
   }
 }
