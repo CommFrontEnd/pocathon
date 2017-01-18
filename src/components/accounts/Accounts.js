@@ -1,5 +1,6 @@
 import React from 'react';
 import AccountStore from '../../stores/AccountStore';
+import LoginStore from '../../stores/LoginStore';
 import AccountService from '../../services/AccountService';
 import Account from './Account'
 
@@ -9,6 +10,8 @@ class Accounts extends React.Component {
         super(props);
         this.state = this.getAccountsState();
         this._onChange = this._onChange.bind(this);
+
+        console.log(LoginStore.user);
     }
 
     componentDidMount() {
