@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule, RequestOptions }    from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent }         from './app.component';
 import { AccountListComponent }   from './account-list/account-list.component';
@@ -24,7 +25,8 @@ import { CustomRequestOptions } from './shared/services/custom-request-options';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
   ],
   declarations: [
     AppComponent,
