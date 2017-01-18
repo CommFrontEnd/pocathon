@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from 'react-fa';
+import  { Link } from 'react-router';
 
 class Menu extends React.Component {
 
@@ -24,7 +25,7 @@ class Menu extends React.Component {
                 <Icon name="angle-down" />
                 <ul className="menu">
                     <li className="menu__item"><a href="#"><Icon name="gear" /> Preferences</a></li>
-                    <li className="menu__item"><a href="/"><Icon name="unlock-alt" /> Logout</a></li>
+                    <li className="menu__item"><Link to="/login"><Icon name="unlock-alt" /> Logout</Link></li>
                 </ul>
             </div>
         )

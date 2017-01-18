@@ -7,7 +7,7 @@ import NotFound from './components/error/NotFound';
 import Login from './components/login/Login';
 import App from './components/App';
 import Accounts from './components/accounts/Accounts';
-import Account from './components/accounts/Account';
+import Account from './components/account/Account';
 
 // Rooter
 import { Router, Route, browserHistory } from 'react-router';

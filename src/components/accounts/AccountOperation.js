@@ -1,0 +1,51 @@
+import React from 'react';
+import OperationStore from '../../stores/OperationStore';
+import OperationService from '../../services/OperationService';
+
+class AccountOperation extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = this.getOperationState();
+        this._onChange = this._onChange.bind(this);
+    }
+
+    componentDidMount() {
+        if (!this.state.operation) {
+            this.requestOperation();
+        }
+        OperationStore.addChangeListener(this._onChange);
+    }
+
+    componentWillUnmount() {
+        OperationStore.removeChangeListener(this._onChange);
+    }
+
+    _onChange() {
+        var state = this.getOperationState();
+        if (state.operation && this.props.id === state.operation.id) {
+            this.setState(state);
+        }
+    }
+    
+    requestOperation() {
+        OperationService.findOne(this.props.id);
+    }
+
+    getOperationState() {
+        return {
+            operation: OperationStore.getOne(this.props.id)
+        };
+    }
+
+    render() {
+        return (
+            <div className="c-field">
+                <div className="c-field__label">{this.state.operation ? this.state.operation.label : ''}</div>
+                <div className="c-field__value is-valid">{this.state.operation ? this.state.operation.montant : ''} {this.state.operation ? this.state.operation.currency : ''}</div>
+            </div>
+        )
+    }
+}
+
+export default AccountOperation;

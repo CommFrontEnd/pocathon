@@ -6,9 +6,7 @@ class App extends React.Component {
         return (
             <div className="o-panel">
                 <Header />
-                <div className="o-panel-content">
-                    {this.props.children}
-                </div>
+                {this.props.children}
             </div>
         )
     }
