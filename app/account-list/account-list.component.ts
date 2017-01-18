@@ -33,7 +33,6 @@ export class AccountListComponent implements OnInit {
                 component.accountService.getAccounts(component.client)
                 .then(function(accounts) {
                      component.accounts = Observable.of<Account[]>(accounts);
-                     console.log(accounts);
                  })
                 .catch(error => {
                     console.log(error);

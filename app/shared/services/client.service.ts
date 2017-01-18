@@ -22,7 +22,7 @@ export class ClientService {
         return new Promise((resolve,reject) => {
             this.http.get(this.clientsUrl + idClient).toPromise()
             .then((res) => {
-                resolve(res);
+                resolve(res.json());
             })
             .catch(() => {
                 reject(new Error("Client "+idClient+" cannot be found"));

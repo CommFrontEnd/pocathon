@@ -2,11 +2,12 @@
     <topbar [isAccountListMode]="true"></topbar>
 
     <div class="o-panel-content">
-        <div *ngFor="let account of accounts | async" (click)="gotoDetail(account)" class="c-list-item">
-            <div>{{account.name}}
+        <div *ngFor="let account of accounts | async" class="c-list-item">
+            <div>
+                <a [routerLink]="['/detail',account.id]">{{account.id}}</a>
                 <div class="c-field c-field--left c-list-item__subtitle">
                     <div class="c-field__label">N° de compte:</div>
-                    <div class="c-field__value">{{account.number}}</div>
+                    <div class="c-field__value">{{account.accountNumber}}</div>
                 </div>
             </div>
             <div class="c-list-item__actions fa fa-angle-right"></div>
