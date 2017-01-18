@@ -3,7 +3,7 @@ import Header from './header/Header';
 
 // Components
 
-import Account from './accounts/Accounts';
+import Accounts from './accounts/Accounts';
 
 class App extends React.Component {
     render() {
@@ -11,7 +11,7 @@ class App extends React.Component {
             <div className="o-panel">
                 <Header />
                 <div className="o-panel-content">
-                    <Account />
+                    <Accounts />
                 </div>
             </div>
         )
