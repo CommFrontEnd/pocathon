@@ -8,11 +8,11 @@
             </h1>
         </div>
         <div class="card__content">
-            <div *ngIf="loginFailed">
-                <h2 ng-style="{color: red}">Login ou mot de passe erroné</h2>
-            </div>
             <form class="form" (submit)="login($event, username.value, password.value)">
-                <div class="form__group is-invalid">
+                <div *ngIf="loginFailed" class="is-invalid">
+                    <label ng-style="{color: red}">Login ou mot de passe erroné</label>
+                </div>
+                <div class="form__group ">
                     <div class="form__label">
                         <label>Username or Email</label>
                     </div>
@@ -26,18 +26,18 @@
                         <input #password type="password" value="mySecurePassword" />
                     </div>
                 </div>
-            </form>
-            <div class="form__group"><a class="form__label" href="#forgottenPassword">Mot de passe oublié ?</a>
-                <div class="form__group" id="forgottenPassword">
-                    <div class="form__label">Email</div>
-                    <div class="form__field">
-                        <input type="text" placeholder="username@login.org" />
-                    </div><a class="btn" href="#">Reset my password</a>
+                <div class="form__group"><a class="form__label" href="#forgottenPassword">Mot de passe oublié ?</a>
+                    <div class="form__group" id="forgottenPassword">
+                        <div class="form__label">Email</div>
+                        <div class="form__field">
+                            <input type="text" placeholder="username@login.org" />
+                        </div><a class="btn" href="#">Reset my password</a>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="card__footer">
-            <button type="submit" class="btn">Log me In!</button>
+                <div class="card__footer">
+                    <button type="submit" class="btn">Log me In!</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
