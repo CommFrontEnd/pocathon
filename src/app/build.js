@@ -11202,9 +11202,11 @@
 	//
 	//
 	//
+	//
+	//
 
 	exports.default = {
-	    name: 'accountsView',
+	    name: 'accounts',
 	    props: [],
 	    components: {
 	        Bandeau: _Bandeau2.default
@@ -12877,40 +12879,35 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "c-list-item"
-	  }, [_vm._l((_vm.accounts), function(account) {
-	    return _c('a', {
-	      staticClass: "c-list-item__title",
-	      attrs: {
-	        "href": "/accountDetail.html"
-	      }
-	    }, [_c('div', {
+	  }, _vm._l((_vm.accounts), function(account) {
+	    return _c('div', [_c('div', {
 	      staticClass: "c-field__label"
 	    }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
 	      staticClass: "c-field__value"
 	    }, [_vm._v(_vm._s(account.accountNum))]), _vm._v(" "), _c('div', {
 	      staticClass: "c-list-item__actions fa fa-angle-right"
-	    })])
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "c-list-item__content js-account-details"
-	  }, [_c('div', {
-	    staticClass: "c-field"
-	  }, [_c('div', {
-	    staticClass: "c-field__label"
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "c-field__value"
-	  }, [_vm._v(_vm._s(_vm.account.accountSolde) + "} "), _c('span', {
-	    staticClass: "down fa fa-angle-down"
-	  })])]), _vm._v(" "), _c('div', {
-	    staticClass: "c-list-item__detail"
-	  }, _vm._l((_vm.account.lastOperations), function(operation) {
-	    return _c('div', {
+	    }), _vm._v(" "), _c('div', {
+	      staticClass: "c-list-item__content js-account-details"
+	    }, [_c('div', {
 	      staticClass: "c-field"
 	    }, [_c('div', {
 	      staticClass: "c-field__label"
-	    }, [_vm._v(_vm._s(operation.label))]), _vm._v(" "), _c('div', {
-	      staticClass: "c-field__value is-valid"
-	    }, [_vm._v(_vm._s(operation.amount) + " €")])])
-	  }))])], 2)
+	    }), _vm._v(" "), _c('div', {
+	      staticClass: "c-field__value"
+	    }, [_vm._v(_vm._s(account.accountSolde) + "} "), _c('span', {
+	      staticClass: "down fa fa-angle-down"
+	    })])]), _vm._v(" "), _c('div', {
+	      staticClass: "c-list-item__detail"
+	    }, _vm._l((account.lastOperations), function(operation) {
+	      return _c('div', {
+	        staticClass: "c-field"
+	      }, [_c('div', {
+	        staticClass: "c-field__label"
+	      }, [_vm._v(_vm._s(operation.label))]), _vm._v(" "), _c('div', {
+	        staticClass: "c-field__value is-valid"
+	      }, [_vm._v(_vm._s(operation.amount) + " €")])])
+	    }))])])
+	  }))
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
