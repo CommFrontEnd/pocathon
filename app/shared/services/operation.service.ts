@@ -9,7 +9,7 @@ import { Operation } from '../domain/operation';
 @Injectable()
 export class OperationService {
     
-    private operationsUrl = '/v1/operations/';  // URL to web api
+    private operationsUrl = 'https://siipocathon.apispark.net:443/v1/operations/';  // URL to web api
 
     constructor(private http: Http) { }
 
