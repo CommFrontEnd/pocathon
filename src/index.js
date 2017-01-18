@@ -4,7 +4,8 @@ import { render } from 'react-dom';
 
 // Components
 // import App from './components/App';
-import Connexion from './components/login/Login';
+import Login from './components/login/Login';
+import NotFound from './components/error/NotFound';
 
 // Rooter
 import { BrowserRouter, Match, Miss } from 'react-router';
@@ -13,7 +14,8 @@ const Root = () => {
 	return (
 		<BrowserRouter>
 			<div>
-				<Match exactly pattern="/" component={Connexion} />
+				<Match exactly pattern="/" component={Login} />
+				<Miss component={NotFound} />
 			</div>
 		</BrowserRouter>
 	)
