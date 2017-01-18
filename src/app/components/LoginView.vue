@@ -1,43 +1,71 @@
 <template>
-        <div class="card z-axis--3">
-                <div class="card__header">
-                  <h1>
-                    <svg class="c-logo" height="4em" viewBox="0 0 20 20" preserveAspectRatio="xMinYMid">
-                      <use xlink:href="#logo"></use>
-                    </svg>
-                  </h1>
-                </div>
-                <div class="card__content">
-                  <form class="form">
-                    <div class="form__group is-invalid">
-                      <div class="form__label">
-                        <label>Username or Email</label>
-                      </div>
-                      <div class="form__field" data-error-msg="Username is required">
-                        <input type="text" placeholder="username@login.org"/>
-                      </div>
-                    </div>
-                    <div class="form__group">
-                      <label class="form__label">Password</label>
-                      <div class="form__field" data-error-msg="Password is required">
-                        <input type="password" value="mySecurePassword"/>
-                      </div>
-                    </div>
-                  </form>
-                  <div class="form__group"><a class="form__label" href="#forgottenPassword">Mot de passe oublié ?</a>
-                    <div class="form__group" id="forgottenPassword">
-                      <div class="form__label">Email</div>
-                      <div class="form__field">
-                        <input type="text" placeholder="username@login.org"/>
-                      </div><a class="btn" href="#">Reset my password</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="card__footer">
-                  <a class="btn" href="accountsList.html">Log me In!</a>
-                </div>
+ <div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div 
+            <div class="form-login">
+            <h4>Bienvenue, pour continuer merci  de vous identifer:</h4>
+            <p class="text-danger"v-if="error">{{message}}</p>
+            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" v-model.trim="userName"/>
+            </br>
+            </br>
+            <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" v-model.trim="password"/>
+            </br>
+            <div class="wrapper">
+            <span class="group-btn">     
+                <span class="btn btn-primary btn-md" v-on:click="formIsValid">login <i class="fa fa-sign-in"></i></span>
+            </span>
             </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
     </template>
-<script>
-    console.debug('loaded');
-</script>
+ <script>
+  export default {
+    name: 'formLogin',
+    methods: {
+      formIsValid: function() {
+        var FakeApiData = {login:'test1', pwd:'test1'};
+
+        if (this.userName == FakeApiData.login && this.password == FakeApiData.pwd) {
+          this.$router.push('/accounts');
+        }
+        else {
+          console.debug("error bordel!!");
+          this.error= true;
+          this.message= 'Bad login or password, try again';
+        }
+      }
+    },
+    data () {
+      return {
+        userName: 'username',
+        password: 'password',
+        error: false
+      }
+    }
+
+  }
+
+
+  </script>
+
+  <style>
+    .form-login {
+      background-color: #EDEDED;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 15px;
+      border-color: #d2d2d2;
+      border-width: 5px;
+      box-shadow: 0 1px 0 #cfcfcf;
+    }
+
+    .container-login {
+      width: 70% !important;
+    }
+  </style>
