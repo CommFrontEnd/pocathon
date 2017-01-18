@@ -6,12 +6,17 @@ class AccountsStore extends BaseStore {
     super();
     this.subscribe(() => this._registerToActions.bind(this))
     this._accounts = '';
+    this._account = {};
   }
 
   _registerToActions(action) {
     switch(action.actionType) {
       case "ACCOUNTS_GET":
         this._accounts = action.accounts;
+        this.emitChange();
+        break;
+      case "ACCOUNT_GET":
+        this._account[action.account.id] = action.account;
         this.emitChange();
         break;
       default:
@@ -21,6 +26,10 @@ class AccountsStore extends BaseStore {
 
   get accounts() {
     return this._accounts;
+  }
+
+  getOne(id) {
+    return this._account[id];
   }
 }
 

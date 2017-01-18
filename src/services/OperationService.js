@@ -3,9 +3,9 @@ import OperationActions from '../actions/OperationActions';
 
 class OperationService {
 
-  findOne(operationId) {
+  findOne(id) {
     request({
-      url: "https://siipocathon.apispark.net:443/v1/operations/" + operationId,
+      url: "https://siipocathon.apispark.net:443/v1/operations/" + id,
       method: 'GET',
       crossOrigin: true,
       headers: {
