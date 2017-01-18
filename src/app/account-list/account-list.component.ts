@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
-import { Observable }        from 'rxjs/Observable';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
 // TODO ADD IMPORTS
@@ -20,17 +20,17 @@ export class AccountListComponent implements OnInit {
 
   constructor(
     private clientService: ClientService,
-    private router: Router) {}
+    private router: Router) { }
 
   ngOnInit(): void {
     this.clientService.getCurrentClient()
-    .then(function (client) {this.client = client})
-    .catch(
+      .then(function (client) { this.client = client })
+      .catch(
       error => {
         console.log(error);
         this.client = new Client();
       }
-    );
+      );
     this.accounts = Observable.of<Account[]>(this.client.accountsList);
   }
 
