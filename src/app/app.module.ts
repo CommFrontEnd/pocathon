@@ -15,6 +15,7 @@ import { StatComponent }  from './stat/stat.component';
 
 import { AccountService }    from './shared/services/account.service';
 import { ClientService }    from './shared/services/client.service';
+import { OperationService }    from './shared/services/operation.service';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { ClientService }    from './shared/services/client.service';
   ],
   providers: [
     AccountService,
-    ClientService
+    ClientService,
+    OperationService
   ],
   bootstrap: [ AppComponent ]
 })

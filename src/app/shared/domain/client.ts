@@ -1,5 +1,5 @@
 export class Client {
-    id : string;
-    accountsList : string[];
-    label : string;
+    id: string;
+    accountsList: string[];
+    label: string;
 }
