@@ -1,10 +1,17 @@
 import React from 'react';
 
+// Components
+
+import Account from './account/Account';
+
 class App extends React.Component {
     render() {
         return (
-            <div className="test">
-                <h2>Hello World</h2>
+            <div className="o-panel">
+                
+                <div className="o-panel-content">
+                    <Account />
+                </div>
             </div>
         )
     }
