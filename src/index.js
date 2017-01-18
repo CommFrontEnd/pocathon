@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 // Components
 // import App from './components/App';
 import Login from './components/login/Login';
+import App from './components/App';
 import NotFound from './components/error/NotFound';
 
 // Rooter
@@ -16,6 +17,7 @@ const Root = () => {
 	return (
 		<Router history={browserHistory}>
 			<Route path="/" component={Login} />
+			<Route path="/accounts-list" component={App} />
 			<Route path="*" component={NotFound} />
 		</Router>
 	)
