@@ -60,11 +60,8 @@ class Login extends React.Component {
                         </div><a className="btn" href="#">Reset my password</a>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         )
     }
 
