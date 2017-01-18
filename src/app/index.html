@@ -14,12 +14,7 @@
         <div id="app">
             <h1>Your server is online.  </h1>
             <p>"-Your orders, Templar? pouet !"</p>
-            <ul>
-                <li><a href="/login.html">Login</a></li>
-                <li><a href="/accountsList.html">Liste des comptes</a></li>
-                <li><a href="/accountDetail.html">Détail d'un compte</a></li>
-                <li><a href="/accountStatistics.html">Statistiques d'un compte</a></li>
-            </ul>
+            <router-view></router-view>
         </div>
     </body>
 
@@ -30,4 +25,5 @@
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZCsMSV5KhnOaKVGfxidaR60q6ZH6O9M&callback=initMap"> </script>
 
     <script src="/vendors/chartist/dist/chartist.min.js" defer></script>
+     <script src="router.js" ></script>
 </html>

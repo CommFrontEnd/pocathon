@@ -2,9 +2,11 @@
 
 // 1. Define route components.
 // These can be imported from other files
-//const Foo = { template: '<div>foo</div>' }
-//const Bar = { template: '<div>bar</div>' }
+const Foo = { template: '<div>foo</div>' }
+const Bar = { template: '<div>bar</div>' }
 
+
+console.log('debug');
 // 2. Define some routes
 // Each route should map to a component. The "component" can
 // either be an actual component constructor created via
