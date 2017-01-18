@@ -5,24 +5,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
-//import { AppRoutingModule } from './app-routing.module';
-
-// Imports for loading & configuring the in-memory web api
-// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService }  from './in-memory-data.service';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }         from './app.component';
+import { AccountListComponent }   from './account-list/account-list.component';
+import { AccountDetailsComponent }      from './account-details/account-details.component';
+import { LoginComponent }  from './login/login.component';
+import { StatComponent }  from './stat/stat.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule//,
-    //InMeoryWebApiModule.forRoot(InMemoryDataService),
-    //AppRoutingModule
+    HttpModule,
+    AppRoutingModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+  AccountListComponent,
+  AccountDetailsComponent,
+  LoginComponent,
+  StatComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]
