@@ -25,7 +25,7 @@ export class AccountDetailsComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-ngOnInit(): void {
+ngOnInit() {
     this.accountService.getAccount(this.route.params['id'])
     .then(function (account) {
       this.account = account;

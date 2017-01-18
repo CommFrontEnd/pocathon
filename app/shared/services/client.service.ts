@@ -9,7 +9,7 @@ import { Client } from '../domain/client';
 
 @Injectable()
 export class ClientService {
-    private clientsUrl = '/v1/clients/';  // URL to web api
+    private clientsUrl = 'https://siipocathon.apispark.net:443/v1/clients/';  // URL to web api
 
     private currentClient : Client = null;
 
@@ -39,7 +39,7 @@ export class ClientService {
                     this.setCurrentClient(res);
                     resolve(res);
                 })
-                .catch((err)) => {
+                .catch((err) => {
                     reject(err);
                 });
             })
