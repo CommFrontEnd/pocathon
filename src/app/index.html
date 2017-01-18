@@ -11,13 +11,27 @@
 </head>
 
 <body>
-    <div id="app">
-        <!-- header -->
-        <div id="header">
-            <h1>Vue JS Pocathon</h1>
-        </div>
+    <div id="app" class="container">
         <router-view></router-view>
-    </div>
+        <div class="floating-btn-group floating-btn-group--inverted">
+            <div class="btn fa fa-globe js-localization"></div>
+            </div>
+            <div class="overlay js-localization-modal" aria-hidden="true">
+                <div class="modal">
+                    <div class="btn btn-close js-close"><div class="fa fa-close"></div></div>
+                    <div style="width:50vw;max-width:100%;overflow:hidden;height:60vh;">
+                        <div id="gmap-canvas">
+                            <iframe
+                                style="height:100%;width:100%;border:0;"
+                                frameborder="0"
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBSXVSIegDwxmT3vc1AuiEUDRmunfjDP1w&q=Brooklyn+Bridge,New-York+NY&zoom=16">
+                            </iframe>
+                        </div><!-- AIzaSyCMZCsMSV5KhnOaKVGfxidaR60q6ZH6O9M-->
+                        <style>#gmap-canvas img{max-width:none!important;background:none!important;}</style>
+                    </div>
+                </div>
+            </div>
+        </div>
     <script src="build.js"></script>
 </body>
 

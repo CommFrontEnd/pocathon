@@ -10963,6 +10963,117 @@
 	'use strict';
 
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	console.debug('loaded');
 
@@ -10973,7 +11084,169 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _vm._m(0)
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('h1', [_vm._v("Login View")])])
+	  return _c('div', {
+	    staticClass: "o-panel"
+	  }, [_c('div', {
+	    staticClass: "o-panel-header"
+	  }, [_c('h1', {
+	    staticClass: "c-logo"
+	  }, [_c('a', {
+	    staticClass: "header__btn fa fa-angle-left",
+	    attrs: {
+	      "href": "/accountsList.html"
+	    }
+	  })]), _vm._v(" "), _c('div', {
+	    staticClass: "c-user menu-container js-user-menu"
+	  }, [_c('div', {
+	    staticClass: "fa fa-user-circle-o c-user__ico"
+	  }), _vm._v("\n        Hervé Lepinard\n        "), _c('div', {
+	    staticClass: "fa fa-angle-down"
+	  }), _vm._v(" "), _c('ul', {
+	    staticClass: "menu"
+	  }, [_c('li', {
+	    staticClass: "menu__item"
+	  }, [_c('a', {
+	    attrs: {
+	      "href": "#"
+	    }
+	  }, [_c('span', {
+	    staticClass: "fa fa-gear"
+	  }), _vm._v(" Preferences")])]), _c('li', {
+	    staticClass: "menu__item"
+	  }, [_c('a', {
+	    attrs: {
+	      "href": "/login.html"
+	    }
+	  }, [_c('span', {
+	    staticClass: "fa fa-unlock-alt"
+	  }), _vm._v(" Logout")])])])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-options"
+	  }, [_c('a', {
+	    staticClass: "header__btn fa fa-line-chart",
+	    attrs: {
+	      "href": "/accountStatistics.html"
+	    }
+	  })])]), _vm._v(" "), _c('div', {
+	    staticClass: "o-panel-content"
+	  }, [_c('div', {
+	    staticClass: "c-list-item"
+	  }, [_c('div', {
+	    staticClass: "c-list-item__title"
+	  }, [_c('div', {
+	    staticClass: "u-fullWidth"
+	  }, [_vm._v("Compte courant\n            "), _c('div', {
+	    staticClass: "c-list-item__subtitle c-field c-field--left"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value"
+	  }, [_vm._v("923456789012345678")])]), _vm._v(" "), _c('div', {
+	    staticClass: "chart c-list-item__content"
+	  }, [_c('div', {
+	    staticClass: "js-d3-history"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "c-heading c-field"
+	  }, [_c('div', {
+	    staticClass: "field__label"
+	  }, [_vm._v("Solde")]), _vm._v(" "), _c('div', {
+	    staticClass: "u-blank c-field__value is-valid"
+	  }, [_vm._v("150.000,00 €")])])])])])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-briefcase"
+	  }), _vm._v("Virement SII\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value"
+	  }, [_vm._v("+2.000.000,44 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-money"
+	  }), _vm._v("Impôts sur le revenu\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-10,44 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-car"
+	  }), _vm._v("Crédit voiture\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-186,44 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-shopping-cart"
+	  }), _vm._v("Courses GeekWorkshop\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-42 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-user-md"
+	  }), _vm._v("Médecin\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-42 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-building"
+	  }), _vm._v("Taxe d'habitation\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-842 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-shopping-cart"
+	  }), _vm._v("Courses\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-42 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-shopping-cart"
+	  }), _vm._v("Courses\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-42 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-shopping-cart"
+	  }), _vm._v("Courses\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-42 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-shopping-cart"
+	  }), _vm._v("Courses\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-42 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-shopping-cart"
+	  }), _vm._v("Courses\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-42 €")])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item c-field c-field--default"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_c('div', {
+	    staticClass: "c-ico fa fa-shopping-cart"
+	  }), _vm._v("Courses\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value is-invalid"
+	  }, [_vm._v("-42 €")])])])])
 	}]}
 	module.exports.render._withStripped = true
 	if (false) {
