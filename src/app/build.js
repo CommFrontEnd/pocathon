@@ -11225,8 +11225,11 @@
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
+	/* script */
+	__vue_exports__ = __webpack_require__(12)
+
 	/* template */
-	var __vue_template__ = __webpack_require__(12)
+	var __vue_template__ = __webpack_require__(16)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -11263,9 +11266,496 @@
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _Bandeau = __webpack_require__(13);
+
+	var _Bandeau2 = _interopRequireDefault(_Bandeau);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	    name: 'account-statistic',
+	    components: {
+	        Bandeau: _Bandeau2.default
+	    },
+	    data: function data() {
+	        var data = {
+	            account: {
+	                number: '923456789012345678'
+	            }
+
+	        };
+	        return data;
+	    }
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* script */
+	__vue_exports__ = __webpack_require__(14)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(15)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "C:\\Users\\wverlut\\pocathon\\src\\app\\components\\Bandeau.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-74a5c656", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-74a5c656", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] Bandeau.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	exports.default = {
+	    name: 'bandeau'
+	};
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c("div")
-	},staticRenderFns: []}
+	  return _c('div', {
+	    staticClass: "o-panel-header"
+	  }, [_c('h1', {
+	    staticClass: "c-logo"
+	  }, [_c('svg', {
+	    attrs: {
+	      "height": "2em",
+	      "viewBox": "0 0 20 20",
+	      "preserveAspectRatio": "xMinYMid"
+	    }
+	  }, [_c('use', {
+	    attrs: {
+	      "xlink:href": "#logo-min"
+	    }
+	  })])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+	    staticClass: "c-options"
+	  })])
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "c-user menu-container js-user-menu"
+	  }, [_c('div', {
+	    staticClass: "fa fa-user-circle-o c-user__ico"
+	  }), _vm._v("\n        Hervé Lepinard\n        "), _c('div', {
+	    staticClass: "fa fa-angle-down"
+	  }), _vm._v(" "), _c('ul', {
+	    staticClass: "menu"
+	  }, [_c('li', {
+	    staticClass: "menu__item"
+	  }, [_c('a', {
+	    attrs: {
+	      "href": "#"
+	    }
+	  }, [_c('span', {
+	    staticClass: "fa fa-gear"
+	  }), _vm._v(" Preferences")])]), _c('li', {
+	    staticClass: "menu__item"
+	  }, [_c('a', {
+	    attrs: {
+	      "href": "/login.html"
+	    }
+	  }, [_c('span', {
+	    staticClass: "fa fa-unlock-alt"
+	  }), _vm._v(" Logout")])])])])
+	}]}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-74a5c656", module.exports)
+	  }
+	}
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "o-panel"
+	  }, [_c('bandeau'), _vm._v(" "), _c('div', {
+	    staticClass: "o-panel-content"
+	  }, [_c('div', {
+	    staticClass: "c-list-item"
+	  }, [_c('div', {
+	    staticClass: "c-list-item__title"
+	  }, [_c('div', {
+	    staticClass: "u-fullWidth"
+	  }, [_vm._v("Compte courant\n                    "), _c('div', {
+	    staticClass: "c-list-item__subtitle c-field c-field--left"
+	  }, [_c('div', {
+	    staticClass: "c-field__label"
+	  }, [_vm._v("N° de compte:")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-field__value"
+	  }, [_vm._v(_vm._s(_vm.account.number))])])])]), _vm._v(" "), _vm._m(0)])])], 1)
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "c-list-item__content"
+	  }, [_c('div', {
+	    staticClass: "c-list-item"
+	  }, [_c('div', {
+	    staticClass: "c-list-item__title"
+	  }, [_vm._v("Répartition des dépenses par catégorie")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item__content"
+	  }, [_c('div', {
+	    staticClass: "chart js-d3-categories-repartition"
+	  })]), _vm._v(" "), _c('div', {
+	    staticClass: "btn-group"
+	  }, [_c('div', {
+	    staticClass: "u-bg-1 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-briefcase"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Boulot")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-2 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-money"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Impôts")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-3 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-shopping-cart"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Dépenses diverses")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-4 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-building"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Logement")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-5 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-user-md"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Santé")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-6 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-car"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Voiture")])])])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item"
+	  }, [_c('div', {
+	    staticClass: "c-list-item__title"
+	  }, [_vm._v("Répartition des gains par catégorie")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item__content"
+	  }, [_c('div', {
+	    staticClass: "chart js-d3-categories-repartition-gains"
+	  })]), _vm._v(" "), _c('div', {
+	    staticClass: "btn-group"
+	  }, [_c('div', {
+	    staticClass: "u-bg-1 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-briefcase"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Boulot")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-2 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-money"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Impôts")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-3 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-shopping-cart"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Dépenses diverses")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-4 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-building"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Logement")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-5 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-user-md"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Santé")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-6 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-car"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Voiture")])])])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item"
+	  }, [_c('div', {
+	    staticClass: "c-list-item__title"
+	  }, [_vm._v("Historique des dépenses par catégorie")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item__content"
+	  }, [_c('div', {
+	    staticClass: "chart js-d3-history-by-category"
+	  })]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item__footer"
+	  }, [_c('div', {
+	    staticClass: "btn-group"
+	  }, [_c('div', {
+	    staticClass: "u-bg-1 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-briefcase"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Boulot")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-2 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-money"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Impôts")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-3 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-shopping-cart"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Dépenses diverses")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-4 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-building"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Logement")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-5 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-user-md"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Santé")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-6 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "fa fa-car"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Voiture")])])])])]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item"
+	  }, [_c('div', {
+	    staticClass: "c-list-item__title"
+	  }, [_vm._v("Historique comparé avec le mois précédent")]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item__content"
+	  }, [_c('div', {
+	    staticClass: "chart js-d3-history-month"
+	  })]), _vm._v(" "), _c('div', {
+	    staticClass: "c-list-item__footer"
+	  }, [_c('div', {
+	    staticClass: "btn-group"
+	  }, [_c('div', {
+	    staticClass: "u-bg-1 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Mois Courant")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-2 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Mois Précédent")])]), _vm._v(" "), _c('div', {
+	    staticClass: "u-bg-3 btn btn--selectable is-selected js-btn--selectable"
+	  }, [_c('div', {
+	    staticClass: "btn__label"
+	  }, [_vm._v("Moyenne Annuell")])])])])])])
+	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
