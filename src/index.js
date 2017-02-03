@@ -10,9 +10,14 @@ import Accounts from './components/accounts/Accounts';
 import Account from './components/account/Account';
 
 // Rooter
-import { Router, Route, browserHistory } from 'react-router';
+import { createHistory } from 'history';
+import { Router, Route, useRouterHistory } from 'react-router';
 
 import './main.css';
+
+const browserHistory = useRouterHistory(createHistory)({
+    basename: '/poc/react'
+});
 
 const Root = () => {
 	return (
