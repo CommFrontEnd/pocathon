@@ -32,9 +32,9 @@ export class AccountService {
     getAccounts(client: Client): Promise<Account[]> {
         return new Promise((resolve, reject) => {
             let accounts: Account[] = [];
-            let promises: Promise[] = [];
+            let promises: Promise<Account[]>[] = [];
             for (let i in client.accountsList) {
-                let p : Promise = this.getAccount(client.accountsList[i]);
+                let p : Promise<Account> = this.getAccount(client.accountsList[i]);
                 promises.push(p);
                 p.then((res) => {
                     accounts.push(res)

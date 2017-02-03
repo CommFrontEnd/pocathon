@@ -32,9 +32,9 @@ export class OperationService {
     getOperations(account: Account): Promise<Operation[]> {
          return new Promise((resolve, reject) => {
             let operations: Operation[] = [];
-            let promises: Promise[] = [];
+            let promises: Promise<Operation[]>[] = [];
             for (let i in account.operationsList) {
-                let p : Promise = this.getOperation(account.operationsList[i]);
+                let p : Promise<Operation> = this.getOperation(account.operationsList[i]);
                 promises.push(p);
                 p.then((res) => {
                     operations.push(res)
