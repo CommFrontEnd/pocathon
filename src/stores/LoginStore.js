@@ -35,4 +35,4 @@ class LoginStore extends BaseStore {
 
 }
 
-export default new LoginStore;
+export default new LoginStore();

@@ -23,7 +23,7 @@ class Chartist extends React.Component {
   updateChart(config) {
     let Chartist = require('chartist');
 
-    let { type, data } = config;
+    let { data } = config;
     let options = config.options || {};
     let responsiveOptions = config.responsiveOptions || [];
     let event;

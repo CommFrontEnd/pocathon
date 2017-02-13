@@ -22,10 +22,11 @@
   "bugs": {
     "url": "https://github.com/CommFrontEnd/pocathon/issues"
   },
-  "homepage":"http://webapp7.nantes.sii.fr/poc/react",
+  "homepage": "http://webapp7.nantes.sii.fr/poc/react",
   "dependencies": {
     "chartist": "^0.10.1",
     "flux": "^3.1.2",
+    "history": "^4.5.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-fa": "^4.1.2",
