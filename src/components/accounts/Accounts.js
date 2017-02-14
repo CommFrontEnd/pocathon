@@ -11,7 +11,7 @@ class Accounts extends React.Component {
         this.state = this.getAccountsState();
         this._onChange = this._onChange.bind(this);
 
-        console.log(LoginStore.user);
+        console.log('sessionStorage',sessionStorage.getItem('user'));
     }
 
     componentDidMount() {

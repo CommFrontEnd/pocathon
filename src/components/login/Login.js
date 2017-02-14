@@ -1,20 +1,18 @@
 import React from 'react';
-import  { Link } from 'react-router';
 
 import LoginService from '../../services/LoginService';
-import LoginStore from '../../stores/LoginStore';
+//import LoginStore from '../../stores/LoginStore';
 
 class Login extends React.Component {
-
-    state = {
-        user : {}
-    };
 
     goToApp = event => {
         event.preventDefault();
         const user = LoginService.findUser();
-        
-        LoginStore.user(user);
+
+        // On créer un sessionStorage pour le user
+        sessionStorage.setItem('user', user.username);
+        // On met en place la redirection à partir du context router déclaré dans le contextType plus bas
+        this.context.router.push('/accounts'); // On met la bonne URL en place sur la page des comptes
     }
 
     render() {
@@ -48,8 +46,7 @@ class Login extends React.Component {
                             </div>
                         </div>
 
-                        <Link className="btn" to={`/accounts`} >Log me In!</Link>
-
+                        <button className="btn" type="submit">Log me In!</button>
                     </form>
                     <div className="form__group">
                         <a href="#forgottenPassword" className="form__label">Mot de passe oublié ?</a>
@@ -66,5 +63,9 @@ class Login extends React.Component {
     }
 
 }
+
+Login.contextTypes = {
+    router: React.PropTypes.object
+};
 
 export default Login;
