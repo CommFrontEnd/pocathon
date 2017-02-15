@@ -1,6 +1,5 @@
 import React from 'react';
 import AccountStore from '../../stores/AccountStore';
-import LoginStore from '../../stores/LoginStore';
 import AccountService from '../../services/AccountService';
 import Account from './Account'
 
@@ -10,8 +9,6 @@ class Accounts extends React.Component {
         super(props);
         this.state = this.getAccountsState();
         this._onChange = this._onChange.bind(this);
-
-        console.log('sessionStorage',sessionStorage.getItem('user'));
     }
 
     componentDidMount() {
@@ -42,10 +39,12 @@ class Accounts extends React.Component {
     render() {
         const accounts = Object
             .keys(this.state.accounts)
-            .map(key => <Account key={key} account={this.state.accounts[key]}/>);
+            .map(key => <Account key={key} account={this.state.accounts[key]} accountClick={this.props.accountClick} accountIdSelected={this.props.accountIdSelected}/>);
         return(
-            <div className="o-panel-content">
-                {accounts}
+            <div>
+                <div className="o-panel-content">
+                    {accounts}
+                </div>
             </div>
         )
     }

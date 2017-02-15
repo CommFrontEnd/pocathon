@@ -1,8 +1,13 @@
 import React from 'react';
 
-const NotFound = () => {
-	return (
-		<h2 className="notFound">Y'a rien ici!</h2>
-	)
+class NotFound extends React.Component {
+
+	render() {
+		return (
+			<div className="card z-axis--3">
+				<h2 className="notFound" style="color:white;">Y'a rien ici!</h2>
+			</div>
+		)
+	}
 }
 export default NotFound;

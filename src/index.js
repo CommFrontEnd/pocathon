@@ -3,22 +3,23 @@ import React from 'react';
 import { render } from 'react-dom';
 
 // Components
-import NotFound from './components/error/NotFound';
 import Login from './components/login/Login';
 import App from './components/App';
-import Accounts from './components/accounts/Accounts';
+import AccountsPage from './components/accounts/AccountsPage';
 import Account from './components/account/Account';
+import VirementCompteADebiter from './components/virement/VirementCompteADebiter';
+import VirementCompteACrediter from './components/virement/VirementCompteACrediter';
 
 // Rooter
-import { createHistory } from 'history';
-import { Router, Route, useRouterHistory } from 'react-router';
-//import { Router, Route, browserHistory } from 'react-router'
+//import { createHistory } from 'history';
+//import { Router, Route, useRouterHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router'
 
 import './main.css';
 
-const browserHistory = useRouterHistory(createHistory)({
+/*const browserHistory = useRouterHistory(createHistory)({
     basename: '/poc/react'
-});
+});*/
 
 
 function requireAuth(nextState, replace) {
@@ -35,10 +36,12 @@ const Root = () => {
 		<Router history={browserHistory}>
 			<Route path="/login" component={Login} />
 			<Route path="/" component={App} onEnter={requireAuth}>
-				<Route path="accounts" component={Accounts} />
+				<Route path="accounts" component={AccountsPage} />
 				<Route path="accounts/:accountId" component={Account} />
+				<Route path="virement/debiter" component={VirementCompteADebiter} />
+				<Route path="virement/crediter/:accountIdADebiter" component={VirementCompteACrediter} />
 			</Route>
-			<Route path="*" component={NotFound} />
+			<Route path="*" component={Login} />
 		</Router>
 	)
 }
