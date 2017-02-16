@@ -3,16 +3,17 @@
  */
 import React from 'react';
 
-class Virement extends React.Component {
+class VirementBilan extends React.Component {
 
-    constructor(props) {
+    /*constructor(props) {
         super(props);
     }
+    */
     render() {
         return (
             <div>
                 <div className="o-panel-content">
-                    Virement test
+                    Virement bilan
                 </div>
             </div>
         )
@@ -20,4 +21,4 @@ class Virement extends React.Component {
 
 }
 
-export default Virement;
+export default VirementBilan;

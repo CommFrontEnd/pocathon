@@ -39,7 +39,16 @@ class Accounts extends React.Component {
     render() {
         const accounts = Object
             .keys(this.state.accounts)
-            .map(key => <Account key={key} account={this.state.accounts[key]} accountClick={this.props.accountClick} accountIdSelected={this.props.accountIdSelected}/>);
+            .map((key) => {
+
+                if (this.state.accounts[key].id === this.props.accountNotInList) {
+                    return null;
+                }
+                else {
+                    return <Account key={key} account={this.state.accounts[key]} accountClick={this.props.accountClick} accountIdSelected={this.props.accountIdSelected}/>;
+                }
+
+            });
         return(
             <div>
                 <div className="o-panel-content">

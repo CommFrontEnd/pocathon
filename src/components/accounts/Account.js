@@ -20,6 +20,9 @@ class Account extends React.Component {
 
     render() {
         const account = this.props.account;
+        if (!account) {
+            return(<div></div>)
+        }
         const operations = Object
             .keys(account.operationsList)
             .map(key => <AccountOperation key={key} id={account.operationsList[key]}/>);
