@@ -13,10 +13,13 @@ class VirementCompteACrediter extends React.Component {
         super(props);
         this.state = {
             accountIdACrediter : '',
-            accountADebiter: this.getAccountState(this.props.params.accountIdADebiter)
+            accountADebiter: this.getAccountState(this.props.params.accountIdADebiter),
+            montantCrediter: '',
+            libelleMontant: ''
         }
         this.handleAccountClick = this.handleAccountClick.bind(this);
         this.handleAccountADebiterClick = this.handleAccountADebiterClick.bind(this);
+        this.handleInputMontantChange = this.handleInputMontantChange.bind(this);
         this._onChange = this._onChange.bind(this);
     }
 
@@ -58,21 +61,32 @@ class VirementCompteACrediter extends React.Component {
         // On construit l'objet params pour le router
         var params = ({
             accountIdADebiter: this.props.params.accountIdADebiter,
-            accountIdACrediter: this.state.accountIdACrediter
+            accountIdACrediter: this.state.accountIdACrediter,
+            montantCrediter: this.state.montantCrediter,
+            libelleMontant: this.state.libelleMontant
         });
-        // On redirige vers la page
-        this.state.accountIdACrediter ?
-            this.context.router.push("/virement/bilan/"+params.accountIdADebiter+"/"+params.accountIdACrediter)
+        // TODO On sauvegarde en base de données
+        // On redirige vers la page des comptes
+        this.state.accountIdACrediter && this.state.montantCrediter ?
+            this.context.router.push("/accounts")
             :
-            console.log("Il faut sélectionner un compte")
+            console.log("Il faut sélectionner un compte et un montant")
         ;
     }
 
+    handleInputMontantChange(event) {
+        this.setState({montantCrediter: event.target.value});
+    }
+
+    handleInputLibelleMontantChange (event) {
+        this.setState({libelleMontant: event.target.value});
+    }
+
     render() {
-        var button = (this.state.accountIdACrediter ?
-                <button className="btn" onClick={this.handleClick.bind(this)} >Bilan du virement</button>
+        var button = (this.state.accountIdACrediter && this.state.montantCrediter ?
+                <button className="btn" onClick={this.handleClick.bind(this)} >Confirmer le virement</button>
                 :
-                <button className="btn" onClick={this.handleClick.bind(this)} disabled>Bilan du virement</button>
+                <button className="btn" onClick={this.handleClick.bind(this)} disabled>Confirmer le virement</button>
         );
         var accountIdADebiterSelected = this.state.accountADebiter ? this.state.accountADebiter.id : null;
         return (
@@ -85,6 +99,13 @@ class VirementCompteACrediter extends React.Component {
                     <h2>Choisir un compte à créditer</h2>
                     <Accounts accountClick={this.handleAccountClick} accountIdSelected={this.state.accountIdACrediter} accountNotInList={this.props.params.accountIdADebiter}/>
                 </div>
+                <div>
+                    <h2>Montant à créditer</h2>
+                    <input type="text" onChange={this.handleInputMontantChange}/>
+                    <label>Libellé du virement</label>
+                    <input type="text" onChange={this.handleInputLibelleMontantChange}/>
+                </div>
+
                 {button}
             </div>
         )

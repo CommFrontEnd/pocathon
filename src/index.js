@@ -9,7 +9,6 @@ import AccountsPage from './components/accounts/AccountsPage';
 import Account from './components/account/Account';
 import VirementCompteADebiter from './components/virement/VirementCompteADebiter';
 import VirementCompteACrediter from './components/virement/VirementCompteACrediter';
-import VirementBilan from './components/virement/VirementBilan';
 
 // Rooter
 //import { createHistory } from 'history';
@@ -41,7 +40,6 @@ const Root = () => {
 				<Route path="accounts/:accountId" component={Account} />
 				<Route path="virement/debiter" component={VirementCompteADebiter} />
 				<Route path="virement/crediter/:accountIdADebiter" component={VirementCompteACrediter} />
-				<Route path="virement/bilan/:accountIdADebiter/:accountIdACrediter" component={VirementBilan} />
 			</Route>
 			<Route path="*" component={Login} />
 		</Router>
