@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from 'react-fa';
+import { Link } from 'react-router';
 
 class Menu extends React.Component {
 
@@ -8,7 +9,7 @@ class Menu extends React.Component {
         this.state = {isOpened: false};
 
         this.open = this.open.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        this.handleLogoutClick = this.handleLogoutClick.bind(this);
     }
 
     open() {
@@ -17,7 +18,7 @@ class Menu extends React.Component {
         }))
     }
 
-    handleClick(event) {
+    handleLogoutClick(event) {
         event.preventDefault();
 
         // On créer un sessionStorage pour le user
@@ -34,8 +35,9 @@ class Menu extends React.Component {
                 Hervé Lepinard&nbsp;
                 <Icon name="angle-down" />
                 <ul className="menu">
-                    <li className="menu__item"><a href="#"><Icon name="gear" /> Preferences</a></li>
-                    <li className="menu__item"><a href="#" onClick={this.handleClick}><Icon name="unlock-alt" /> Logout</a></li>
+                    <li className="menu__item"><Link to="/accounts"><Icon name="gear" /> Vos Comptes</Link></li>
+                    <li className="menu__item"><Link to="/virement/debiter"><Icon name="gear" /> Faire un virement</Link></li>
+                    <li className="menu__item"><a href="#" onClick={this.handleLogoutClick}><Icon name="unlock-alt" /> Logout</a></li>
                 </ul>
             </div>
         )

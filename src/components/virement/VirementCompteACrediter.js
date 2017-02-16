@@ -58,13 +58,7 @@ class VirementCompteACrediter extends React.Component {
     }
 
     handleClick(event) {
-        // On construit l'objet params pour le router
-        var params = ({
-            accountIdADebiter: this.props.params.accountIdADebiter,
-            accountIdACrediter: this.state.accountIdACrediter,
-            montantCrediter: this.state.montantCrediter,
-            libelleMontant: this.state.libelleMontant
-        });
+
         // TODO On sauvegarde en base de données
         // On redirige vers la page des comptes
         this.state.accountIdACrediter && this.state.montantCrediter ?
