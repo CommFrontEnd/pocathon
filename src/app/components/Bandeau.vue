@@ -10,8 +10,8 @@
             {{user.name}}
             <div class="fa fa-angle-down"></div>
             <ul class="menu">
-                <li class="menu__item" v-on:click="switchLanguage"><span class="fa fa-gear"></span>Go English
-                <li class="menu__item"><router-link to="/login"><span class="fa fa-unlock-alt"></span>{{disconnect}}</router-link></a>
+                <li class="menu__item" v-on:click="switchLanguage"><span class="fa fa-gear"></span>Go English</li>
+                <li class="menu__item"><router-link to="/login"><span class="fa fa-unlock-alt"></span>{{disconnect}}</router-link></li>
             </ul>
         </div>
         <div class="c-options"></div>

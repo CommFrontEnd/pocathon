@@ -1,30 +1,36 @@
 <template>
- <div class="container">
     <div class="row">
         <div class="col-md-offset-5 col-md-3">
-            <div 
-            <div class="form-login">
-            <h4>{{ welcome }}:</h4>
-            <p class="text-danger"v-if="error">{{message}}</p>
-            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" v-model.trim="userName"/>
-            </br>
-            </br>
-            <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" v-model.trim="password"/>
-            </br>
-            <div class="wrapper">
-            <span class="group-btn">     
-                <span class="btn btn-primary btn-md" v-on:click="formIsValid">{{ login }} <i class="fa fa-sign-in"></i></span>
-            </span>
+            <div >
+                <div class="form-login">
+                    <h4>{{ welcome }}:</h4>
+                    <p class="text-danger"v-if="error">{{message}}</p>
+                    <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" v-model.trim="userName"/>
+                    </br>
+                    </br>
+                    <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" v-model.trim="password"/>
+                    </br>
+                    <div class="wrapper">
+                        <span class="group-btn">
+                            <span class="btn btn-primary btn-md" v-on:click="formIsValid">{{ login }} <i class="fa fa-sign-in"></i></span>
+                        </span>
+                    </div>
+                </div>
+
             </div>
-            </div>
-        
         </div>
+        <cartographie></cartographie>
     </div>
-</div>
-    </template>
+
+</template>
  <script>
+ import Cartographie from './Cartographie.vue';
   export default {
     name: 'formLogin',
+    props: [],
+    components: {
+        Cartographie
+    },
     methods: {
       formIsValid: function() {
         var FakeApiData = {login:'test1', pwd:'test1'};

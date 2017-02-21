@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import AppView from './components/AppView.vue';
 import LoginView from './components/LoginView.vue';
 import AccountsView from './components/AccountsView.vue';
 import AccountDetailsView from './components/AccountDetailsView.vue';
@@ -35,10 +36,15 @@ Vue.locale('en', {
 // routing
 
 const routes = [
+
 {path: '/login', component: LoginView },
-{path: '/accounts', component: AccountsView },
-{path: '/accounts/:id', component: AccountDetailsView },
-{path: '/accounts/:id/stats', component: AccountStatisticsView },
+{path: '/', component: AppView,
+    children: [
+        {path: 'accounts', component: AccountsView},
+        {path: 'accounts/:id', component: AccountDetailsView }
+    ]
+},
+{path: '*', redirect: '/login' }
 ];
 var router = new Router({routes: routes})
 
