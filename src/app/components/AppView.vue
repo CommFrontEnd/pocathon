@@ -9,7 +9,6 @@
 <script>
     import Bandeau from './Bandeau.vue';
     import Cartographie from './Cartographie.vue';
-    import axios from 'axios';
     export default {
         name: 'appView',
         props: [],

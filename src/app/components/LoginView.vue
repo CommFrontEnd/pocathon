@@ -1,27 +1,43 @@
 <template>
-    <div class="row">
-        <div class="col-md-offset-5 col-md-3">
-            <div >
-                <div class="form-login">
-                    <h4>{{ welcome }}:</h4>
-                    <p class="text-danger"v-if="error">{{message}}</p>
-                    <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" v-model.trim="userName"/>
-                    </br>
-                    </br>
-                    <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" v-model.trim="password"/>
-                    </br>
-                    <div class="wrapper">
-                        <span class="group-btn">
-                            <span class="btn btn-primary btn-md" v-on:click="formIsValid">{{ login }} <i class="fa fa-sign-in"></i></span>
-                        </span>
+    <div class="card z-axis--3">
+        <div class="card__header">
+            <h1>
+                <svg class="c-logo" height="4em" viewBox="0 0 20 20" preserveAspectRatio="xMinYMid">
+                    <use xlink:href="#logo"></use>
+                </svg>
+            </h1>
+        </div>
+        <div class="card__content">
+            <form class="form">
+                <div class="form__group">
+                    <div class="form__label">
+                        <label>Username or Email</label>
+                    </div>
+                    <div class="form__field" data-error-msg="Username is required">
+                        <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" v-model.trim="userName"/>
                     </div>
                 </div>
-
+                <div class="form__group">
+                    <label class="form__label">Password</label>
+                    <div class="form__field" data-error-msg="Password is required">
+                        <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" v-model.trim="password"/>
+                    </div>
+                </div>
+            </form>
+            <div class="form__group"><a class="form__label" href="#forgottenPassword">Mot de passe oublié ?</a>
+                <div class="form__group" id="forgottenPassword">
+                    <div class="form__label">Email</div>
+                    <div class="form__field">
+                        <input type="text" placeholder="username@login.org"/>
+                    </div><a class="btn" href="#">Reset my password</a>
+                </div>
             </div>
+        </div>
+        <div class="card__footer">
+            <span class="btn btn-primary btn-md" v-on:click="formIsValid">{{ login }} <i class="fa fa-sign-in"></i></span>
         </div>
         <cartographie></cartographie>
     </div>
-
 </template>
  <script>
  import Cartographie from './Cartographie.vue';
@@ -35,13 +51,14 @@
       formIsValid: function() {
         var FakeApiData = {login:'test1', pwd:'test1'};
 
-        if (this.userName == FakeApiData.login && this.password == FakeApiData.pwd) {
-          this.$router.push('/accounts');
-        }
+        //if (this.userName == FakeApiData.login && this.password == FakeApiData.pwd) {
+        sessionStorage.setItem('user','hervelepinard');
+        this.$router.push('/accounts');
+        /*}
         else {
           this.error= true;
           this.message= 'Bad login or password, try again';
-        }
+        }*/
       }
     },
     data () {

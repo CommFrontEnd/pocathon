@@ -37,8 +37,11 @@ Vue.locale('en', {
 
 const routes = [
 
-{path: '/login', component: LoginView },
-{path: '/', component: AppView,
+{path: '/login', name: 'login', component: LoginView },
+{path: '/', component: AppView, beforeEnter: (to, from, next) => {
+        // On vérifie que le user est bien connecté, si oui on passe à la page suivante, sinon sur le formulaire de login
+        sessionStorage.getItem('user') ? next(): router.push('login');
+    },
     children: [
         {path: 'accounts', component: AccountsView},
         {path: 'accounts/:id', component: AccountDetailsView }

@@ -127,11 +127,9 @@ html,body{
   padding:0.5em 0;
 }
 .form__label{
-  flex: 1 0 33%;
   font-size:0.75em;
 }
 .form__field{
-  flex:1 0 66%;
   margin-top:0;
   position:relative;
 }
