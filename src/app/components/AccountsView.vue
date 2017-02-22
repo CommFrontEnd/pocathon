@@ -1,6 +1,6 @@
 <template>
     <div>
-        <accounts></accounts>
+        <accounts :clickOnRow=redirectToDetailsAccount></accounts>
     </div>
 </template>
 
@@ -12,5 +12,15 @@ export default {
     components: {
         Accounts
     },
+    methods : {
+        redirectToDetailsAccount: function(accountId) {
+            if(this.$router.push('/accounts/' + accountId)){
+
+            }
+            else {
+
+            }
+        },
+    }
 };
 </script>
