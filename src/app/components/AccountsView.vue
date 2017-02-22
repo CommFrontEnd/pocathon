@@ -1,6 +1,7 @@
 <template>
     <div>
         <accounts :clickOnRow=redirectToDetailsAccount></accounts>
+        <router-link class="btn btn-primary btn-md" :to="{ name: 'virement'}">Faire un virement</router-link>
     </div>
 </template>
 
@@ -14,12 +15,7 @@ export default {
     },
     methods : {
         redirectToDetailsAccount: function(accountId) {
-            if(this.$router.push('/accounts/' + accountId)){
-
-            }
-            else {
-
-            }
+            this.$router.push('/accounts/' + accountId);
         },
     }
 };

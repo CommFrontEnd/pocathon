@@ -5,6 +5,7 @@ import LoginView from './components/LoginView.vue';
 import AccountsView from './components/AccountsView.vue';
 import AccountDetailsView from './components/AccountDetailsView.vue';
 import AccountStatisticsView from './components/AccountStatisticsView.vue';
+import VirementView from './components/VirementView.vue';
 import axios from 'axios';
 var VueI18n = require('vue-i18n')
 // install router
@@ -44,7 +45,8 @@ const routes = [
     },
     children: [
         {path: 'accounts', component: AccountsView},
-        {path: 'accounts/:id', component: AccountDetailsView }
+        {path: 'accounts/:id', component: AccountDetailsView },
+        {path: 'virement', name: 'virement', component: VirementView }
     ]
 },
 {path: '*', redirect: '/login' }
