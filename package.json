@@ -7,7 +7,7 @@
     "mockups": "gulp mockups",
     "server": "gulp server",
     "build": "webpack",
-    "webpack": "webpack-dev-server --inline --hot"
+    "webpack": "webpack-dev-server --inline --hot --content-base"
   },
   "repository": {
     "type": "git",
