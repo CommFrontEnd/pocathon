@@ -15,23 +15,21 @@
                 <div class="c-field__label"></div>
                 <div class="c-field__value">{{ account.balance }} euros<span class="down fa fa-angle-down"></span></div>
             </div>
-            <div class="c-list-item__detail">
-                <div class="c-field" v-for="operation in operations">
-                    <div class="c-field__label">{{ operation.label }}</div>
-                    <div class="c-field__value is-valid">{{ operation.montant }} €</div>
-                </div>
+            <div class="c-list-item__detail" v-for="operation in operations">
+                <accountOperation :operation=operation></accountOperation>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import AccountOperation from './AccountOperation.vue';
     import axios from 'axios';
     export default {
         name: 'account',
         props: ['account', 'clickOnRow'],
         components: {
-
+            AccountOperation
         },
         data() {
             const data = {
