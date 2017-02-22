@@ -24,19 +24,18 @@
             <div class="c-field__label">
                 <div class="c-ico fa fa-briefcase"></div>{{operation.label}}
             </div>
-            <div class="c-field__value">{{operation.amount}} €</div>
+            <div class="c-field__value">{{operation.montant}} €</div>
         </div>
     </div>
 </template>
 
 <script>
-import Bandeau from './Bandeau.vue';
 import axios from 'axios';
 export default {
   name: 'accounts-details',
   props: [],
   components: {
-     Bandeau
+
   },
   data() {
     const data = {
@@ -52,13 +51,27 @@ export default {
   methods: {
       fetchData: function(){
           var vm = this;
-        axios.get('accounts/'+ "7d0f5db0-c693-11e6-81ea-fdbe71bceebb")
+          console.log(this.$router.currentRoute.params.id);
+        axios.get('accounts/'+ this.$router.currentRoute.params.id)
         .then(function(response) {
             var data = response.data;
             vm.accountNumber = data.accountNumber;
             vm.accountSolde = data.balance;
-            vm.operations = data.operationsList;
+            // On appelle la liste des opérations du compte
+            data.operationsList.forEach(function (operation) {
+                console.log('operation', operation);
+                vm.fetchOperation('operations/'+operation)
+                        .then(function(response) {
+                            vm.operations.push(response.data);
+                        });
+            })
+
+
+
         });
+      },
+      fetchOperation: function(url) {
+          return axios.get(url);
       }
   }
 };
