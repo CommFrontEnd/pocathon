@@ -41,7 +41,7 @@ export default{
         },
         deconnexion: function () {
             sessionStorage.removeItem('user');
-            this.$router.push('login');
+            this.$router.push({name: 'login'});
         }
     }
 }

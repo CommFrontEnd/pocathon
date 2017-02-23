@@ -1,7 +1,7 @@
 <template>
     <div class="o-panel-content">
-        <div class="c-list-item" v-for="account in accounts">
-            <account :account=account :clickOnRow=clickOnRow></account>
+        <div v-for="account in accounts">
+            <account :account=account :clickOnRow=clickOnRow :accountSelected=accountSelected v-if="account.id != accountNotInList"></account>
         </div>
     </div>
 </template>
@@ -11,7 +11,7 @@
     import axios from 'axios';
     export default {
         name: 'accounts',
-        props: ['clickOnRow'],
+        props: ['clickOnRow', 'accountSelected', 'accountNotInList'],
         components: {
             Account
         },

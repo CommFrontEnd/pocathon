@@ -1,7 +1,7 @@
 <template>
     <div>
         <accounts :clickOnRow=redirectToDetailsAccount></accounts>
-        <router-link class="btn btn-primary btn-md" :to="{ name: 'virement'}">Faire un virement</router-link>
+        <router-link class="btn btn-primary btn-md" :to="{ name: 'virementADebiter'}">Faire un virement</router-link>
     </div>
 </template>
 

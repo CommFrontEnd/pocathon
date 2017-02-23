@@ -4,8 +4,9 @@ import AppView from './components/AppView.vue';
 import LoginView from './components/LoginView.vue';
 import AccountsView from './components/AccountsView.vue';
 import AccountDetailsView from './components/AccountDetailsView.vue';
-import AccountStatisticsView from './components/AccountStatisticsView.vue';
-import VirementView from './components/VirementView.vue';
+import VirementCompteADebiterView from './components/VirementCompteADebiterView.vue';
+import VirementCompteACrediterView from './components/VirementCompteACrediterView.vue';
+
 import axios from 'axios';
 var VueI18n = require('vue-i18n')
 // install router
@@ -44,9 +45,10 @@ const routes = [
         sessionStorage.getItem('user') ? next(): router.push('login');
     },
     children: [
-        {path: 'accounts', component: AccountsView},
+        {path: 'accounts', name: 'accounts', component: AccountsView},
         {path: 'accounts/:id', component: AccountDetailsView },
-        {path: 'virement', name: 'virement', component: VirementView }
+        {path: 'virement/debiter', name: 'virementADebiter', component: VirementCompteADebiterView },
+        {path: 'virement/crediter/:idAccountADebiter', name: 'virementACrediter', component: VirementCompteACrediterView }
     ]
 },
 {path: '*', redirect: '/login' }

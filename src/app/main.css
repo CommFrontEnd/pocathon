@@ -535,3 +535,12 @@ input{
 .c-list-item__content.is-selected .c-field__value .down{
     transform: rotate(180deg);
 }
+
+/* Ajout Erwan */
+.u-accountSelected {
+    background-color: #bdbebd;
+}
+
+.btn:disabled{
+    background: #bdbebd;
+}
