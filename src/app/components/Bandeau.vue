@@ -11,6 +11,8 @@
             <div class="fa fa-angle-down"></div>
             <ul class="menu">
                 <li class="menu__item" v-on:click="switchLanguage"><span class="fa fa-gear"></span>Go English</li>
+                <li class="menu__item"><router-link :to="{ name: 'accounts'}"><span class="fa fa-gear"></span>Mes Comptes</router-link></li>
+                <li class="menu__item"><router-link :to="{ name: 'virementADebiter'}"><span class="fa fa-gear"></span>Faire un Virement</router-link></li>
                 <li class="menu__item" v-on:click="deconnexion"><span class="fa fa-unlock-alt"></span>{{disconnect}}</li>
             </ul>
         </div>
