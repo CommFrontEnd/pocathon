@@ -1,38 +1,27 @@
-# pocathon
-Seed app repository for our next pocathon !
-This repository aggregates all the resources you'll need to participate.
+# Pocathon
 
-## Quick start
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.32.3.
 
-Things you'll need:
+## Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-* [node](https://nodejs.org)
-* [visual studio code ](https://www.npmjs.com/package/markdown-it)
-* [gulp](https://www.npmjs.com/package/gulp). Easier to develop if installed globally ( npm install -g gulp)
+## Code scaffolding
 
-> Though, you are free to use/ install any web based resource thats suits you better.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
-> Fork the project 
- `npm install`
- `gulp server`
-> Code.
-> Have fun.
+## Build
 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Mockups
+## Running unit tests
 
-> This folder contains all visuals with html templates you need to start coding focused on your framework.
-> You cann access them in loclhost with following command :
-> `gulp mockups`
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Backend
+## Running end-to-end tests
 
-> Your backend is accessible through an API hosted by Restlet.
-> You'll need to provide a client token in your requests. An extensive description of the API will be provided.
- An client example in vanilla js is provided to get you started.
- A documentation is available in the doc folder.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
 
+## Further help
 
-
-
-
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

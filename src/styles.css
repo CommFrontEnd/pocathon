@@ -8,8 +8,8 @@
   --color-gold:#D69B35;
   --color-gold-darker:#A37A2F;
 
-    --red:red;
-    --green:green;
+  --red:red;
+  --green:green;
 
   --headerFont:'sans-serif';
   --bgColor:var(--color-dark-blue);
@@ -44,16 +44,16 @@ html,body{
   overflow:hidden;
 }
 .container{
-    display:flex;
-    justify-content:center;
-    align-content: center;
-    align-items:center;
-    background:var(--bgColor);
-    height:100%;
-    width:100%;
+  display:flex;
+  justify-content:center;
+  align-content: center;
+  align-items:center;
+  background:var(--bgColor);
+  height:100%;
+  width:100%;
 }
 .symbols{
-    display:none;
+  display:none;
 }
 .card{
   display: inline-flex;
@@ -96,7 +96,7 @@ html,body{
   font-size:2em;
 }
 .btn-group .btn__label{
-    font-size:0.5em;
+  font-size:0.5em;
 }
 .btn-group > *{
   margin:0.25em;
@@ -114,7 +114,7 @@ html,body{
 }
 
 .btn:active{
-    background-color: var(--secondaryColor);
+  background-color: var(--secondaryColor);
 }
 
 .form{
@@ -155,8 +155,8 @@ input{
   visibility:visible;
 }
 .chart{
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   margin-left:0.5em;
   margin-right:0.5em;
   overflow: hidden;
@@ -360,7 +360,7 @@ input{
   fill:#9881F5 !important;
 }
 .ct-chart-pie .ct-label{
-    fill:var(--bgColor);
+  fill:var(--bgColor);
 }
 
 .ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut{
@@ -437,103 +437,103 @@ input{
 }
 
 .floating-btn-group--inverted  .btn{
-    color:var(--bgColor);
-    background-color:var(--primaryColor);
+  color:var(--bgColor);
+  background-color:var(--primaryColor);
 }
 
 .overlay{
-    background-color: rgba(0,0,0,0.4);
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100vw;
-    height: 100vh;
-    z-index:var(--z-index-overlay);
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    transition: all var(--animation-time);
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  z-index:var(--z-index-overlay);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transition: all var(--animation-time);
 }
 .overlay[aria-hidden='true']{
-    pointer-events: none;
-    opacity: 0;
+  pointer-events: none;
+  opacity: 0;
 }
 .overlay[aria-hidden='false']{
-    pointer-events: auto;
-    opacity: 1;
+  pointer-events: auto;
+  opacity: 1;
 }
 .overlay[aria-hidden='false'] .modal{
-    transform: scale(1) translateX(-50vw) translateY(-50vh);
+  transform: scale(1) translateX(-50vw) translateY(-50vh);
 }
 .modal{
-    position: relative;
-    background-color: white;
-    box-shadow:var(--boxShadow3);
-    top:50vh;
-    left:50vw;
-    transform: scale(0) translateX(0) translateY(0);
-    transition: all var(--animation-time);
+  position: relative;
+  background-color: white;
+  box-shadow:var(--boxShadow3);
+  top:50vh;
+  left:50vw;
+  transform: scale(0) translateX(0) translateY(0);
+  transition: all var(--animation-time);
 }
 .modal .btn-close{
-    position: absolute;
-    cursor:pointer;
-    top: -0.5em;
-    right: -0.5em;
-    box-shadow: var(--boxShadow1);
+  position: absolute;
+  cursor:pointer;
+  top: -0.5em;
+  right: -0.5em;
+  box-shadow: var(--boxShadow1);
 }
 
 .menu-container{
-    position: relative;
-    margin: 0;
-    transition: all var(--animation-time);
+  position: relative;
+  margin: 0;
+  transition: all var(--animation-time);
 }
 .menu-container.is-opened{
-    background-color: var(--primaryColor);
-    color:var(--bgColor);
+  background-color: var(--primaryColor);
+  color:var(--bgColor);
 }
 .menu{
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-    background: white;
-    box-shadow: var(--boxShadow2);
-    margin: 0;
-    padding: 0;
-    top:100%;
-    left: 0;
-    width: 100%;
-    transform: scaleY(0) translateY(-100%);
-    transition: all var(--animation-time);
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  background: white;
+  box-shadow: var(--boxShadow2);
+  margin: 0;
+  padding: 0;
+  top:100%;
+  left: 0;
+  width: 100%;
+  transform: scaleY(0) translateY(-100%);
+  transition: all var(--animation-time);
 }
 .menu-container.is-opened .menu{
-    opacity: 1;
-    pointer-events: auto;
-    transform: scaleY(1) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  transform: scaleY(1) translateY(0);
 }
 .menu__item{
-    list-style-type: none;
-    margin: 0;
-    padding:0;
-    color:inherit;
-    border-bottom: 1px solid var(--primaryColor);
+  list-style-type: none;
+  margin: 0;
+  padding:0;
+  color:inherit;
+  border-bottom: 1px solid var(--primaryColor);
 }
 .menu__item a{
-    display: block;
-    widows: 100%;
-    height: 100%;
-    padding: 0.5em;
-    text-decoration: none;
-    color:inherit;
+  display: block;
+  widows: 100%;
+  height: 100%;
+  padding: 0.5em;
+  text-decoration: none;
+  color:inherit;
 }
 .header__btn{
-    color:var(--primaryColor);
-    text-decoration:none;
+  color:var(--primaryColor);
+  text-decoration:none;
 }
- .down{
-     transition: all var(--animation-time);
-     width:1em;
-     height:1em;
- }
+.down{
+  transition: all var(--animation-time);
+  width:1em;
+  height:1em;
+}
 .c-list-item__content.is-selected .c-field__value .down{
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
