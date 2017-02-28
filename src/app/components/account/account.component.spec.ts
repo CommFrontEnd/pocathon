@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CartographieComponent } from './cartographie.component';
+import { AccountComponent } from './account.component.ts';
 
-describe('CartographieComponent', () => {
-  let component: CartographieComponent;
-  let fixture: ComponentFixture<CartographieComponent>;
+describe('AccountComponent', () => {
+  let component: AccountComponent;
+  let fixture: ComponentFixture<AccountComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CartographieComponent ]
+      declarations: [ AccountComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CartographieComponent);
+    fixture = TestBed.createComponent(AccountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

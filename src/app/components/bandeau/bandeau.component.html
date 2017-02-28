@@ -1,0 +1,18 @@
+<div class="o-panel-header">
+  <h1 class="c-logo">
+    <svg height="2em" viewBox="0 0 20 20" preserveAspectRatio="xMinYMid">
+      <use xlink:href="#logo-min"></use>
+    </svg>
+  </h1>
+  <div class="c-user menu-container js-user-menu" [class.is-opened]="isOpened" (click)="menuOpen()" >
+    <div class="fa fa-user-circle-o c-user__ico"></div>
+    Hervé Lepinard
+    <div class="fa fa-angle-down"></div>
+    <ul class="menu">
+      <li class="menu__item"><a routerLink="/app/accounts"><span class="fa fa-gear"></span> Mes comptes</a></li>
+      <li class="menu__item"><a routerLink="/app/virement/debiter"><span class="fa fa-gear"></span> Faire un virement</a></li>
+      <li class="menu__item" (click)="logout()"><a href="#"><span class="fa fa-unlock-alt"></span> Logout</a></li>
+    </ul>
+  </div>
+  <div class="c-options"></div>
+</div>
