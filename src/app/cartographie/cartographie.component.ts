@@ -15,12 +15,10 @@ export class CartographieComponent implements OnInit {
 
   clickOpenModal(event) {
     this.isAriaHidden = false;
-    console.log('clickOpenModal', this.isAriaHidden);
   }
 
   clickCloseModal(event) {
     this.isAriaHidden = true;
-    console.log('clickOpenModal', this.isAriaHidden);
   }
 
 }
