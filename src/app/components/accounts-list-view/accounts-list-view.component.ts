@@ -14,7 +14,6 @@ export class AccountsListViewComponent implements OnInit {
   }
 
   onRowClick(id: string) {
-    console.log('onRowClick', this);
     this.routeur.navigate(['/app/accounts', id]);
   }
 

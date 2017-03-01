@@ -14,4 +14,9 @@ export class AccountService {
       .map(res => res.json());
   }
 
+  getAccount(id: string) {
+    return this.http.get(this.accountsUrl+id)
+      .map(res => res.json());
+  }
+
 }
