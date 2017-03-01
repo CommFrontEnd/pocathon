@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, RequestOptions } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ClientService } from './services/clientService/client.service';
+import { AccountService } from './services/accountService/account.service';
+import { OperationService } from './services/operationService/operation.service';
+import { CustomRequestOptions } from './services/custom-request-options';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -14,6 +17,7 @@ import { AccountsListViewComponent } from './components/accounts-list-view/accou
 import { AccountsComponent } from './components/accounts/accounts.component';
 import { AccountComponent } from './components/account/account.component';
 import { AppViewComponent } from './components/app-view/app-view.component';
+import { AccountDetailsComponent } from './components/account-details/account-details.component';
 
 
 
@@ -21,7 +25,9 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'app', component: AppViewComponent,
     children: [
-      { path: 'accounts', component: AccountsListViewComponent }
+      { path: 'accounts', component: AccountsListViewComponent },
+      { path: 'accounts/:id', component: AccountDetailsComponent }
+
     ]
   },
   { path: 'login',  component: LoginComponent },
@@ -38,7 +44,8 @@ const appRoutes: Routes = [
     AccountsListViewComponent,
     AccountsComponent,
     AccountComponent,
-    AppViewComponent
+    AppViewComponent,
+    AccountDetailsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -46,7 +53,12 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [ClientService],
+  providers: [
+    { provide: RequestOptions, useClass: CustomRequestOptions },
+    ClientService,
+    AccountService,
+    OperationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

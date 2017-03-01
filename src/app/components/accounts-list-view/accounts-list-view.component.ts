@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accounts-list-view',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountsListViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public routeur: Router) { }
 
   ngOnInit() {
+  }
+
+  onRowClick(id: string) {
+    console.log('onRowClick', this);
+    this.routeur.navigate(['/app/accounts', id]);
   }
 
 }

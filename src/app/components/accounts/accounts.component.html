@@ -1,3 +1,8 @@
-<p>
-  accounts works!
-</p>
+
+<div class="o-panel-content" *ngFor="let account of accounts">
+  <app-account [account]="account" (accountsRowClick)="accountsRowClick($event)"></app-account>
+</div>
+
+
+
+
