@@ -1,0 +1,10 @@
+<h2>
+  Choisir un compte à débiter :
+</h2>
+<app-accounts (onRowClick)="onRowClick($event)" [accountSelected]="idAccountSelected"></app-accounts>
+<div *ngIf="idAccountSelected != null">
+  <button class="btn" (click)="redirectionCompteACrediter()">Choisir un compte à créditer</button>
+</div>
+<div *ngIf="idAccountSelected == null">
+  <button class="btn" disabled>Choisir un compte à créditer</button>
+</div>

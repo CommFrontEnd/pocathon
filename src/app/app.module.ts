@@ -19,6 +19,8 @@ import { AccountComponent } from './components/account/account.component';
 import { AppViewComponent } from './components/app-view/app-view.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { OperationComponent } from './components/operation/operation.component';
+import { VirementADebiterComponent } from './components/virement-adebiter/virement-adebiter.component';
+import { VirementACrediterComponent } from './components/virement-acrediter/virement-acrediter.component';
 
 
 
@@ -27,8 +29,9 @@ const appRoutes: Routes = [
   { path: 'app', component: AppViewComponent,
     children: [
       { path: 'accounts', component: AccountsListViewComponent },
-      { path: 'accounts/:id', component: AccountDetailsComponent }
-
+      { path: 'accounts/:id', component: AccountDetailsComponent },
+      { path: 'virement/debiter', component: VirementADebiterComponent },
+      { path: 'virement/crediter/:idAccountADebiter', component: VirementACrediterComponent }
     ]
   },
   { path: 'login',  component: LoginComponent },
@@ -47,7 +50,9 @@ const appRoutes: Routes = [
     AccountComponent,
     AppViewComponent,
     AccountDetailsComponent,
-    OperationComponent
+    OperationComponent,
+    VirementADebiterComponent,
+    VirementACrediterComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

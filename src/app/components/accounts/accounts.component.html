@@ -1,6 +1,8 @@
 
 <div class="o-panel-content" *ngFor="let account of accounts">
-  <app-account [account]="account" (accountsRowClick)="accountsRowClick($event)"></app-account>
+  <div *ngIf="account.id != notInList">
+    <app-account [account]="account" [accountSelected]="accountSelected" (accountsRowClick)="accountsRowClick($event)"></app-account>
+  </div>
 </div>
 
 

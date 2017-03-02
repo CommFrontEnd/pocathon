@@ -24,7 +24,6 @@ export class AccountDetailsComponent implements OnInit {
         component.account = data;
         component.account.operationsList.forEach(function (operation) {
           component.operationService.getOperations(operation).subscribe(data => {
-            console.log(data);
             component.operations.push(data);
           });
         })

@@ -11,6 +11,8 @@ import { Account } from '../../model/account';
 export class AccountsComponent implements OnInit {
 
   @Output() onRowClick: EventEmitter<any> = new EventEmitter();
+  @Input() accountSelected: string;
+  @Input() notInList: string;
   accounts: any[];
 
   constructor(public accountService: AccountService) { }

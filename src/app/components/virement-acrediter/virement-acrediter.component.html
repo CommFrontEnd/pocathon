@@ -1,0 +1,14 @@
+<h2>Compte qui sera débité :</h2>
+<app-account [account]="accountADebiter" [accountSelected]="idAccountADebiter"></app-account>
+<h2>Choisir un compte à créditer :</h2>
+<app-accounts [accountSelected]="idAccountACrediter" [notInList]="idAccountADebiter" (onRowClick)="onRowClick($event)"></app-accounts>
+<h2>Montant à créditer</h2>
+<input type="text"  [(ngModel)]="montantVirement"/>
+<label>Libellé du virement</label>
+<input type="text" />
+<div *ngIf="idAccountACrediter && montantVirement ">
+  <button class="btn" routerLink="/app/accounts">Finaliser le virement</button>
+</div>
+<div *ngIf="!idAccountACrediter || !montantVirement ">
+  <button class="btn" disabled>Finaliser le virement</button>
+</div>

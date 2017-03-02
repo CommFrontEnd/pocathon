@@ -11,6 +11,7 @@ import { OperationService } from "../../services/operationService/operation.serv
 export class AccountComponent implements OnInit {
   @Output() accountsRowClick: EventEmitter<any> = new EventEmitter();
   @Input() account: any;
+  @Input() accountSelected: string;
   isDetailsSelected: boolean = false;
   operations: Operation[] = new Array<Operation>();
 
@@ -18,12 +19,13 @@ export class AccountComponent implements OnInit {
 
   ngOnInit() {
     var component = this;
-    component.account.operationsList.forEach(function (operation) {
-      component.operationService.getOperations(operation).subscribe(data => {
-        console.log(data);
-        component.operations.push(data);
-      });
-    })
+    if (component.account) {
+      component.account.operationsList.forEach(function (operation) {
+        component.operationService.getOperations(operation).subscribe(data => {
+          component.operations.push(data);
+        });
+      })
+    }
   }
 
   detailsSelected () {
