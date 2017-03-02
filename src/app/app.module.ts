@@ -18,6 +18,7 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 import { AccountComponent } from './components/account/account.component';
 import { AppViewComponent } from './components/app-view/app-view.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
+import { OperationComponent } from './components/operation/operation.component';
 
 
 
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     AccountsComponent,
     AccountComponent,
     AppViewComponent,
-    AccountDetailsComponent
+    AccountDetailsComponent,
+    OperationComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
