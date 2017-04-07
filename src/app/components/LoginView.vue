@@ -36,17 +36,12 @@
         <div class="card__footer">
             <span class="btn btn-primary btn-md" v-on:click="formIsValid">{{ login }} <i class="fa fa-sign-in"></i></span>
         </div>
-        <cartographie></cartographie>
     </div>
 </template>
  <script>
- import Cartographie from './Cartographie.vue';
   export default {
     name: 'formLogin',
     props: [],
-    components: {
-        Cartographie
-    },
     methods: {
       formIsValid: function() {
         var FakeApiData = {login:'test1', pwd:'test1'};
