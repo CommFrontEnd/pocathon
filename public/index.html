@@ -15,27 +15,6 @@
   <div class="container" id="root">
   </div>
 
-  <div class="floating-btn-group floating-btn-group--inverted">
-    <div class="btn fa fa-globe js-localization"></div>
-  </div>
-
-  <div class="overlay js-localization-modal" aria-hidden="true">
-      <div class="modal">
-          <div class="btn btn-close js-close"><div class="fa fa-close"></div></div>
-          <div style="width:50vw;max-width:100%;overflow:hidden;height:60vh;">
-              <div id="gmap-canvas">
-                  <iframe
-                      style="height:100%;width:100%;border:0;"
-                      frameborder="0"
-                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBSXVSIegDwxmT3vc1AuiEUDRmunfjDP1w&q=Brooklyn+Bridge,New-York+NY&zoom=16">
-                  </iframe>
-              </div><!-- AIzaSyCMZCsMSV5KhnOaKVGfxidaR60q6ZH6O9M-->
-              <style>#gmap-canvas img{max-width:none!important;background:none!important;}</style>
-          </div>
-      </div>
-  </div>
-
-
   <!-- SYMBOLS -->
   <svg class="symbols" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <symbol id="logo" viewBox="0 0 53 30">
@@ -54,18 +33,6 @@
       <path id="path1_fill" d="M 0 0L 7 0C 7 0 15.0801 -1.90735e-06 15.0801 6C 15.0801 9.5 11.9584 10.8049 11.9584 10.8049C 16.125 11.1383 21.5 15 21.5 19.5171C 21.5 27 17.5 28.6667 13 29L 4.12337 29L 4.12337 27L 11.9584 27C 13.7611 27 15.0801 20 15.0801 19C 15.0801 18.2 14.1619 18 13 18L 8 18C 8.5 17.6667 9 16.6 9 15C 9 13.4 8.04086 13 7 13C 7 14.0118 7.5 15.5 6.02091 16C 5.26304 16.2562 4.4567 18.3333 4.12337 19L 2 19L 2 25L 0 25L 0 0Z"></path>
     </defs>
   </svg>
-
-  <!-- GOOGLE MAPS -->
-  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZCsMSV5KhnOaKVGfxidaR60q6ZH6O9M&callback=initMap"> </script>
-
-  <script type="text/javascript">
-      document.querySelector('.js-localization').addEventListener('click',function(){
-          document.querySelector('.js-localization-modal').setAttribute('aria-hidden', 'false');
-      });
-      document.querySelector('.js-close').addEventListener('click',function(){
-          document.querySelector('.js-localization-modal').setAttribute('aria-hidden', 'true');
-      });
-  </script>
 </body>
 
 </html>
