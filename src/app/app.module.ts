@@ -11,7 +11,6 @@ import { CustomRequestOptions } from './services/custom-request-options';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { CartographieComponent } from './components/cartographie/cartographie.component';
 import { BandeauComponent } from './components/bandeau/bandeau.component';
 import { AccountsListViewComponent } from './components/accounts-list-view/accounts-list-view.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
@@ -43,7 +42,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    CartographieComponent,
     BandeauComponent,
     AccountsListViewComponent,
     AccountsComponent,
